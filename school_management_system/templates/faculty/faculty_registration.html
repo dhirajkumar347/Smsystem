@@ -1,0 +1,106 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en"  ng-app="qlsApp">
+<head>
+  <title>Registration</title>
+  <meta charset="utf-4">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+  <script src="{% static 'js/faculty/faculty_registration.js' %}"></script>   
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
+  
+     
+</head>
+<style>
+body  {
+ 
+  background-color: #cccccc;
+}
+</style>
+{% verbatim %} 
+<body>
+<div class="container" ng-controller="registerCtrl" class="container">
+ <div class="row">
+  <div class="col-md-7 panel panel-default" style="margin-top: 50px">
+  <form  class="form-horizontal" name="facultyform" ng-submit="registrationform()" novalidate>
+             
+               <!-- Name input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" >Full Name<span class="cus_man7">*</span></label>
+                  <div class="col-md-10">
+                     <input id="name" name="state"  ng-model ="user.full_name"  type="text" placeholder="" class="form-control"  placeholder="Full Name" required pattern="[A-Za-z '-]{2,}">
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Mobile No<span class="cus_man7">*</span></label>
+                  <div class="col-md-10">
+                     <input   name="date_of_birth" ng-model ="user.mobile_no"   align="right" type="text" id="empdate" placeholder="Mobile No" class="form-control thedate" required >
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Faculty designation<span class="cus_man7">*</span></label>
+                  <div class="col-md-10">
+                     <input id="email" name="email"  ng-model ="user.faculty_designation" type="text"  class=" form-control field" required>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Faculty description<span class="cus_man7">*</span></label>
+                  <div class="col-md-10">
+                     <input id="email" name="email"  ng-model ="user.faculty_description" type="text"  class=" form-control field" required>
+                  </div>
+               </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Experience<span class="cus_man7">*</span></label>
+                  <div class="col-md-10">
+                     <input id="annualctc" name="annualctc"  ng-model ="user.experience"  type="text" placeholder="" class="form-control">
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Country<span class="cus_man7">*</span></label>
+                  <div class="col-md-10">
+                     <input id="pan" name="pan"   ng-model ="user.country"  type="text" placeholder="" class="form-control" required>
+                  </div>
+               </div>
+              
+               <div class="form-group">
+                  <label class="col-md-4 control-label">State</label>
+                  <div class="col-md-10">
+                     <input id="name" name="state"  ng-model ="user.state"  type="text" placeholder="" class="form-control" title="State name should be letter" required pattern="[A-Za-z '-]{2,}"> 
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Pincode</label>
+                  <div class="col-md-10">
+                     <input id="name" name="state"  ng-model ="user.pincode"  type="text" placeholder="" class="form-control"> 
+                  </div>
+               </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Address</label>
+                  <div class="col-md-10">
+                     <input id="address" name="address"  ng-model ="user.address"  type="text" placeholder="" class="form-control" required>
+                  </div>
+               </div>
+               <button type="submit"  class="btn btn-success cus_man4">Submit</button>
+               <button type="button" data-dismiss="modal" ng-click="close()" class="btn btn cus_man9">Cancel</button>
+            </form>
+            </div>
+             <div class="col-md-5 mobile_kid"> 
+                    
+                        <div class="col-md-2 mobile_kid"> 
+                          <center> 
+                            <img  src=""></center>
+                            <center><button class="btn genius_button" type="button" style="margin:0px;"> <h2>Faculty Registarion</h2></button></center>
+                          </div>
+                         
+                          </div> 
+
+                        </div>
+            </div>
+</body>{% endverbatim %} 
+</html>
