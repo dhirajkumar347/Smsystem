@@ -8,7 +8,7 @@ app.config(['$httpProvider', '$interpolateProvider',
 }]);
 
 //Register form controller
-app.controller('loginCtrl', function($scope,$http,$window) {
+app.controller('Ctrl', function($scope,$http,$window) {
 	$scope.loginformsubmit = function(isValid) {
 	
 		if (isValid) {

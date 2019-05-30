@@ -2,6 +2,9 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.core.validators import RegexValidator
+# Create your models here.
+phone_regex = RegexValidator(regex=r'^\+?1?\d{5,10}$')
 
 # Create your models here.
 
@@ -51,3 +54,18 @@ class student_Registration(models.Model):
 
     #user name  Dhiraj.kumar@asmltd.com:
     #password dhiraj@25254646
+
+
+class contact_us(models.Model):
+
+    fullname=models.CharField(max_length=30)
+    mobile_number = models.CharField(validators=[phone_regex],unique=True,null=True,max_length=10)
+
+    Email_id=models.EmailField(max_length=20,unique=True,null=False)
+    country=models.CharField(max_length=15)
+    state=models.CharField(max_length=15)
+    city=models.CharField(max_length=20)
+    query=models.TextField()
+
+    def _str_(self):
+        return self.mobile_number,self.Email_id

@@ -1,7 +1,7 @@
 'use strict';
 
 function DashboardController($scope, $http,$window){
-  console.log("intial loading");
+  console.log("load")
    var y =$window.location.href;
     var mydat =y.substr(49);
     //Available Program
