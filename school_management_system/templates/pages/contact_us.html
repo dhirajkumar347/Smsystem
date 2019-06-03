@@ -1,5 +1,7 @@
+{% extends "base.html" %}
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
+
 <html lang="en" ng-app="qlsApp">
 <head>
   <title>Contact_us</title>
@@ -13,13 +15,8 @@
      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
  </head>
- <!-- <style>
-  .body  {
  
-        background-color: light blue;
-      }
-</style> -->
-
+ {% block content %}
 {% verbatim %}
 <body>
 <div class="container" ng-controller="contCtrl" class="container">
@@ -35,25 +32,19 @@
                      <input type="text"   name="fullname"  ng-model ="contact_us.fullname" placeholder="Full Name" class="form-control" ng-pattern="/^[A-z_ ]+$/"   required>
                      <span style="color: red" ng-show="contact_usForm.fullname.$error.required && (contact_usForm.$submitted || contact_usForm.fullname.$touched)">Full name is required.</span>
 
-              <span style="color: red" ng-show="contact_usForm.fullname.$error.pattern && (contact_usForm.$submitted || contact_usForm.fullname.$touched)">Full name should be only letter.</span>  
+                     <span style="color: red" ng-show="contact_usForm.fullname.$error.pattern && (contact_usForm.$submitted || contact_usForm.fullname.$touched)">Full name should be only letter.</span>  
                      
                   </div>
                </div>
-
-
-
                <div class="form-group">
                   <label class="col-md-4 control-label" >mobile_number<span class="cus_man7">*</span></label>
                   <div class="col-md-10">
                      <input type="text"   name="mobile_number"  ng-model ="contact_us.mobile_number" placeholder="Mobile number" class="form-control" ng-minlength="10" ng-maxlength="10"    required>
                      <span style="color: red" ng-show="contact_usForm.mobile_number.$error.required && (contact_usForm.$submitted || contact_usForm.mobile_number.$touched)">Mobile number is required.</span>
 
-              
-              <span style="color: red" ng-show="contact_usForm.mobile_number.$error.minlength && (contact_usForm.$submitted || contact_usForm.mobile_number.$touched)">mobile number should be only 10 digit.</span>  
-              <span style="color: red" ng-show="contact_usForm.mobile_number.$error.maxlength && (contact_usForm.$submitted || contact_usForm.mobile_number.$touched)">mobile number should  be only 10 digit.</span>  
-            
-                  
-          
+                    
+                    <span style="color: red" ng-show="contact_usForm.mobile_number.$error.minlength && (contact_usForm.$submitted || contact_usForm.mobile_number.$touched)">mobile number should be only 10 digit.</span>  
+                    <span style="color: red" ng-show="contact_usForm.mobile_number.$error.maxlength && (contact_usForm.$submitted || contact_usForm.mobile_number.$touched)">mobile number should  be only 10 digit.</span>  
                   </div>
                      <span style="color: red;margin-left: 17px;">{{mobile_error[0]}}</span> 
                </div>
@@ -105,139 +96,10 @@
                   </div>
                </div>
 
-
-
-
-                <!-- <div class="form-group">
-                  <label class="col-md-4 control-label" >Mobile_number<span class="cus_man7">*</span></label>
-                  <div class="col-md-10">
-                     <input name="mobile_number"  ng-model ="mobile_number"  type="text" placeholder="mobile number" class="form-control" ng-max="10" ng-min="10"  required>
-                     <span style="color:red" ng-show="contact_us.mobile_number.$dirty && contact_us.mobile_number.$invalid">
-                    <span ng-show="contact_us.mobile_number.$error.required">Mobile number  is required.</span>
-                  </span>
-                  </div>
-               </div>
-
-               <div class="form-group">
-                  <label class="col-md-4 control-label" >Email_id<span class="cus_man7">*</span></label>
-                  <div class="col-md-10">
-                    <input type="email" name="email" ng-model="Email_id" required>
-                     <span style="color:red" ng-show="contact_us.Email_id.$dirty && contact_us.Email_id.$invalid">
-                  <span ng-show="contact_us.Email_id.$error.required">Email is required.</span>
-                
-                </span>
-                </div>
-              </div>
-
-               <div class="form-group">
-                    <label class="col-md-4 control-label" >country<span class="cus_man7">*</span></label>
-                      <div class="col-md-10">
-                          <input type="country" name="country" ng-model="country" ng-minlength="10" ng-maxlength="10" required>
-                            <span style="color:red" ng-show="contact_us.country.$dirty && contact_us.country.$invalid">
-                            <span ng-show="contact_us.country.$error.required">Country name is required.</span>
-                          
-                         </span>
-                      </div>
-                </div>
-
-
-                <div class="form-group">
-                    <label class="col-md-4 control-label" >state<span class="cus_man7">*</span></label>
-                      <div class="col-md-10">
-                          <input type="state" name="state" ng-model="state" required>
-                            <span style="color:red" ng-show="contact_us.state.$dirty && contact_us.state.$invalid">
-                            <span ng-show="contact_us.state.$error.required">state name is required.
-                          </span>
-                         </span>
-                      </div>
-                </div>
-
-
-                <div class="form-group">
-                    <label class="col-md-4 control-label" >city<span class="cus_man7">*</span></label>
-                      <div class="col-md-10">
-                          <input type="city" name="city" ng-model="city" required>
-                          <span style="color:red" ng-show="contact_us.city.$dirty && contact_us.city.$invalid">
-                          <span ng-show="contact_us.city.$error.required">state name is required.</span>
-                          
-                         </span>
-                      </div>
-                </div>
-
-
-                <div class="form-group">
-                    <label class="col-md-4 control-label" >query<span class="cus_man7">*</span></label>
-                      <div class="col-md-10">
-                          <textarea type="query" name="query" ng-model="query" required></textarea>
-                            <span style="color:red" ng-show="contact_us.query.$dirty && contact_us.query.$invalid">
-                            <span ng-show="contact_us.query.$error.required">query field is required.</span>
-                          
-                         </span>
-                      </div>
-                </div> -->
-               
-             <!--  <div class="form-group">
-                  <label class="col-md-4 control-label">Mobile No<span class="cus_man7">*</span></label>
-                  <div class="col-md-10">
-                     <input   name="phone" ng-model ="mobile_number"   type="number"  id="inputPhone" placeholder="Mobile No" class="form-control" ng-minlength="10" ng-maxlength="10" required >
-                     <span style="color:red" ng-show="contact_usform.mobile_number.$dirty && contact_usform.mobile_number.$invalid">
-                    <span ng-show="contact_usform.mobile_number.$error.required">mobile_number is required.</span>
-                    <span ng-show="contact_usform.mobile_number.$error.email">Invalid mobile_number address.</span>
-                  </div>
-               </div>
-
-
-               <div class="form-group">
-                  <label class="col-md-4 control-label">Email<span class="cus_man7">*</span></label>
-                  <div class="col-md-10">
-                     <input id="text" name="Email_id"  ng-model ="Email_id" type="text"  class=" form-control field" ng-pattern="word" required>
-                    <span style="color:red" ng-show="contact_usform.Email_id.$dirty && contact_usform.Email_id.$invalid"> &&
-                    <span ng-show="contact_usform.Email_id.$error.required">Email is required.</span>
-                    <span ng-show="contact_usform.Email_id.$error.email">Invalid email address.</span>
-
-                  </div>
-               </div>
-
-
-
-               <div class="form-group">
-                  <label class="col-md-4 control-label">Country<span class="cus_man7">*</span></label>
-                  <div class="col-md-10">
-                     <input id="pan" name="pan"   ng-model ="contact_us.country"  type="text" placeholder="" class="form-control" required>
-                  </div>
-               </div>
-              
-
-               <div class="form-group">
-                  <label class="col-md-4 control-label">State</label>
-                  <div class="col-md-10">
-                     <input id="name" name="state"  ng-model ="state"  type="text" placeholder="" class="form-control" title="State name should be letter" required> 
-                  </div>
-               </div>
-                
-
-               <div class="form-group">
-                  <label class="col-md-4 control-label">city<span class="cus_man7">*</span></label>
-                  <div class="col-md-10">
-                     <input id="name" name="city"  ng-model ="contact_us.city"  type="text" placeholder="" class="form-control">
-                  </div>
-               </div>
-
-
-               <div class="form-group">
-                  <label class="col-md-4 control-label">Query<span class="cus_man7">*</span></label>
-                  <div class="col-md-10">
-                     <textarea id="name" name="Query"  ng-model ="contact_us.query"  type="text" placeholder="" class="form-control"></textarea> 
-                  </div>
-               </div>
-               <p><input type="submit"
-                  ng-disabled="contact_usform.fullname.$invalid"></p>
-
- -->
-
               <button type="submit" class="btn btn-primary">send</button>
              
         </form>
            </div>
            </body>{% endverbatim %} 
+           {% endblock content %}
 </html>

@@ -1,6 +1,9 @@
-
-{% load staticfiles %}
+{% extends "base.html" %}
+{% load static %}
 <!DOCTYPE html>
+
+    
+  
 <html lang="en"  ng-app="qlsApp">
 <head>
   <title>Registration</title>
@@ -21,6 +24,9 @@ body  {
   background-color: #cccccc;
 }
 </style>
+
+{% block content %}
+
 {% verbatim %} 
 
 <body>
@@ -44,4 +50,5 @@ body  {
 	</div>
 </div>
 </body>{% endverbatim %} 
+{% endblock content %}
 </html>

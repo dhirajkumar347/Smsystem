@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>{% block title %} {% endblock title %}</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="{% static 'js/faculty/faculty_list.js' %}"></script>
+  <script src="{% static 'js/faculty/faculty_registration.js' %}"></script> 
+  <script src="{% static 'js/login/login.js' %}"></script>
+  <script src="{% static 'js/pages/contact_us.js' %}"></script>  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+
+ <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+<link href="{% static 'css/main.css' %}" rel="stylesheet">
+<link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
+<link href="{% static 'css/font-awesome.min.css.css' %}" rel="stylesheet">
+
+
+
+
+<link rel="shortcut icon" href="images/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+     
+</head>
+<style>
+.outer-div
+{
+     height: 300px;
+     overflow: hidden; 
+}
+.inner-div
+{
+     height: 100%;
+     width:100%
+     background-size: cover;
+     background-position: center;
+     transition: all 0.5s ease;
+     background-image: url('foo.jpg');
+}
+.inner-div:hover
+{
+     transform: scale(1.2);
+}
+</style>
+<body>
+
+<header id="header">
+<div class="top-bar">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-xs-4">
+<div class="top-number"><p><i class="fa fa-phone-square"></i> +91 8800144116</p></div>
+</div>
+<div class="col-sm-6 col-xs-8">
+<div class="social">
+<ul class="social-share">
+<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+<li><a href="#"><i class="fa fa-skype"></i></a></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div> 
+</div> 
+<nav class="navbar navbar-inverse" role="banner">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+
+</div>
+<div class="collapse navbar-collapse navbar-right">
+<ul class="nav navbar-nav">
+<li><a href="about-us.html">About Us</a></li>
+
+<li><a href="/app/contact_us">Contact</a></li>
+<li><a href="/app/faculty">Our faculty</a></li>
+<li><a href="/app/login/">Student login</a></li>
+<li><a href="/app/login">Faculty login</a></li>
+<li><a href="/app/faculty_registration">Faculty Registrion</a></li>
+<li><a href="/app/student_registration">Student Registrion</a></li>
+
+</ul>
+</div>
+</div> 
+</nav> 
+</header> 
+
+{% block content %}{% endblock content %}
+
+<footer>
+	<section id="bottom">
+<div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+<div class="row">
+<div class="col-md-3 col-sm-6">
+<div class="widget">
+<h3>Company</h3>
+<ul>
+<li><a href="#">About us</a></li>
+<li><a href="#">We are hiring</a></li>
+<li><a href="#">Meet the team</a></li>
+<li><a href="#">Copyright</a></li>
+<li><a href="#">Terms of use</a></li>
+<li><a href="#">Privacy policy</a></li>
+<li><a href="#">Contact us</a></li>
+</ul>
+</div>
+</div> 
+<div class="col-md-3 col-sm-6">
+<div class="widget">
+<h3>Support</h3>
+<ul>
+<li><a href="#">Faq</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Forum</a></li>
+<li><a href="#">Documentation</a></li>
+<li><a href="#">Refund policy</a></li>
+<li><a href="#">Ticket system</a></li>
+<li><a href="#">Billing system</a></li>
+</ul>
+</div>
+</div> 
+<div class="col-md-3 col-sm-6">
+<div class="widget">
+<h3>Developers</h3>
+<ul>
+<li><a href="#">Web Development</a></li>
+<li><a href="#">SEO Marketing</a></li>
+<li><a href="#">Theme</a></li>
+<li><a href="#">Development</a></li>
+<li><a href="#">Email Marketing</a></li>
+<li><a href="#">Plugin Development</a></li>
+<li><a href="#">Article Writing</a></li>
+</ul>
+</div>
+</div> 
+<div class="col-md-3 col-sm-6">
+<div class="widget">
+<h3>Our Partners</h3>
+<ul>
+<li><a href="#">Adipisicing Elit</a></li>
+<li><a href="#">Eiusmod</a></li>
+<li><a href="#">Tempor</a></li>
+<li><a href="#">Veniam</a></li>
+<li><a href="#">Exercitation</a></li>
+<li><a href="#">Ullamco</a></li>
+<li><a href="#">Laboris</a></li>
+</ul>
+</div>
+</div> 
+</div>
+</div>
+</section> 
+</footer>
+
+
+
+
+
+</body>
+</html>

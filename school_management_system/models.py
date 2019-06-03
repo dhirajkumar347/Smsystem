@@ -16,6 +16,20 @@ class Usertype(models.Model):
     def __unicode__(self):
         return self.user_type
 
+class Standard(models.Model):
+    standard_name = models.CharField(max_length=20)
+    
+    def __unicode__(self):
+        return self.standard_name
+
+class Board(models.Model):
+    board_name = models.CharField(max_length=100)
+    
+
+
+    def __unicode__(self):
+        return self.board_name
+
 
 """
 This model belong to faculty as well as faculty information 
@@ -46,11 +60,14 @@ class student_Registration(models.Model):
     pincode = models.IntegerField(max_length=10)
     address = models.TextField(max_length= 200)
     user_type = models.ForeignKey(Usertype)
+    standard_name=models.ForeignKey(Standard)
+    school_name=models.CharField(max_length=20)
+    board_name=models.ForeignKey(Board)
 
 
   
     def __unicode__(self):
-        return self.password  
+        return self.full_name  
 
     #user name  Dhiraj.kumar@asmltd.com:
     #password dhiraj@25254646
