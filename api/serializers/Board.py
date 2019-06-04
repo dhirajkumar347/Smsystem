@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from school_management_system.models import Board
+from school_management_system.models import board
 
-class BoardSerializers(serializers.ModelSerializer):
+class boardSerializers(serializers.ModelSerializer):
 	class Meta:
-		model=Board
-		fields ='__all__'
+		model=board
+		fields =('board_name',)

@@ -10,6 +10,6 @@ from api.serializers import *
 
 
 # Create your views here.
-class StandardApi(viewsets.ModelViewSet): 
-	serializer_class=StandardSerializers
-	queryset=Standard.objects.all()
+class standardApi(viewsets.ModelViewSet): 
+	serializer_class=standardSerializers
+	queryset=standard.objects.all()

@@ -17,6 +17,7 @@ class studentInfoApi(viewsets.ModelViewSet):
 		faculty_name = self.request.query_params.get('username',None)
 		queryset = student_Registration.objects.filter(username=faculty_name)
 		return queryset
+	
 
 
 

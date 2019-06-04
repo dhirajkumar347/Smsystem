@@ -28,6 +28,11 @@ def faculty_registration(request):
 	if request.method == 'GET':
 		return render(request,'faculty/faculty_registration.html')
 
+def student_Registration(request):
+	if request.method == 'GET':
+		return render(request,'student/student_Registration.html')
+
+
 def contact_us(request):
 	if request.method == 'GET':
 		return render(request,'pages/contact_us.html')

@@ -5,7 +5,7 @@ from school_management_system.models import faculty_Registration,student_Registr
 class student_infoSerializer(ModelSerializer):
     class Meta:
         model = student_Registration
-        fields ='__all__'
+        fields =('full_name', 'username', 'password','age','country','state','pincode','address','standard_name','school_name','board_name')
 
 
     

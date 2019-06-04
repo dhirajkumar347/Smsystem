@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en"  ng-app="qlsApp">
+<head>
+  <title>Registration</title>
+  <meta charset="utf-4">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+  <script src="{% static 'js/student/student_Registration.js' %}"></script>   
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
+  
+     
+</head>
+<style>
+body  {
+ 
+  background-color: #cccccc;
+}
+</style>
+{% block content %}
+
+{% verbatim %} 
+<body>
+<div class="container" ng-controller="registerCtrl" class="container">
+ <div class="row">
+  <div class="col-md-7 panel panel-default" style="margin-top: 50px">
+  <form  class="form-horizontal" name="studentform" ng-submit="studentregistrationform()" novalidate>
+             
+               <!-- Name input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" >Full Name<span class="cus_man7">*</span></label>
+                  <div class="col-md-10">
+                     <input id="name" name="state"  ng-model ="user.full_name"  type="text" placeholder="" class="form-control"  placeholder="Full Name" required pattern="[A-Za-z '-]{2,}">
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label">username<span class="cus_man7">*</span></label>
+                  <div class="col-md-10">
+                     <input   name="username" ng-model ="user.username"   align="right" type="text" id="username" placeholder="username" class="form-control field" required >
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label">password<span class="cus_man7">*</span></label>
+                  <div class="col-md-10">
+                     <input id="password" name="password"  ng-model ="user.password" type="text"  class=" form-control field" required>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label">age<span class="cus_man7">*</span></label>
+                  <div class="col-md-10">
+                     <input id="age" name="age"  ng-model ="user.age" type="text"  class=" form-control field" required>
+                  </div>
+               </div>
+                
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Country<span class="cus_man7">*</span></label>
+                  <div class="col-md-10">
+                     <input id="pan" name="pan"   ng-model ="user.country"  type="text" placeholder="" class="form-control" required>
+                  </div>
+               </div>
+              
+               <div class="form-group">
+                  <label class="col-md-4 control-label">State</label>
+                  <div class="col-md-10">
+                     <input id="name" name="state"  ng-model ="user.state"  type="text" placeholder="" class="form-control" title="State name should be letter" required pattern="[A-Za-z '-]{2,}"> 
+                  </div>
+               </div>
+               
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Pincode</label>
+                  <div class="col-md-10">
+                     <input id="name" name="state"  ng-model ="user.pincode"  type="text" placeholder="" class="form-control"> 
+                  </div>
+               </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label">Address</label>
+                  <div class="col-md-10">
+                     <input id="address" name="address"  ng-model ="user.address"  type="text" placeholder="" class="form-control" required>
+                  </div>
+               </div>
+               
+               <div class="form-group">
+                  <label class="col-md-4 control-label">standard_name</label>
+                  <div class="col-md-10">
+                     <input id="standard_name" name="standard_name"  ng-model ="user.standard_name"  type="text" placeholder="" class="form-control" required>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label">school_name</label>
+                  <div class="col-md-10">
+                     <input id="school_name" name="school_name"  ng-model ="user.school_name"  type="text" placeholder="school_name" class="form-control" required>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label">board_name</label>
+                  <div class="col-md-10">
+                     <input id="board_name" name="board_name"  ng-model ="user.board_name"  type="text" placeholder="" class="form-control" required>
+                  </div>
+               </div>
+
+               <button type="submit"  class="btn btn-success cus_man4">Submit</button>
+               <button type="button" data-dismiss="modal" ng-click="close()" class="btn btn cus_man9">Cancel</button>
+            </form>
+            </div>
+             <div class="col-md-5 mobile_kid"> 
+                    
+                        <div class="col-md-2 mobile_kid"> 
+                          <center> 
+                            <img  src=""></center>
+                            <center><button class="btn genius_button" type="button" style="margin:0px;"> <h2>Faculty Registarion</h2></button></center>
+                          </div>
+                         
+                          </div> 
+
+                        </div>
+            </div>
+</body>{% endverbatim %} {% endblock content %}
+</html>

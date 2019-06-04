@@ -16,18 +16,18 @@ class Usertype(models.Model):
     def __unicode__(self):
         return self.user_type
 
-class Standard(models.Model):
+class standard(models.Model):
     standard_name = models.CharField(max_length=20,null=False)
-    
-    def __unicode__(self):
+
+    def __str__(self):
         return self.standard_name
 
-class Board(models.Model):
+class board(models.Model):
     board_name = models.CharField(max_length=100,null=False)
     
 
 
-    def __unicode__(self):
+    def __str__(self):
         return self.board_name
 
 
@@ -57,12 +57,13 @@ class student_Registration(models.Model):
     age = models.CharField(max_length=20)
     country =  models.CharField(max_length=20)
     state = models.CharField(max_length=20)
+    
     pincode = models.IntegerField(max_length=10)
     address = models.TextField(max_length= 200)
     user_type = models.ForeignKey(Usertype,null=False,on_delete=models.CASCADE)
-    standard_name=models.ForeignKey(Standard,null=False,on_delete=models.CASCADE)
+    standard_name=models.ForeignKey(standard,null=False,on_delete=models.CASCADE)
     school_name=models.CharField(max_length=20)
-    board_name=models.ForeignKey(Board,null=False,on_delete=models.CASCADE)
+    board_name=models.ForeignKey(board,null=False,on_delete=models.CASCADE)
 
 
   
@@ -84,5 +85,5 @@ class contact_us(models.Model):
     city=models.CharField(max_length=20)
     query=models.TextField()
 
-    def _str_(self):
-        return self.mobile_number,self.Email_id
+    def __str__(self):
+        return self.Email_id

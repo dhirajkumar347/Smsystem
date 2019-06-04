@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from school_management_system.models import Standard
+from school_management_system.models import standard
 
-class StandardSerializers(serializers.ModelSerializer):
+class standardSerializers(serializers.ModelSerializer):
 	class Meta:
-		model=Standard
-		fields='__all__'
+		model=standard
+		fields=('standard_name',)
 	    
