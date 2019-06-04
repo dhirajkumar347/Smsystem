@@ -17,13 +17,13 @@ class Usertype(models.Model):
         return self.user_type
 
 class Standard(models.Model):
-    standard_name = models.CharField(max_length=20)
+    standard_name = models.CharField(max_length=20,null=False)
     
     def __unicode__(self):
         return self.standard_name
 
 class Board(models.Model):
-    board_name = models.CharField(max_length=100)
+    board_name = models.CharField(max_length=100,null=False)
     
 
 
@@ -59,10 +59,10 @@ class student_Registration(models.Model):
     state = models.CharField(max_length=20)
     pincode = models.IntegerField(max_length=10)
     address = models.TextField(max_length= 200)
-    user_type = models.ForeignKey(Usertype)
-    standard_name=models.ForeignKey(Standard)
+    user_type = models.ForeignKey(Usertype,null=False,on_delete=models.CASCADE)
+    standard_name=models.ForeignKey(Standard,null=False,on_delete=models.CASCADE)
     school_name=models.CharField(max_length=20)
-    board_name=models.ForeignKey(Board)
+    board_name=models.ForeignKey(Board,null=False,on_delete=models.CASCADE)
 
 
   

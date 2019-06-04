@@ -77,13 +77,20 @@ WSGI_APPLICATION = 'schoolapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
+<<<<<<< HEAD
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),                    
         
+=======
+       'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')                     
+>>>>>>> 4ac22a7a7e402d1a404ce4ccc7a418d933e6ab7f
     }
 }
+
 
 
 # Password validation
