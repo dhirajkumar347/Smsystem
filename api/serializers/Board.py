@@ -4,4 +4,4 @@ from school_management_system.models import Board
 class BoardSerializers(serializers.ModelSerializer):
 	class Meta:
 		model=Board
-		fields=('boardname')
+		fields ='__all__'

@@ -4,4 +4,5 @@ from school_management_system.models import Standard
 class StandardSerializers(serializers.ModelSerializer):
 	class Meta:
 		model=Standard
-		fields=('standard_name')
+		fields='__all__'
+	    
