@@ -13,7 +13,7 @@ class Usertype(models.Model):
     
 
 
-    def __unicode__(self):
+    def __str__(self):
         return self.user_type
 
 class standard(models.Model):
@@ -64,6 +64,7 @@ class student_Registration(models.Model):
     standard_name=models.ForeignKey(standard,null=False,on_delete=models.CASCADE)
     school_name=models.CharField(max_length=20)
     board_name=models.ForeignKey(board,null=False,on_delete=models.CASCADE)
+    student_state = models.CharField(max_length=20,default="registered")
 
 
   
