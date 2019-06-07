@@ -25,6 +25,8 @@ class studentInfoApi(viewsets.ModelViewSet):
 		print("valid",serializer)
 		if serializer.is_valid():
 			serializer.save()
+		else:
+			Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 		headers = self.get_success_headers(serializer.data)
 		print("final response")
 		return Response(serializer.data, headers=headers)
