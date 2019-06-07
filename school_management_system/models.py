@@ -45,8 +45,7 @@ class faculty_Registration(models.Model):
     state = models.CharField(max_length=20)
     pincode = models.IntegerField(max_length=10)
     address = models.TextField(max_length= 200)
-
-    def __unicode__(self):
+    def __str__(self):
         return self.full_name
 
 
@@ -65,10 +64,7 @@ class student_Registration(models.Model):
     school_name=models.CharField(max_length=20)
     board_name=models.ForeignKey(board,null=False,on_delete=models.CASCADE)
     student_state = models.CharField(max_length=20,default="registered")
-
-
-  
-    def __unicode__(self):
+    def __str__(self):
         return self.full_name  
 
     #user name  Dhiraj.kumar@asmltd.com:

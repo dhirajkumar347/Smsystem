@@ -90,7 +90,9 @@ body  {
                <div class="form-group">
                   <label class="col-md-4 control-label">standard_name</label>
                   <div class="col-md-10">
-                     <input id="standard_name" name="standard_name"  ng-model ="user.standard_name"  type="text" placeholder="" class="form-control" required>
+                     
+                     <select class="form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" placeholder="Select Standard" ng-model="user.standard_name" name="standard" ng-options="standard.standard_namestandard_name as standard.standard for standard in StandardList track by standard.standard_name" required=""><option value="" disabled="" class="" selected="selected">Select your Standard</option>
+                     <option value="" disabled="" class="" selected="selected">Select your Standard</option></select>
                   </div>
                </div>
                <div class="form-group">
@@ -102,7 +104,10 @@ body  {
                <div class="form-group">
                   <label class="col-md-4 control-label">board_name</label>
                   <div class="col-md-10">
-                     <input id="board_name" name="board_name"  ng-model ="user.board_name"  type="text" placeholder="" class="form-control" required>
+                     
+                        <select class="form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" placeholder="Select Board"  ng-model="user.board_name" name="board_name" ng-options="board.board_name as board.board_name for board in BoardList track by board.board_id" required=""><option value="" disabled="" class="" selected="selected">Select your Board</option><option label="CBSE" value="1">CBSE</option><option label="ICSE" value="2">ICSE</option><option label="Other" value="3">Other</option></select>
+                      
+                      </div>
                   </div>
                </div>
 
@@ -110,17 +115,6 @@ body  {
                <button type="button" data-dismiss="modal" ng-click="close()" class="btn btn cus_man9">Cancel</button>
             </form>
             </div>
-             <div class="col-md-5 mobile_kid"> 
-                    
-                        <div class="col-md-2 mobile_kid"> 
-                          <center> 
-                            <img  src=""></center>
-                            <center><button class="btn genius_button" type="button" style="margin:0px;"> <h2>Faculty Registarion</h2></button></center>
-                          </div>
-                         
-                          </div> 
-
-                        </div>
-            </div>
+             
 </body>{% endverbatim %} {% endblock content %}
 </html>
