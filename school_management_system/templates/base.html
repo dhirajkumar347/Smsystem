@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html>
+<html lang="en">
 <head>
 	<title>{% block title %} {% endblock title %}</title>
   <meta charset="utf-8">
@@ -17,13 +17,15 @@
   <script src="{% static 'js/faculty/faculty_registration.js' %}"></script> 
   <script src="{% static 'js/login/login.js' %}"></script>
   <script src="{% static 'js/pages/contact_us.js' %}"></script>  
+  <script src="{% static 'js/student/student_Registration.js' %}"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
 
- <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+ 
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
 <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
 <link href="{% static 'css/main.css' %}" rel="stylesheet">
@@ -32,7 +34,10 @@
 
 
 
-
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
 <link rel="shortcut icon" href="images/ico/favicon.ico">
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -40,9 +45,7 @@
 <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  
-     
-</head>
+</head> 
 <style>
 .outer-div
 {
@@ -63,8 +66,7 @@
      transform: scale(1.2);
 }
 </style>
-<body>
-
+<body class="homepage">
 <header id="header">
 <div class="top-bar">
 <div class="container">
@@ -107,14 +109,13 @@
 <li><a href="/app/login/">Student login</a></li>
 <li><a href="/app/login">Faculty login</a></li>
 <li><a href="/app/faculty_registration">Faculty Registrion</a></li>
-<li><a href="/app/student_registration">Student Registrion</a></li>
+<li><a href="/app/student_Registration">Student Registrion</a></li>
 
 </ul>
 </div>
 </div> 
 </nav> 
 </header> 
-
 {% block content %}{% endblock content %}
 
 <footer>
