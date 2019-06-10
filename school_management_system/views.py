@@ -32,6 +32,9 @@ def student_Registration(request):
 	if request.method == 'GET':
 		return render(request,'student/student_Registration.html')
 
+def terms_conditions(request):
+	if request.method == 'GET' :
+		return render(request,'pages/terms.html')
 
 def contact_us(request):
 	if request.method == 'GET':

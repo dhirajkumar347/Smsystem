@@ -15,6 +15,7 @@ app.controller('registerCtrl', function($scope,$http,$window) {
 		var standard_id =JSON.stringify($scope.standard_name.standard_id);
 		var board_id =JSON.stringify($scope.board_name.board_id);
 		var final_data= JSON.parse(user_input)
+
 		final_data["standard_name"] = standard_id;
 		final_data["board_name"] = board_id;
 		console.log("final json"+JSON.stringify(final_data));
@@ -23,10 +24,16 @@ app.controller('registerCtrl', function($scope,$http,$window) {
 				method : "POST",
 				url : "/api/student/",
 				data:final_data
-			}).then(function(response) {
-				alert("save");		        
-			},function(response) {			
-				$scope.error = response.data;
+			}).then(function success(response) {
+				console.log("response"+JSON.stringify(response.data))
+				 // $scope.username = response.data.username;
+				 // return Response("success",status=status.HTTP_200_SUCCESS)
+				 
+				 
+						        
+			},function error(response) {			
+				$scope.username_error = response.data.username;
+				// return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 			});
 		} else{
 			console.log("Invalid")		
