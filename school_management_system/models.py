@@ -56,12 +56,13 @@ class student_Registration(models.Model):
     age = models.CharField(max_length=20)
     country =  models.CharField(max_length=20)
     state = models.CharField(max_length=20)
-    pincode = models.IntegerField(max_length=10)
+    pincode = models.CharField(max_length=10)
     address = models.TextField(max_length= 200)
     user_type = models.CharField(max_length=20,default="student")
+    board_name=models.ForeignKey(board,null=False,on_delete=models.CASCADE)
     standard_name=models.ForeignKey(standard,null=False,on_delete=models.CASCADE)
     school_name=models.CharField(max_length=20)
-    board_name=models.ForeignKey(board,null=False,on_delete=models.CASCADE)
+   
     student_state = models.CharField(max_length=20,default="registered")
     def __str__(self):
         return self.full_name  
