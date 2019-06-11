@@ -1,16 +1,23 @@
-{% extends "base.html" %}
-{% load staticfiles %}
-{% block title %}
-QLS-register
-{% endblock %}
-{% block head %}
+{% load static %}
+<!DOCTYPE html>
 
-  <script src="{% static "js/student/student_Registration.js" %}"></script>
-
+<html lang="en"  ng-app="qlsApp">
+<head>
+  <title>Registration</title>
+  <meta charset="utf-4">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+  <script src="{% static 'js/student/student_Registration.js' %}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
   
-  {% endblock %}
-  {% block front_pane %}   
-
+     
+</head>
 <style>
 body  {
  
@@ -19,10 +26,11 @@ body  {
 </style>
 
 
-<div class="container"  ng-app="qlsApp" ng-controller="registerCtrl" class="container">
- <div class="row">
 {% verbatim %} 
-  <div class="col-md-7 panel panel-default">
+<body>
+<div class="container" ng-controller="registerCtrl" class="container">
+ <div class="row">
+  <div class="col-md-7 panel panel-default" style="margin-top: 50px">
   <form  class="form-horizontal" name="studentform" ng-submit="studentregistrationform()" novalidate>
               
                 <div class="form-group">
@@ -168,9 +176,9 @@ body  {
  
                <button type="submit"  class="btn btn-success cus_man4">Submit</button>
                
-            </form> {% endverbatim %} 
+            </form> 
             </div>
-{% endblock %}
+             
+</body>{% endverbatim %} 
+</html>
 <!--  -->
-
-

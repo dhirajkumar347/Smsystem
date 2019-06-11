@@ -1,12 +1,8 @@
-
-{% load staticfiles %}
-
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-	 <title>
-    {% block title %}{% endblock %}
-  </title>
+	<title>{% block title %} {% endblock title %}</title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -21,7 +17,7 @@
   <script src="{% static 'js/faculty/faculty_registration.js' %}"></script> 
   <script src="{% static 'js/login/login.js' %}"></script>
   <script src="{% static 'js/pages/contact_us.js' %}"></script>  
- 
+  <script src="{% static 'js/student/student_Registration.js' %}"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
@@ -49,8 +45,6 @@
 <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-{% block head %}
-  {% endblock %}
 </head> 
 <style>
 .outer-div
@@ -122,10 +116,7 @@
 </div> 
 </nav> 
 </header> 
-
-
-  {% block front_pane %}
-  {% endblock %}
+{% block content %}{% endblock content %}
 
 <footer>
 	<section id="bottom">
