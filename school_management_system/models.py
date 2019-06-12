@@ -45,6 +45,7 @@ class faculty_Registration(models.Model):
     state = models.CharField(max_length=20)
     pincode = models.IntegerField(max_length=10)
     address = models.TextField(max_length= 200)
+    
     def __str__(self):
         return self.full_name
 

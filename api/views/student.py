@@ -30,7 +30,7 @@ class studentInfoApi(viewsets.ModelViewSet):
 		if serializer.is_valid():
 			print("is valid")
 			serializer.save()
-			return Response("success",status=status.HTTP_201_CREATED)
+			return Response({"success":"created"},status=status.HTTP_201_CREATED)
 		else:
 			print("not valid")
 		return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)

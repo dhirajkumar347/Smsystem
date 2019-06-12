@@ -1,23 +1,17 @@
-{% load static %}
-<!DOCTYPE html>
-
-<html lang="en"  ng-app="qlsApp">
-<head>
-  <title>Registration</title>
-  <meta charset="utf-4">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+QLS-register
+{% endblock %}
+{% block head %}
+ {{ block.super }}
  
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
   <script src="{% static 'js/student/student_Registration.js' %}"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 
+
   
-     
-</head>
+  {% endblock %}
+  {% block front_pane %}  
+
 <style>
 body  {
  
@@ -26,11 +20,11 @@ body  {
 </style>
 
 
-{% verbatim %} 
-<body>
-<div class="container" ng-controller="registerCtrl" class="container">
+<div class="container" ng-cloak ng-app="qlsApp" ng-controller="registerCtrl" class="container">
  <div class="row">
+{% verbatim %}
   <div class="col-md-7 panel panel-default" style="margin-top: 50px">
+   
   <form  class="form-horizontal" name="studentform" ng-submit="studentregistrationform()" novalidate>
               
                 <div class="form-group">
@@ -49,7 +43,7 @@ body  {
                   <label class="col-md-4 control-label">username<span class="cus_man7">*</span></label>
                   <div class="col-md-10">
                      <input   name="username" ng-model ="user.username" ng-pattern="/^[a-z][a-z0-9-_\.]{3,20}$/"   ng-maxlength ="20" ng-minlength="4"  align="right" type="text" id="username" placeholder="username" class="form-control field"  required >
-                      <span style="color: red" ng-show="studentform.username.$error.required && (studentform.username.$touched || studentform.$submitted)">User name is required.</span> 
+                      <span style="color: red" ng-show="studentform.username.$error.required && (studentform.username.$touched || studentform.$submitted)">User name is required.</span>
                       <span style="color: red"
                         ng-show="studentform.username.$error.minlength && (studentform.username.$touched  || studentform.$submitted)">User name is too short</span>
                       <span style="color: red" ng-show="studentform.username.$error.maxlength && (studentform.username.$touched  || studentform.$submitted)">User name is too long</span>
@@ -61,7 +55,7 @@ body  {
               </div>
             </div>
 
-               
+              
                <div class="form-group">
                   <label class="col-md-4 control-label">password<span class="cus_man7">*</span></label>
                   <div class="col-md-10">
@@ -79,7 +73,7 @@ body  {
                      <input id="age" name="age"  ng-model ="user.age" type="text"  class=" form-control field" required>
                      <span style="color: red" ng-show="studentform.age.$error.required && (studentform.$submitted || studentform.age.$touched)">
                               Age is required.
-                            </span> 
+                            </span>
                   </div>
                </div>
                 
@@ -89,7 +83,7 @@ body  {
                      <input id="country" name="country"   ng-model ="user.country"  type="text" placeholder="" class="form-control" required>
                      <span style="color: red" ng-show="studentform.country.$error.required && (studentform.$submitted || studentform.country.$touched)">
                               country is required.
-                            </span> 
+                            </span>
                   </div>
                </div>
               
@@ -99,17 +93,17 @@ body  {
                      <input id="state" name="state"  ng-model ="user.state"  type="text" placeholder="" class="form-control" title="State name should be letter" required>
                      <span style="color: red" ng-show="studentform.state.$error.required && (studentform.$submitted || studentform.state.$touched)">
                               state is required.
-                            </span> 
+                            </span>
                   </div>
                </div>
-               
+              
                <div class="form-group">
                   <label class="col-md-4 control-label">Pincode</label>
                   <div class="col-md-10">
                      <input id="pincode" name="pincode"  ng-model ="user.pincode"  type="text" placeholder=""  class="form-control"   ng-maxlength="6" ng-minlength="6"  >
                      <span style="color: red" ng-show="studentform.pincode.$error.required && (studentform.$submitted || studentform.pincode.$touched)">
                               pincode is required.
-                            </span> 
+                            </span>
                      <span style="color: red" ng-show="studentform.pincode.$error.maxlength && (studentform.pincode.$touched  || studentform.$submitted)">Pin code should be 6 digit</span>
                      <span style="color: red" ng-show="studentform.pincode.$error.minlength && (studentform.pincode.$touched  || studentform.$submitted)">Pin code should be 6 digit</span>
                      <!-- <span style="color: red" ng-show="studentform.pincode.$error.pattern && (studentform.$submitted || studentform.pincode.$touched)">pin code should be number</span> -->
@@ -122,7 +116,7 @@ body  {
                      <textarea id="address" name="address"  ng-model ="user.address"  type="text" placeholder="" class="form-control" required></textarea>
                      <span style="color: red" ng-show="studentform.address.$error.required && (studentform.$submitted || studentform.address.$touched)">
                               address is required.
-                            </span> 
+                            </span>
                   </div>
                </div>
 
@@ -141,7 +135,7 @@ body  {
                     <select  id="standard_name" name="standard_name" type="text" class="form-control" placeholder="Select Standard" ng-options="item as item.standard_name for item in standards track by item.standard_id" ng-model="standard_name" required></select>
                     <span style="color: red" ng-show="studentform.standard_name.$error.required && (studentform.$submitted || studentform.standard_name.$touched)">
                               standard_name is required.
-                            </span> 
+                            </span>
                   </div>
                </div>
 
@@ -152,13 +146,13 @@ body  {
                      <input id="school_name" name="school_name"  ng-model ="user.school_name"  type="text" placeholder="school_name" class="form-control" required>
                      <span style="color: red" ng-show="studentform.school_name.$error.required && (studentform.$submitted || studentform.school_name.$touched)">
                               school_name is required.
-                            </span> 
+                            </span>
                   </div>
                </div>
-               
+              
 
 
-                       
+                      
 
                 <div class="form-group">
                   <label class="col-md-4 control-label">student_state</label>
@@ -166,7 +160,7 @@ body  {
                      <input id="student_state" name="student_state"  ng-model ="user.student_state"  type="text" placeholder="student_state" class="form-control" required>
                      <span style="color: red" ng-show="studentform.student_state.$error.required && (studentform.$submitted || studentform.student_state.$touched)">
                               student_state is required.
-                            </span> 
+                            </span>
                   </div>
                </div>
                <div class="form-group col-md-12">
@@ -175,10 +169,14 @@ body  {
                             </div>    
  
                <button type="submit"  class="btn btn-success cus_man4">Submit</button>
-               
-            </form> 
+              
+            </form> {% endverbatim %}
             </div>
-             
-</body>{% endverbatim %} 
-</html>
+{% endblock %}
+</div>
+</div>
 <!--  -->
+
+
+
+

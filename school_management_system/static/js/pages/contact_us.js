@@ -8,6 +8,7 @@ app.config(['$httpProvider', '$interpolateProvider',
 }]);
 //Register form controller
 app.controller('contCtrl', function($scope,$http,$window) {
+	console.log("initialize the controller")
 		$scope.submitform = function() {
    			if ($scope.contact_usForm.$valid) {
                    var contact_us = JSON.stringify($scope.contact_us);
@@ -16,7 +17,7 @@ app.controller('contCtrl', function($scope,$http,$window) {
 						url : "/api/contact_us/",
 						data:contact_us
 			}).then(function(response) {
-				console.log("query worked") 
+				$scope.success = "sdvsd"
 				alert("Query is delivered .we will contact you soon") 
 			},function(response) {		
 				$scope.email_error = response.data.Email_id;

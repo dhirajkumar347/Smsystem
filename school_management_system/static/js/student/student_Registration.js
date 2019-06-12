@@ -25,12 +25,11 @@ app.controller('registerCtrl', function($scope,$http,$window) {
 				url : "/api/student/",
 				data:final_data
 			}).then(function success(response) {
-				console.log("response"+JSON.stringify(response.data))
-				 // $scope.username = response.data.username;
-				 // return Response("success",status=status.HTTP_200_SUCCESS)
-				 
-				 
-						        
+				 $scope.success_data = response.data.success;
+					if ($scope.success_data != undefined){
+						$window.location.href= "http://127.0.0.1:8000/app/login/";
+					}
+				 // return Response("success",status=status.HTTP_200_SUCCESS)	        
 			},function error(response) {			
 				$scope.username_error = response.data.username;
 				// return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
@@ -40,6 +39,7 @@ app.controller('registerCtrl', function($scope,$http,$window) {
 			return;
 		} 
 	}; 
+
 	$scope.getboardList = function() {
 		console.log("function calling or  not");
 			$http({

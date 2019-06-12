@@ -1,56 +1,58 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
-	<title>{% block title %} {% endblock title %}</title>
+         <title>
+    {% block title %}{% endblock %}
+  </title>
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-<meta name="author" content="">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
-   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="{% static 'js/faculty/faculty_list.js' %}"></script>
-  <script src="{% static 'js/faculty/faculty_registration.js' %}"></script> 
-  <script src="{% static 'js/login/login.js' %}"></script>
-  <script src="{% static 'js/pages/contact_us.js' %}"></script>  
-  <script src="{% static 'js/student/student_Registration.js' %}"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+
+  
+ 
 
  
-<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-<link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
-<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
-<link href="{% static 'css/main.css' %}" rel="stylesheet">
-<link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
-<link href="{% static 'css/font-awesome.min.css.css' %}" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
+  
 
+ 
+
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
+  <link href="{% static 'css/font-awesome.min.css.css' %}" rel="stylesheet">
 
 <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-<link rel="shortcut icon" href="images/ico/favicon.ico">
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-</head> 
+  <link rel="shortcut icon" href="images/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+{% block head %}
+  {% endblock %}
+</head>
 <style>
 .outer-div
 {
      height: 300px;
-     overflow: hidden; 
+     overflow: hidden;
 }
 .inner-div
 {
@@ -87,8 +89,8 @@
 </div>
 </div>
 </div>
-</div> 
-</div> 
+</div>
+</div>
 <nav class="navbar navbar-inverse" role="banner">
 <div class="container">
 <div class="navbar-header">
@@ -113,13 +115,16 @@
 
 </ul>
 </div>
-</div> 
-</nav> 
-</header> 
-{% block content %}{% endblock content %}
+</div>
+</nav>
+</header>
+
+
+  {% block front_pane %}
+  {% endblock %}
 
 <footer>
-	<section id="bottom">
+        <section id="bottom">
 <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
 <div class="row">
 <div class="col-md-3 col-sm-6">
@@ -135,7 +140,7 @@
 <li><a href="#">Contact us</a></li>
 </ul>
 </div>
-</div> 
+</div>
 <div class="col-md-3 col-sm-6">
 <div class="widget">
 <h3>Support</h3>
@@ -149,7 +154,7 @@
 <li><a href="#">Billing system</a></li>
 </ul>
 </div>
-</div> 
+</div>
 <div class="col-md-3 col-sm-6">
 <div class="widget">
 <h3>Developers</h3>
@@ -163,7 +168,7 @@
 <li><a href="#">Article Writing</a></li>
 </ul>
 </div>
-</div> 
+</div>
 <div class="col-md-3 col-sm-6">
 <div class="widget">
 <h3>Our Partners</h3>
@@ -177,10 +182,10 @@
 <li><a href="#">Laboris</a></li>
 </ul>
 </div>
-</div> 
 </div>
 </div>
-</section> 
+</div>
+</section>
 </footer>
 
 

@@ -1,23 +1,18 @@
-{% extends "base.html" %}
-{% load static %}
-<!DOCTYPE html>
 
-    
-  
-<html lang="en"  ng-app="qlsApp">
-<head>
-  <title>Registration</title>
-  <meta charset="utf-4">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+QLS-register
+{% endblock %}
+{% block head %}
+ {{ block.super }}
  
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
-  <script src="{% static 'js/login/login.js' %}"></script>   
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
+  <script src="{% static 'js/login/login.js' %}"></script>
+
+  
+  {% endblock %}
+  {% block front_pane %}  
+
 <style>
 body  {
  
@@ -25,13 +20,13 @@ body  {
 }
 </style>
 
-{% block content %}
 
-{% verbatim %} 
+
 
 <body>
 <div ng-cloak ng-app="qlsApp" ng-controller ="loginCtrl" class="container">	
 	<div class="col-sm-6 col-sm-offset-3 panel panel-default">
+		{% verbatim %} 
 		<div class="panel-header">
 			<center><h1 class="page-formtitle">Login</h1></center>
 		</div>
@@ -50,5 +45,6 @@ body  {
 	</div>
 </div>
 </body>{% endverbatim %} 
-{% endblock content %}
+
 </html>
+{% endblock %}
