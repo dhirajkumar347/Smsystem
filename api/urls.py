@@ -3,7 +3,7 @@ from . import views
 from django.contrib import admin
 from rest_framework import routers
 router = routers.DefaultRouter()
-router.register(r'facultys',views.faculty_RegistrationApi,base_name='facultys')
+router.register(r'faculty',views.faculty_RegistrationApi,base_name='faculty')
 router.register(r'search',views.faculty_searchApi,base_name='search')
 router.register(r'student',views.studentInfoApi,base_name='student')
 

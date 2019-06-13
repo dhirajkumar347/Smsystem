@@ -9,18 +9,22 @@ app.config(['$httpProvider', '$interpolateProvider',
 
 //Register form controller
 app.controller('registerCtrl', function($scope,$http,$window) {
+	console.log("intial controller");
 	$scope.registrationform = function() {
-		
-		if ($scope.facultyform) {
-			console.log("data"+JSON.stringify($scope.user.pincode));
+		console.log("data"+JSON.stringify($scope.user));
+		if ($scope.facultyform.$valid) {
+			console.log("data"+JSON.stringify($scope.user));
 			$http({
 				method : "POST",
-				url : "/api/register",
+				url : "/api/faculty/",
 				data:$scope.user
 			}).then(function(response) {
-				alert("save");		        
+				$scope.success = "sdvsd"
+				$scope.user={}
+	        
 			},function(response) {			
-				$scope.error = response.data;
+				$scope.username_error = response.data.username;
+				$scope.mobile_error = response.data.mobile_no;
 			});
 		} else{
 			console.log("Invalid")		

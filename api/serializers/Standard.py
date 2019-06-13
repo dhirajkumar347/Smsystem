@@ -6,4 +6,3 @@ class standardSerializers(serializers.ModelSerializer):
 	class Meta:
 		model=standard
 		fields=('standard_name','standard_id')
-	    

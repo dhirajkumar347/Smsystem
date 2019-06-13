@@ -16,7 +16,7 @@ angularApp.controller('ListDashboardCtrl', function($scope,$http,$window,$locati
     //$scope.pageSizeSelected = 5; // Maximum number of items per page.  
   
     $scope.getFacultyList = function () { 
-        $http.get("/api/facultys?page=" + $scope.pageIndex).then(  
+        $http.get("/api/faculty?page=" + $scope.pageIndex).then(  
                        function (response) {  
                             $scope.facultyList = response.data;
                            $scope.totalCount = response.data.totalCount;  
@@ -28,7 +28,7 @@ angularApp.controller('ListDashboardCtrl', function($scope,$http,$window,$locati
 
 
     $scope.get_facultyinformation = function (id) { 
-        $http.get("/api/facultys/"+id).then(  
+        $http.get("/api/faculty/"+id).then(  
                        function (response) {  
                             $scope.faculty_information = response.data;
                            console.log("information"+JSON.stringify($scope.faculty_information));
