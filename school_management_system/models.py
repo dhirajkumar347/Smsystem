@@ -35,6 +35,8 @@ class board(models.Model):
 This model belong to faculty as well as faculty information 
 
 """
+
+
 class faculty_Registration(models.Model):
     full_name = models.CharField(max_length=20)
     username = models.CharField(max_length=20,unique=True)

@@ -23,28 +23,42 @@ body  {
 
 
 
-<body>
-<div ng-cloak ng-app="qlsApp" ng-controller ="loginCtrl" class="container">	
+
+<div class="container" ng-cloak ng-app="qlsApp" ng-controller ="loginCtrl" class="container">
 	<div class="col-sm-6 col-sm-offset-3 panel panel-default">
-		{% verbatim %} 
+		{% verbatim %}
 		<div class="panel-header">
 			<center><h1 class="page-formtitle">Login</h1></center>
 		</div>
 		<div class="panel-body">
-			<form   ng-submit="loginformsubmit(loginform.$valid)" class="col-md-12"  name="loginform" novalidate>
+			<form  class="col-md-12"  name="loginform" ng-submit="loginformsubmit()"  novalidate>
 				<div class="form-group">
-					<input type="text" name="username"  ng-model="login.username" class="form-control input-lg " placeholder="Username">
-				</div>	
-				<div class="form-group">				
-					<input type="password" name="password" ng-model ="login.password" class="form-control input-lg" placeholder="Password">
+					<label class="col-md-4 control-label">username<span class="cus_man7">*</span></label>
+					<div class="col-md-10">
+						<input   name="username" ng-model ="user.username" ng-pattern="/^[a-z][a-z0-9-_\.]{3,20}$/"   ng-maxlength ="20" ng-minlength="4"  align="right" type="text" id="username" placeholder="username" class="form-control field"  required >
+						<span style="color: red" ng-show="loginform.username.$error.required && (loginform.username.$touched || loginform.$submitted)">User name is required.</span>
+						<span style="color: red" ng-show="loginform.username.$error.minlength && (loginform.username.$touched  || loginform.$submitted)">User name is too short</span>
+						<span style="color: red" ng-show="loginform.username.$error.maxlength && (loginform.username.$touched  || loginform.$submitted)">User name is too long</span>
+						<span style="color: red" ng-show="loginform.username.$error.pattern && (loginform.$submitted || loginform.username.$touched)">Username can only contain small letters, number, dots or underscore.</span>
+						<span style="color: red">{{ username_error[0] }}</span>
+					</div>
 				</div>
+				<div class="form-group">
+				<label class="col-md-4 control-label">password<span class="cus_man7">*</span></label>
+					<div class="col-md-10">				
+					<input id="password" name="password"  ng-model ="user.password" type="text"  class=" form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" placeholder="Password"  required>
+					<span style="color: red" ng-show="facultyform.password.$error.required &amp;&amp; (facultyform.$submitted || facultyform.password.$touched)" class="">Password is required.</span>
+				</div>
+			</div>
+
 				<button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
+				
 			</form>
 
 		</div>
+		{% endverbatim %} 
 	</div>
-</div>
-</body>{% endverbatim %} 
-
-</html>
 {% endblock %}
+</div>
+
+

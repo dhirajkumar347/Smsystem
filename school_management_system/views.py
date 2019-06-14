@@ -14,7 +14,9 @@ from django.http import JsonResponse
 
 
 from django.http import HttpResponse
-
+def about_us(request):
+	if request.method == 'GET':
+		return render(request,'about_us/about_us.html')
 
 def home(request):
 	if request.method == 'GET':
@@ -35,6 +37,9 @@ def student_Registration(request):
 def terms_conditions(request):
 	if request.method == 'GET' :
 		return render(request,'pages/terms.html')
+def introduction(request):
+	if request.method == 'GET' :
+		return render(request,'about_us/introduction.html')
 
 def contact_us(request):
 	if request.method == 'GET':

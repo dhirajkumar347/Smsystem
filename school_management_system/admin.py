@@ -16,3 +16,4 @@ admin.site.register(contact_us)
 
 admin.site.register(board) 
 admin.site.register(standard) 
+

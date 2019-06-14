@@ -8,25 +8,27 @@ app.config(['$httpProvider', '$interpolateProvider',
 }]);
 
 //Register form controller
-app.controller('Ctrl', function($scope,$http,$window) {
-	$scope.loginformsubmit = function(isValid) {
-	
-		if (isValid) {
+app.controller('loginCtrl', function($scope,$http,$window) {
+	console.log("intial controller");
+	$scope.loginformsubmit = function() {
+	console.log("data"+JSON.stringify($scope.login));
+		if ($scope.loginform.$valid) {
 			$http({
 				method : "POST",
 				url : "/app/login/",
 				data:$scope.login
 			}).then(function(response) {
+				// $scope.success = "sdvsd"
 				data = response.data
 				console.log(data);
 				$window.location.href = "http://127.0.0.1:8000/app/dashboard/#!/"+"?username="+data.username;		        
 			},function(response) {			
-				$scope.error = response.data;
+				$scope.username_error = response.data.username;
 			});
 		} else{
 			console.log("Invalid")		
 			return;
 		} 
-	}; 
+	}
+}); 
 	
-});
