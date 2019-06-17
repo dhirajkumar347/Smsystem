@@ -28,9 +28,9 @@ body  {
   <form  class="form-horizontal" name="studentform" ng-submit="studentregistrationform()" novalidate>
               
                 <div class="form-group">
-                  <label class="col-md-4 control-label" >Full Name<span class="cus_man7">*</span></label>
+                  <label class="col-md-4 control-label" ><span class="cus_man7"></span></label>
                   <div class="col-md-10">
-                     <input id="name" name="full_name"  ng-model ="user.full_name"  type="text" placeholder="" class="form-control"  placeholder="Full Name" required pattern="[A-Za-z '-]{2,}">
+                     <input id="name" name="full_name"  ng-model ="user.full_name"  type="text" placeholder="full_name" class="form-control"  placeholder="Full Name" required pattern="[A-Za-z '-]{2,}">
                      <span style="color: red" ng-show="studentform.full_name.$error.required && (studentform.$submitted || studentform.full_name.$touched)">Full name is required.</span>
 
                      <span style="color: red" ng-show="studentform.full_name.$error.pattern && (studentform.$submitted || studentform.full_name.$touched)">Full name should be only letter.</span>  
@@ -40,7 +40,7 @@ body  {
 
 
                <div class="form-group">
-                  <label class="col-md-4 control-label">username<span class="cus_man7">*</span></label>
+                  <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
                   <div class="col-md-10">
                      <input   name="username" ng-model ="user.username" ng-pattern="/^[a-z][a-z0-9-_\.]{3,20}$/"   ng-maxlength ="20" ng-minlength="4"  align="right" type="text" id="username" placeholder="username" class="form-control field"  required >
                       <span style="color: red" ng-show="studentform.username.$error.required && (studentform.username.$touched || studentform.$submitted)">User name is required.</span>
@@ -57,7 +57,7 @@ body  {
 
               
                <div class="form-group">
-                  <label class="col-md-4 control-label">password<span class="cus_man7">*</span></label>
+                  <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
                   <div class="col-md-10">
                      <input id="password" name="password"  ng-model ="user.password" type="text"  class=" form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" placeholder="Password"  required>
                      <span style="color: red" ng-show="studentform.password.$error.required &amp;&amp; (studentform.$submitted || studentform.password.$touched)" class="">
@@ -68,9 +68,9 @@ body  {
                               
 
                <div class="form-group">
-                  <label class="col-md-4 control-label">age<span class="cus_man7">*</span></label>
+                  <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
                   <div class="col-md-10">
-                     <input id="age" name="age"  ng-model ="user.age" type="text"  class=" form-control field" required>
+                     <input id="age" name="age"  ng-model ="user.age" type="text"  class=" form-control field" placeholder="age" required>
                      <span style="color: red" ng-show="studentform.age.$error.required && (studentform.$submitted || studentform.age.$touched)">
                               Age is required.
                             </span>
@@ -78,9 +78,9 @@ body  {
                </div>
                 
                <div class="form-group">
-                  <label class="col-md-4 control-label">Country<span class="cus_man7">*</span></label>
+                  <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
                   <div class="col-md-10">
-                     <input id="country" name="country"   ng-model ="user.country"  type="text" placeholder="" class="form-control" required>
+                     <input id="country" name="country"   ng-model ="user.country"  type="text" placeholder="Country" class="form-control" required>
                      <span style="color: red" ng-show="studentform.country.$error.required && (studentform.$submitted || studentform.country.$touched)">
                               country is required.
                             </span>
@@ -88,9 +88,9 @@ body  {
                </div>
               
                <div class="form-group">
-                  <label class="col-md-4 control-label">State</label>
+                  <label class="col-md-4 control-label"></label>
                   <div class="col-md-10">
-                     <input id="state" name="state"  ng-model ="user.state"  type="text" placeholder="" class="form-control" title="State name should be letter" required>
+                     <input id="state" name="state"  ng-model ="user.state"  type="text" placeholder="State" class="form-control" title="State name should be letter" required>
                      <span style="color: red" ng-show="studentform.state.$error.required && (studentform.$submitted || studentform.state.$touched)">
                               state is required.
                             </span>
@@ -98,9 +98,9 @@ body  {
                </div>
               
                <div class="form-group">
-                  <label class="col-md-4 control-label">Pincode</label>
+                  <label class="col-md-4 control-label"></label>
                   <div class="col-md-10">
-                     <input id="pincode" name="pincode"  ng-model ="user.pincode"  type="text" placeholder=""  class="form-control"   ng-maxlength="6" ng-minlength="6"  >
+                     <input id="pincode" name="pincode"  ng-model ="user.pincode"  type="text" placeholder="Pincode"  class="form-control"   ng-maxlength="6" ng-minlength="6"  >
                      <span style="color: red" ng-show="studentform.pincode.$error.required && (studentform.$submitted || studentform.pincode.$touched)">
                               pincode is required.
                             </span>
@@ -111,9 +111,9 @@ body  {
                </div>
 
                 <div class="form-group">
-                  <label class="col-md-4 control-label">Address</label>
+                  <label class="col-md-4 control-label"></label>
                   <div class="col-md-10">
-                     <textarea id="address" name="address"  ng-model ="user.address"  type="text" placeholder="" class="form-control" required></textarea>
+                     <textarea id="address" name="address"  ng-model ="user.address"  type="text" placeholder="Address" class="form-control" required></textarea>
                      <span style="color: red" ng-show="studentform.address.$error.required && (studentform.$submitted || studentform.address.$touched)">
                               address is required.
                             </span>
@@ -121,7 +121,7 @@ body  {
                </div>
 
                <div class="form-group">
-                  <label class="col-md-4 control-label">board_name</label>
+                  <label class="col-md-4 control-label">Select Board</label>
                   <div class="col-md-10">
                     <select id="board_name" name="board_name" type="text" class="form-control" placeholder="Select Board" ng-options="item as item.board_name for item in boards track by item.board_id" ng-model="board_name" required></select>
                        <span style="color: red" ng-show="studentform.board_name.$error.required && (studentform.$submitted || studentform.board_name.$touched)">
@@ -129,9 +129,10 @@ body  {
                             </div>
                   </div>
                <div class="form-group">
-                  <label class="col-md-4 control-label">standard_name</label>
+                  <label class="col-md-4 control-label">Select Standard</label>
               
                   <div class="col-md-10">
+                    
                     <select  id="standard_name" name="standard_name" type="text" class="form-control" placeholder="Select Standard" ng-options="item as item.standard_name for item in standards track by item.standard_id" ng-model="standard_name" required></select>
                     <span style="color: red" ng-show="studentform.standard_name.$error.required && (studentform.$submitted || studentform.standard_name.$touched)">
                               standard_name is required.
@@ -141,7 +142,7 @@ body  {
 
 
                <div class="form-group">
-                  <label class="col-md-4 control-label">school_name</label>
+                  <label class="col-md-4 control-label"></label>
                   <div class="col-md-10">
                      <input id="school_name" name="school_name"  ng-model ="user.school_name"  type="text" placeholder="school_name" class="form-control" required>
                      <span style="color: red" ng-show="studentform.school_name.$error.required && (studentform.$submitted || studentform.school_name.$touched)">
@@ -154,15 +155,7 @@ body  {
 
                       
 
-                <div class="form-group">
-                  <label class="col-md-4 control-label">student_state</label>
-                  <div class="col-md-10">
-                     <input id="student_state" name="student_state"  ng-model ="user.student_state"  type="text" placeholder="student_state" class="form-control" required>
-                     <span style="color: red" ng-show="studentform.student_state.$error.required && (studentform.$submitted || studentform.student_state.$touched)">
-                              student_state is required.
-                            </span>
-                  </div>
-               </div>
+               
                <div class="form-group col-md-12">
                 <input type="checkbox"   name="TermsandCondition" > I agree to the <a href="/app/terms">terms and conditions</a>Privacy policy</a><br>
                             

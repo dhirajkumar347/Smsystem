@@ -70,8 +70,10 @@ class student_Registration(models.Model):
     board_name=models.ForeignKey(board,null=False,on_delete=models.CASCADE)
     standard_name=models.ForeignKey(standard,null=False,on_delete=models.CASCADE)
     school_name=models.CharField(max_length=20)
-   
     student_state = models.CharField(max_length=20,default="registered")
+    def profile_completed(self):
+        return "20"
+
     def __str__(self):
         return self.full_name 
      
@@ -93,3 +95,9 @@ class contact_us(models.Model):
 
     def __str__(self):
         return self.Email_id
+
+class issue(models.Model):
+    query=models.TextField(max_length=200,null=False,blank=False)
+
+class notification(models.Model):
+    notification_window=models.TextField(max_length=200,null=False)

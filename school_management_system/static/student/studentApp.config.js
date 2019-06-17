@@ -6,7 +6,13 @@ app.config(function($routeProvider) {
   .when('/', {
     templateUrl : "/static/student/dashboard/view/dashboard.html",
      controller:  ["$scope", "$http","$window", DashboardController],
-  })/*.
+  })
+  .when('/issue', {
+    templateUrl : "/static/student/issue/isuue.html",
+     controller:  ["$scope", "$http","$window", issueController],
+  })
+  
+  /*.
   when('/profile', {
     templateUrl : "/static/student/profile/view/profile.html",
     controller:  ["$scope", "$http", ProfileController],

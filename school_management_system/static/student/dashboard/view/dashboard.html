@@ -24,8 +24,15 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>Welcome 
-        {{studentProgramList[0].full_name}}
+        {{studentProfile[0].full_name}}
       </h1>
+        <h3>profile_completed</h3>
+     <div class="progress">
+
+  <div class="progress-bar" role="progressbar" aria-valuenow="70"
+  aria-valuemin="0" aria-valuemax="100" style="width:{{studentProfile[0].profile_completed}}%">
+  </div>
+</div>
      
     </section>
 

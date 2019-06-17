@@ -28,16 +28,16 @@ body  {
   <div class="col-md-7 panel panel-default" style="margin-top: 50px">
   <form  class="form-horizontal" name="facultyform" ng-submit="registrationform()" novalidate>
     <div class="form-group">
-      <label class="col-md-4 control-label" >Full Name<span class="cus_man7"></span></label>
+      <label class="col-md-4 control-label" ><span class="cus_man7"></span></label>
       <div class="col-md-10">
-        <input id="full_name" name="full_name"  ng-model ="user.full_name"  type="text" placeholder="" class="form-control"  placeholder="Full Name" required pattern="[A-Za-z '-]{2,}">
+        <input id="full_name" name="full_name"  ng-model ="user.full_name"  type="text" placeholder="Full name" class="form-control"  placeholder="Full Name" required pattern="[A-Za-z '-]{2,}">
         <span style="color: red" ng-show="facultyform.full_name.$error.required && (facultyform.$submitted || facultyform.full_name.$touched)">Full name is required.</span>
         <span style="color: red" ng-show="facultyform.full_name.$error.pattern && (facultyform.$submitted || facultyform.full_name.$touched)">Full name should be only letter.</span>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label">username<span class="cus_man7">*</span></label>
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
       <div class="col-md-10">
         <input   name="username" ng-model ="user.username" ng-pattern="/^[a-z][a-z0-9-_\.]{3,20}$/"   ng-maxlength ="20" ng-minlength="4"  align="right" type="text" id="username" placeholder="username" class="form-control field"  required >
         <span style="color: red" ng-show="facultyform.username.$error.required && (facultyform.username.$touched || facultyform.$submitted)">User name is required.</span>
@@ -48,7 +48,7 @@ body  {
       </div>
     </div>
     <div class="form-group">
-      <label class="col-md-4 control-label">password<span class="cus_man7">*</span></label>
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
       <div class="col-md-10">
        <input id="password" name="password"  ng-model ="user.password" type="text"  class=" form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" placeholder="Password"  required>
        <span style="color: red" ng-show="facultyform.password.$error.required &amp;&amp; (facultyform.$submitted || facultyform.password.$touched)" class="">Password is required.</span>
@@ -57,7 +57,7 @@ body  {
    </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label">Mobile No<span class="cus_man7">*</span></label>
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
       <div class="col-md-10">
         <input   name="mobile_no" ng-model ="user.mobile_no"   align="right" type="text" id="mobile_no" placeholder="Mobile No" class="form-control thedate" ng-minlength="10" ng-maxlength="10"    required >
         <span style="color: red" ng-show="facultyform.mobile_no.$error.required && (facultyform.$submitted || facultyform.mobile_no.$touched)">Mobile number is required.</span>
@@ -68,81 +68,81 @@ body  {
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label">qualification<span class="cus_man7"></span></label>
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
       <div class="col-md-10">
-        <input id="qualification" name="qualification"  ng-model ="user.qualification" type="text"  class=" form-control field" required>
+        <input id="qualification" name="qualification"  ng-model ="user.qualification" type="text" placeholder="qualification" class=" form-control field" required>
         <span style="color: red" ng-show="facultyform.qualification.$error.required && (facultyform.$submitted || facultyform.qualification.$touched)">qualification is required.</span>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label">Faculty designation<span class="cus_man7">*</span></label>
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
       <div class="col-md-10">
-        <input id="faculty_designation" name="faculty_designation"  ng-model ="user.faculty_designation" type="text"  class=" form-control field" required>
+        <input id="faculty_designation" name="faculty_designation"  ng-model ="user.faculty_designation" type="text"  class=" form-control field" placeholder="Faculty designation" required>
         <span style="color: red" ng-show="facultyform.faculty_designation.$error.required && (facultyform.$submitted || facultyform.faculty_designation.$touched)">faculty_designation is required.</span>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label">Faculty description<span class="cus_man7">*</span></label>
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
       <div class="col-md-10">
-        <input id="faculty_description" name="faculty_description"  ng-model ="user.faculty_description" type="text"  class=" form-control field" required>
+        <input id="faculty_description" name="faculty_description"  ng-model ="user.faculty_description" type="text"  class=" form-control field" placeholder="Faculty description" required>
         <span style="color: red" ng-show="facultyform.faculty_description.$error.required && (facultyform.$submitted || facultyform.faculty_description.$touched)">faculty_description is required.</span>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label">Experience<span class="cus_man7"></span></label>
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
       <div class="col-md-10">
-        <input id="experience" name="experience"  ng-model ="user.experience"  type="text" placeholder="" class="form-control" required>
+        <input id="experience" name="experience"  ng-model ="user.experience"  type="text" placeholder="Experience" class="form-control" required>
         <span style="color: red" ng-show="facultyform.experience.$error.required && (facultyform.$submitted || facultyform.experience.$touched)">experience is required.</span>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label">Country<span class="cus_man7"></span></label>
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
       <div class="col-md-10">
-        <input id="country" name="country"   ng-model ="user.country"  type="text" placeholder="" class="form-control" required>
+        <input id="country" name="country"   ng-model ="user.country"  type="text" placeholder="Country" class="form-control" required>
         <span style="color: red" ng-show="facultyform.country.$error.required && (facultyform.$submitted || facultyform.country.$touched)">country is required.</span>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label">State<span class="cus_man7"></span></label>
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
       <div class="col-md-10">
-        <input id="state" name="state"  ng-model ="user.state"  type="text" placeholder="" class="form-control" title="State name should be letter" required >
+        <input id="state" name="state"  ng-model ="user.state"  type="text" placeholder="State" class="form-control" title="State name should be letter" required >
         <span style="color: red" ng-show="facultyform.state.$error.required && (facultyform.$submitted || facultyform.state.$touched)">state is required.</span>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label">city<span class="cus_man7"></span></label>
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
       <div class="col-md-10">
-        <input id="city" name="city"  ng-model ="user.city"  type="text" placeholder="" class="form-control"  required >
+        <input id="city" name="city"  ng-model ="user.city"  type="text" placeholder="city" class="form-control"  required >
         <span style="color: red" ng-show="facultyform.city.$error.required && (facultyform.$submitted || facultyform.city.$touched)">city is required.</span>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label">pincode<span class="cus_man7"></span></label>
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
       <div class="col-md-10">
-        <input id="pincode" name="pincode"  ng-model ="user.pincode"  type="text" placeholder="" class="form-control"  ng-maxlength="6" ng-minlength="6"  required>
+        <input id="pincode" name="pincode"  ng-model ="user.pincode"  type="text" placeholder="pincode" class="form-control"  ng-maxlength="6" ng-minlength="6"  required>
         <span style="color: red" ng-show="facultyform.pincode.$error.required && (facultyform.$submitted || facultyform.pincode.$touched)">pincode is required.</span>
         <span style="color: red" ng-show="facultyform.pincode.$error.maxlength && (facultyform.pincode.$touched  || facultyform.$submitted)">Pin code should be 6 digit</span>
         <span style="color: red" ng-show="facultyform.pincode.$error.minlength && (facultyform.pincode.$touched  || facultyform.$submitted)">Pin code should be 6 digit</span>
       </div>
     </div>
     <div class="form-group">
-      <label class="col-md-4 control-label">address<span class="cus_man7"></span></label>
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
       <div class="col-md-10">
-        <textarea id="address" name="address"  ng-model ="user.address"  type="text" placeholder="" class="form-control" required></textarea>
+        <textarea id="address" name="address"  ng-model ="user.address"  type="text" placeholder="address" class="form-control" required></textarea>
         <span style="color: red" ng-show="facultyform.address.$error.required && (facultyform.$submitted || facultyform.address.$touched)">address is required.</span>
       </div>
     </div>
     <div class="form-group">
-      <label class="col-md-4 control-label">previous_institute<span class="cus_man7"></span></label>
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
       <div class="col-md-10">
-        <input id="previous_institute" name="previous_institute"  ng-model ="user.previous_institute"  type="text" placeholder="" class="form-control">
+        <input id="previous_institute" name="previous_institute"  ng-model ="user.previous_institute"  type="text" placeholder="previous_institute" class="form-control">
         
       </div>
     </div>

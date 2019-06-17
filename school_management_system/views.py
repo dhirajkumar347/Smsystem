@@ -26,12 +26,12 @@ def home(request):
 def faculty_List(request):
 	if request.method == 'GET':
 		return render(request,'faculty/faculty_list.html')
-
-def pqr(request):
+#faculty registration
+def fac_registration(request):
 	if request.method == 'GET':
 		return render(request,'faculty/faculty_registration.html')
-
-def xyz(request):
+#student registration
+def stu_Registration(request):
 	if request.method == 'GET':
 		return render(request,'student/student_Registration.html')
 
@@ -53,9 +53,10 @@ class JSONResponse(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
 
-def abc(request):
+def user_login(request):
 	if request.method == 'POST':
 		data = JSONParser().parse(request)
+
 		username =data.get('username')
 		password = data.get('password')
 		user = get_json_user_by_user_name(username,password)
@@ -68,7 +69,6 @@ def abc(request):
 			elif old_password == password and 'faculty' == stu_user_type:
 				return render(request,'faculty/faculty_list.html')
 		else:
-			print("hjghj")
 			return render(request,'login/login.html')
 			
 	else:
