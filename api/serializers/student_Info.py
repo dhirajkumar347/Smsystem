@@ -14,7 +14,7 @@ class student_infoSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = student_Registration
-		fields =('full_name', 'username', 'password','age','country','state','pincode','address','school_name','board_name','user_type','student_state','standard_name','profile_completed')
+		fields =('full_name', 'username', 'password','mobile_no','age','country','state','pincode','address','school_name','board_name','user_type','student_state','standard_name','profile_completed')
         # read_only_fields = ('user_type',)
     # def create(self,validated_data):
     # 	print("new save",validated_data)

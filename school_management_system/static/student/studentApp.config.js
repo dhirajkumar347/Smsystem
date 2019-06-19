@@ -11,7 +11,10 @@ app.config(function($routeProvider) {
     templateUrl : "/static/student/issue/isuue.html",
      controller:  ["$scope", "$http","$window", issueController],
   })
-  
+  .when('/notification', {
+    templateUrl : "/static/student/notification/notification.html",
+     controller:  ["$scope", "$http","$window", notificationController],
+  })
   /*.
   when('/profile', {
     templateUrl : "/static/student/profile/view/profile.html",

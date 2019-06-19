@@ -61,6 +61,7 @@ class student_Registration(models.Model):
     full_name = models.CharField(max_length=20)
     username = models.CharField(max_length=20,unique=True)
     password =models.CharField(max_length=20)
+    mobile_no = models.IntegerField(max_length=20,unique=True)
     age = models.CharField(max_length=20)
     country =  models.CharField(max_length=20)
     state = models.CharField(max_length=20)
@@ -98,6 +99,14 @@ class contact_us(models.Model):
 
 class issue(models.Model):
     query=models.TextField(max_length=200,null=False,blank=False)
+    mobile_no = models.IntegerField(max_length=20,unique=True)
 
 class notification(models.Model):
     notification_window=models.TextField(max_length=200,null=False)
+
+class admin_Registration(models.Model):
+    full_name=models.CharField(max_length=30)
+    username = models.CharField(max_length=20,unique=True)
+    password =models.CharField(max_length=20)
+    mobile_no = models.IntegerField(max_length=20,unique=True)
+    user_type = models.CharField(max_length=20,default="admin")

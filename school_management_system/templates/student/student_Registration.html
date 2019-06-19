@@ -64,6 +64,17 @@ body  {
                                 Password is required.</span>
                   </div>
                </div>
+
+               <div class="form-group">
+                    <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
+                    <div class="col-md-10">
+                      <input   name="mobile_no" ng-model ="user.mobile_no"  type="text" id="mobile_no" placeholder="Mobile No" class="form-control thedate" ng-minlength="10" ng-maxlength="10"    required >
+                      <span style="color: red" ng-show="studentform.mobile_no.$error.required && (studentform.$submitted || studentform.mobile_no.$touched)">Mobile number is required.</span>
+                      <span style="color: red" ng-show="studentform.mobile_no.$error.minlength && (studentform.$submitted || studentform.mobile_no.$touched)">mobile number should be only 10 digit.</span>
+                      <span style="color: red" ng-show="studentform.mobile_no.$error.maxlength && (studentform.$submitted || studentform.mobile_no.$touched)">mobile number should  be only 10 digit.</span>
+                      <span style="color: red;margin-left: 17px;">{{mobile_error[0]}}</span>
+                    </div>
+                  </div>
                                     
                               
 

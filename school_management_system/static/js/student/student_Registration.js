@@ -32,6 +32,7 @@ app.controller('registerCtrl', function($scope,$http,$window) {
 				 // return Response("success",status=status.HTTP_200_SUCCESS)	        
 			},function error(response) {			
 				$scope.username_error = response.data.username;
+				$scope.mobile_error = response.data.mobile_no;
 				// return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 			});
 		} else{

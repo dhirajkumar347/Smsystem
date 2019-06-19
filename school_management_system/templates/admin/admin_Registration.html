@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+QLS-register
+{% endblock %}
+{% block head %}
+ {{ block.super }}
+ 
+  <script src="{% static 'js/ad_Registration/ad.js' %}"></script>
+
+  
+  {% endblock %}
+  {% block front_pane %}  
+
+<style>
+body  {
+ 
+  background-color: #cccccc;
+}
+</style>
+
+
+<div class="container" ng-cloak ng-app="qlsApp" ng-controller="adminregisterCtrl" class="container">
+ <div class="row">
+{% verbatim %}
+  <div class="col-md-7 panel panel-default" style="margin-top: 50px">
+   
+  <form  class="form-horizontal" name="adminform" ng-submit="adminregistrationform()" novalidate>
+              
+                <div class="form-group">
+                  <label class="col-md-4 control-label" ><span class="cus_man7"></span></label>
+                  <div class="col-md-10">
+                     <input id="full_name" name="full_name"  ng-model ="user.full_name"  type="text" placeholder="full_name" class="form-control"  placeholder="Full Name" required pattern="[A-Za-z '-]{2,}">
+                     <span style="color: red" ng-show="adminform.full_name.$error.required && (adminform.$submitted || adminform.full_name.$touched)">Full name is required.</span>
+
+                     <span style="color: red" ng-show="adminform.full_name.$error.pattern && (adminform.$submitted || adminform.full_name.$touched)">Full name should be only letter.</span>  
+                    
+                  </div>
+               </div>
+
+
+               <div class="form-group">
+                  <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
+                  <div class="col-md-10">
+                     <input   name="username" ng-model ="user.username" ng-pattern="/^[a-z][a-z0-9-_\.]{3,20}$/"   ng-maxlength ="20" ng-minlength="4"  align="right" type="text" id="username" placeholder="username" class="form-control field"  required >
+                      <span style="color: red" ng-show="adminform.username.$error.required && (adminform.username.$touched || adminform.$submitted)">User name is required.</span>
+                      <span style="color: red"
+                        ng-show="adminform.username.$error.minlength && (adminform.username.$touched  || adminform.$submitted)">User name is too short</span>
+                      <span style="color: red" ng-show="adminform.username.$error.maxlength && (adminform.username.$touched  || adminform.$submitted)">User name is too long</span>
+                      <span style="color: red" ng-show="adminform.username.$error.pattern && (adminform.$submitted || adminform.username.$touched)">
+                         Username can only contain small letters, number, dots or underscore.</span>  
+                         <!-- <span style="color: red">{{ username[0] }}</span> -->
+                
+                <span style="color: red">{{ username_error[0] }}</span>
+              </div>
+            </div>
+
+              
+               <div class="form-group">
+                  <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
+                  <div class="col-md-10">
+                     <input id="password" name="password"  ng-model ="user.password" type="text"  class=" form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" placeholder="Password"  required>
+                     <span style="color: red" ng-show="adminform.password.$error.required &amp;&amp; (adminform.$submitted || adminform.password.$touched)" class="">
+                                Password is required.</span>
+                  </div>
+               </div>
+
+               <div class="form-group">
+                    <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
+                    <div class="col-md-10">
+                      <input   name="mobile_no" ng-model ="user.mobile_no"  type="text" id="mobile_no" placeholder="Mobile No" class="form-control thedate" ng-minlength="10" ng-maxlength="10"    required >
+                      <span style="color: red" ng-show="adminform.mobile_no.$error.required && (adminform.$submitted || adminform.mobile_no.$touched)">Mobile number is required.</span>
+                      <span style="color: red" ng-show="adminform.mobile_no.$error.minlength && (adminform.$submitted || adminform.mobile_no.$touched)">mobile number should be only 10 digit.</span>
+                      <span style="color: red" ng-show="adminform.mobile_no.$error.maxlength && (adminform.$submitted || adminform.mobile_no.$touched)">mobile number should  be only 10 digit.</span>
+                      <span style="color: red;margin-left: 17px;">{{mobile_error[0]}}</span>
+                    </div>
+                  </div>
+                      <button type="submit"  class="btn btn-success cus_man4">Submit</button>
+                </form> {% endverbatim %}
+            </div>
+</div>
+</div>
+{% endblock %}
