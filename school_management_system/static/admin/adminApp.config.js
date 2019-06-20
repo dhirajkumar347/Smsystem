@@ -3,11 +3,11 @@ var app = angular.module('adminApp', ['ngRoute']);
 app.config(function($routeProvider) {
   $routeProvider
 
-  .when('/', {
+  .when('/admin_dashboard', {
     templateUrl : "/static/admin/dashboard/view/dashboard.html",
      controller:  ["$scope", "$http","$window", DashboardController],
   })
-  .when('/issue', {
+ /* .when('/issue', {
     templateUrl : "/static/admin/issue/view/issue.html",
      controller:  ["$scope", "$http","$window", issueController],
   })
@@ -25,16 +25,16 @@ app.config(function($routeProvider) {
      controller:  ["$scope", "$http","$window", standardController],
 
   })
-  .when('/board',{
+  .when('/allStudents',{
     templateUrl : "/static/admin/allStudents/view/allStudents.html",
      controller:  ["$scope", "$http","$window", allStudentsController],
 
   })
-  .when('/board',{
+  .when('/allFaculty',{
     templateUrl : "/static/admin/allFaculty/view/allFaculty.html",
      controller:  ["$scope", "$http","$window", allFacultyController],
 
-  })
+  })*/
   /*.
   when('/profile', {
     templateUrl : "/static/student/profile/view/profile.html",

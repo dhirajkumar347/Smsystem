@@ -9,13 +9,14 @@ app.config(['$httpProvider', '$interpolateProvider',
 //Register form controller
 app.controller('adminregisterCtrl', function($scope,$http,$window) {
 	console.log("initialize the controller")
-		$scope.adminregistrationform = function() {
+		$scope.adminregistrationsubmitform = function() {
+			console.log("data"+JSON.stringify($scope.admin));
    			if ($scope.adminform.$valid) {
-                   var admin = JSON.stringify($scope.user);
+                   
                       $http({
 						method : "POST",
 						url : "/api/admin/",
-						data:user
+						data:$scope.admin
 			}).then(function(response) {
 				
 				alert("admin login") 

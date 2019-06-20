@@ -13,6 +13,9 @@ urlpatterns = [
     url(r'^introduction/$', views.introduction, name='introduction'),
     url(r'^contact_us/$', views.contact_us, name='contact_us'),
     url(r'^terms/$', views.terms_conditions, name='terms'),
-    url(r'^admin_Registration/$',views.ad_Registration,name='admin_Registration')
+    #admin re
+    url(r'^admin_Registration/$',views.ad_Registration,name='admin_Registration'),
+    url(r'^admin_login/$', views.admin_user_login, name='admin_user_login'),
+    url(r'^admin_dashboard/$', views.admin_dashboard, name='admin_dashboard'),
     
 ]

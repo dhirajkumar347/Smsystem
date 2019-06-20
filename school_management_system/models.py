@@ -110,3 +110,7 @@ class admin_Registration(models.Model):
     password =models.CharField(max_length=20)
     mobile_no = models.IntegerField(max_length=20,unique=True)
     user_type = models.CharField(max_length=20,default="admin")
+
+    def __str__(self):
+        return self.full_name
+

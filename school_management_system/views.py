@@ -70,11 +70,6 @@ def user_login(request):
 			old_username = user.username
 			if old_password == password and user.user_type == 'student':
 				return JsonResponse({'username': username})
-
-			elif old_password == password and  user.user_type == 'faculty':
-				return JsonResponse({'username': username})
-			elif old_password == password and  user.user_type == 'admin':
-				return JsonResponse({'username': username})
 			else:
 				return render(request,'login/login.html')
 	else:
@@ -85,9 +80,9 @@ def student_dashboard(request):
 	if request.method == 'GET':
 		return render(request,'student/index.html')
 
-# def admin_dashboard(request):
-# 	if request.method == 'GET':
-# 		return render(request,'admin/index1.html')
+def admin_dashboard(request):
+	if request.method == 'GET':
+		return render(request,'admin/index1.html')
 
 class JSONResponse(HttpResponse):
     def __init__(self, data, **kwargs):
@@ -105,29 +100,37 @@ def get_json_user_by_user_name(username,password):
 		trace_back = traceback.format_exc()
 		message = str(e)+ " " + str(trace_back)
 		print ("message ex________________"+message)
+
+def admin_user_login(request):
+	if request.method == 'POST':
+		data = JSONParser().parse(request)
+		username =data.get('username')
+		password = data.get('password')
+		user = get_json_user_by_admin_user_name(username,password)
+		print("data",user)
+		if user is not None:
+			old_password = user.password
+			old_username = user.username
+			if old_password == password and user.user_type == 'admin':
+				return JsonResponse({'username': username})
+			else:
+				return render(request,'admin_login/admin_login.html')
+		
+	else:
+		return render(request,'admin_login/admin_login.html')
 		
 
-# def get_json_user_by_user_name(username,password):
-# 	try:
-# 		facul_obj = faculty_Registration.objects.get(username=username,password=password)
+
+
+def get_json_user_by_admin_user_name(username,password):
+ 	try:
+ 		admin_obj = admin_Registration.objects.get(username=username,password=password)
+ 		return admin_obj
+ 	except Exception as e:
+ 		trace_back = traceback.format_exc()
+ 		message = str(e)+ " " + str(trace_back)
+ 		print ("message ex________________"+message)
 		
-# 		return facul_obj
-# 	except Exception as e:
-# 		trace_back = traceback.format_exc()
-# 		message = str(e)+ " " + str(trace_back)
-# 		print ("message ex________________"+message)
-
-
-# def get_json_user_by_user_name(username,password):
-# 	try:
-# 		admin_obj = admin_Registration.objects.get(username=username,password=password)
-# 		return admin_obj
-# 	except Exception as e:
-# 		trace_back = traceback.format_exc()
-# 		message = str(e)+ " " + str(trace_back)
-# 		print ("message ex________________"+message)
-		
-
 
 
 
