@@ -64,7 +64,6 @@ def user_login(request):
 		username =data.get('username')
 		password = data.get('password')
 		user = get_json_user_by_user_name(username,password)
-		print("data",user)
 		if user is not None:
 			old_password = user.password
 			old_username = user.username
@@ -107,7 +106,6 @@ def admin_user_login(request):
 		username =data.get('username')
 		password = data.get('password')
 		user = get_json_user_by_admin_user_name(username,password)
-		print("data",user)
 		if user is not None:
 			old_password = user.password
 			old_username = user.username

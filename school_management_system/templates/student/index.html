@@ -13,13 +13,6 @@
    <link rel="stylesheet" href="/static/js/bower_components/jvectormap/jquery-jvectormap.css">
    <link rel="stylesheet" href="/static/js/dist/css/AdminLTE.min.css">
    <link rel="stylesheet" href="/static/js/dist/css/skins/_all-skins.min.css">
-
-  
-
- 
-
-<!-- <script src="/static/js/dist/js/pages/dashboard2.js"></script> -->
- 
       
        <script src="/static/js/bower_components/jquery/dist/jquery.min.js"></script>
        <script src="/static/js/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -48,13 +41,6 @@
    <script src="/static/student/issue/issue.js"></script>
    <script src="/static/student/notification/notification.js"></script>
 
-
- 
-  
-
-
-
- 
   </head>
 
 <body class="hold-transition skin-blue sidebar-mini"  ng-app="studentApp" ng-controller="studentAppController">
@@ -732,8 +718,9 @@
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
+    <div ng-view></div>
 
-  <div ng-view></div>
+
 
 </div>
 <!-- ./wrapper -->

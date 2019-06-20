@@ -23,7 +23,8 @@ app.controller('loginCtrl', function($scope,$http,$window) {
 				if(data.username == undefined){
 					$scope.success ="Username and password does not exist";	
 				} else{
-					$window.location.href = "http://127.0.0.1:8000/app/admin_dashboard/#!/"+"?username="+data.username;
+						$window.location.href = "http://127.0.0.1:8000/app/admin_dashboard/#!/"+"?username="+data.username;
+					//$window.location.href = "http://127.0.0.1:8000/app/dashboard/#!/"+"?username="+data.username;
 				}		        
 			},function(response) {			
 				$scope.username_error = response.data.username;

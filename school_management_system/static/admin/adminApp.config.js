@@ -3,7 +3,7 @@ var app = angular.module('adminApp', ['ngRoute']);
 app.config(function($routeProvider) {
   $routeProvider
 
-  .when('/admin_dashboard', {
+  .when('/', {
     templateUrl : "/static/admin/dashboard/view/dashboard.html",
      controller:  ["$scope", "$http","$window", DashboardController],
   })
