@@ -14,12 +14,16 @@
   <title>Admin - Dashboard</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <link rel="stylesheet"; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+  <script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+  
   <script src="/static/admin/js/dist/bootstrap/bootstrap.js"></script>
   <!-- <script src="/static/admin/js/dist/chart/chart_area/chart_area.js"></script>
   <script src="/static/admin/js/dist/chart/chart_bar/chart_bar.js"></script>
   <script src="/static/admin/js/dist/chart/chart_min/chart_min.js"></script>
   <script src="/static/admin/js/dist/chart/chart_pie/chart_pie.js"></script>
-  <script src="/static/admin/js/dist/chart/chart_pie/sg_admin.js"></script> -->
+  <script src="/static/admin/js/dist/chart/chart_pie/sg_admin.js"></script>   -->
+  <!-- <link rel="stylesheet" href="/static/admin/fontawesomefinal/font-awesome/css/font-awesome.min.css"> -->
   <link rel="stylesheet" href="/static/admin/js/dist/css/admin.css">
   <link rel="stylesheet" href="/static/admin/js/dist/css/admindashboardlte.css">
   <script src="/static/admin/js/dist/js/jquery.js"></script>
@@ -32,9 +36,11 @@
   <script src="/static/admin/adminAppController.js"></script>
 
   <script src="/static/admin/dashboard/controller/dashboardController.js"></script>
+  <script src="/static/admin/notification/controller/notification.js"></script>
+  
 </head>
 
-<body id="page-top"  ng-app="adminApp" ng-controller="adminAppController">
+<body id="page-top"  ng-app="adminApp" ng-controller="adminAppController" ng-submit="submitnotification">
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -130,12 +136,19 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="tables.html">
+
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
-    </ul>
+      <li class="nav-item"><a class="nav-link" href="#!/notification"><i class="fa fa-share"></i> <span>notification</span></a></li>
+  
+</ul>
+    
      <div ng-view></div>
     </div>
+          </ul>
+
+          </li>
    
 </body>
 

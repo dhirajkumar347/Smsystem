@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Dashboard</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
+  <!-- Bootstrap 3.3.7 -->
+ 
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+ <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>Notification list 
+      </h1>
+     
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+   <div class="col-md-10">
+    <div class="container" ng-cloak  class="container">
+      <modal id="custom-modal-1">
+    <div class="modal">
+        <div class="modal-body">
+            <h1>A Custom Modal!</h1>
+            <p>
+                Home page text: <input type="text" ng-model="vm.bodyText" />
+            </p>
+            <button ng-click="vm.closeModal('custom-modal-1');">Close</button>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+
+
+
+
+   <!--  <form class="form-horizontal" name="studentForm" ng-submit="submitform()" novalidate>
+                     <textarea  name="notification_window"  ng-model ="notification_window" placeholder="notification_window" class="form-control"    required></textarea>
+                     <span style="color: red" ng-show="studentForm.notification_window.$error.required && (studentForm.$submitted || studentForm.notification_window.$touched)">notification_window block  is required.</span>
+                  </div>
+                  <button type="submit" class="btn btn-primary">send</button>
+             
+        </form> -->
+ 
+      
+      <!-- /.row -->
+    </div>
+  </div>
+  <div>
+                <h3>List of Objective Question</h3>
+               <!--  <button class="col-md-offset-10 btn btn-primary" ng-click="create_Question()">Create</button>    -->             
+   <table ng-cloak ng-table="tableParams" class="table" show-filter="true">
+        <tr ng-repeat="notification in $data">    
+          <td class="col-md-1" data-title="'Notification content'" filter="{notification_window: 'text'}">{{notification.notification_window}}</td>
+          <td class="col-md-2" data-title="'Action'">
+               <button
+               class="btn btn-danger" ng-click="delete_notification(notification.notification_id)">
+               Remove
+             </button>
+
+
+          </td>                      
+        </tr>
+      </table>
+</div>
+
+    </section>
+      <!-- /.row -->
+    
+
+
+    <!-- /.content -->
+  
+
+
+</div>
+</body>
+</html>
