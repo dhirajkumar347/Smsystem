@@ -1,4 +1,4 @@
-var app = angular.module('adminApp', ['ngRoute','ngTable','mwl.confirm','ui.bootstrap']);
+var app = angular.module('adminApp', ['ngRoute','ngTable','ngTouch','ui.bootstrap']);
 app.config(['$httpProvider', '$interpolateProvider',''
     function($httpProvider, $interpolateProvider) {    
     /* csrf */

@@ -45,7 +45,9 @@ $scope.open = function () {
 						method : "DELETE",
 						url : "/api/notification/"+notification_id,
 			}).then(function(response) { 
-				alert("DELETE")
+				$scope.ok=function(notification_id){
+					
+				}
 				
 
 			},function(response) {		

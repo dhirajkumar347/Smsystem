@@ -3,7 +3,9 @@ var app=angular.module("adminApp",
 	["ngRoute",
 	"ngTable",
 	// "ngSanitize",
-	"mwl.confirm",
+	// "mwl.confirm",
 	// "cp.ngConfirm"
 	"ui.bootstrap",
+	"ngTouch",
+
 	]);
