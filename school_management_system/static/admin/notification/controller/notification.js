@@ -4,6 +4,12 @@
 function adminnotificationController($scope, $http,$window,NgTableParams){
 
 console.log("notification");
+
+$scope.open = function () {
+            $scope.showModal = true;
+        };
+
+
    $scope.submitnotification = function() {
    			 $http({
 						method : "POST",
@@ -47,8 +53,10 @@ console.log("notification");
 				
 			});
 					
-                } 
-                $scope.notifications ()
+                }
+
+         
+                 $scope.notifications ()
               
      }
 

@@ -1,5 +1,5 @@
-var app = angular.module('adminApp', ['ngRoute','ngTable']);
-app.config(['$httpProvider', '$interpolateProvider',
+var app = angular.module('adminApp', ['ngRoute','ngTable','mwl.confirm','ui.bootstrap']);
+app.config(['$httpProvider', '$interpolateProvider',''
     function($httpProvider, $interpolateProvider) {    
     /* csrf */
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
@@ -16,7 +16,7 @@ app.config(function($routeProvider) {
  
   .when('/notification', {
     templateUrl : "/static/admin/notification/view/notification.html",
-     controller:  ["$scope", "$http","$window","NgTableParams", adminnotificationController],
+     controller:  ["$scope", "$http","$window","NgTableParams",'$confirm', adminnotificationController],
   })
   // .when('/board',{
   //   templateUrl : "/static/admin/board/view/board.html",
