@@ -1,10 +1,11 @@
-var app = angular.module('adminApp', ['ngRoute','ngTable','ngTouch','ui.bootstrap']);
-app.config(['$httpProvider', '$interpolateProvider',''
+var app = angular.module('adminApp', ['ngRoute','ngTable','ui.bootstrap', 'mwl.confirm','ngSanitize']);
+app.config(['$httpProvider', '$interpolateProvider',
     function($httpProvider, $interpolateProvider) {    
-    /* csrf */
+ 
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
 }]);
+
 
 app.config(function($routeProvider) {
   $routeProvider
@@ -16,7 +17,7 @@ app.config(function($routeProvider) {
  
   .when('/notification', {
     templateUrl : "/static/admin/notification/view/notification.html",
-     controller:  ["$scope", "$http","$window","NgTableParams",'$confirm', adminnotificationController],
+     controller:  ["$scope", "$http","$window","NgTableParams", adminnotificationController],
   })
   // .when('/board',{
   //   templateUrl : "/static/admin/board/view/board.html",
