@@ -9,3 +9,4 @@ from api.serializers import *
 class notificationApi(viewsets.ModelViewSet): 
 	serializer_class=notificationSerializers
 	queryset=notification.objects.all()
+	

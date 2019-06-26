@@ -17,9 +17,9 @@ app.config(function($routeProvider) {
  
   .when('/notification', {
     templateUrl : "/static/admin/notification/view/notification.html",
-     controller:  ["$scope", "$http","$window","NgTableParams", adminnotificationController],
+     controller:  ["$scope", "$http","$window","$uibModal","NgTableParams", adminnotificationController],
   })
-  // .when('/board',{
+  // .when('/board', {
   //   templateUrl : "/static/admin/board/view/board.html",
   //    controller:  ["$scope", "$http","$window", boardController],
 

@@ -102,7 +102,7 @@ class issue(models.Model):
     mobile_no = models.IntegerField(max_length=20,unique=True)
 
 class notification(models.Model):
-    notification_window=models.TextField(max_length=200,null=False)
+    notification_window=models.TextField()
 
 class admin_Registration(models.Model):
     full_name=models.CharField(max_length=30)
