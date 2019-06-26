@@ -1,23 +1,54 @@
-'use strict';
-
-
-function adminnotificationController($scope, $http,$window,$uibModal,NgTableParams,){
-
-console.log("notification");
-   $scope.create_notification = function() {
-   			 $http({
+"use strict";
+app.controller("notificationeModalController", function ($scope, $uibModal, $http, $uibModalStack) {
+    // create class model
+    console.log("ne controller");
+ // create class model
+     $scope.submitnotificationwindow = function() {
+                	var notification_window= JSON.stringify($scope.notification);
+                	console.log("hg"+notification_window);
+				    		$http({
 						method : "POST",
 						url : "/api/notification/",
 						data:notification_window
-			}).then(function(response) { 
-				 alert("notification is sent")
+					}).then(function(response) { 
+					},function(response) {
+						$scope.error = response.data
+				
+			})	
+                
 
+				  }
+				    $scope.edit_notification = function(notification_id) {
+        
+   			 $http({
+						method : "PUT",
+						url : "/api/notification/"+notification_id+"/",
+						data:{"notification_window":"ddddd"}
+			}).then(function(response) { 
+				$scope.notifications();
 			},function(response) {		
 				$scope.error = response.data
 				
 			});
 					
-                } 
+              }
+				   
+		
+//close modal
+$scope.close=function(){
+    $uibModalStack.dismissAll();
+
+}
+
+});
+
+
+
+function adminnotificationController($scope, $http,$window,$uibModal,$controller,NgTableParams){
+	angular.extend(this, $controller('notificationeModalController', {$scope: $scope}));
+
+   console.log("notification control");
+ 
 
     $scope.notifications = function() {
    			 $http({
@@ -47,64 +78,20 @@ console.log("notification");
 					
                 }
 
-        $scope.edit_notification = function(notification_id) {
-        	console.log("ghjg"+notification_id);
-   			 $http({
-						method : "PUT",
-						url : "/api/notification/"+notification_id+"/",
-						data:{"notification_window":"xdvsdvsdvdvd"}
-			}).then(function(response) { 
-				$scope.notifications();
-			},function(response) {		
-				$scope.error = response.data
-				
-			});
-					
-                }
-         $scope.open_notificationwindow = function() {
-                	var notification_window= JSON.stringify($scope.notification);
-                	console.log("hg"+notification_window);
-				    		$http({
-						method : "POST",
-						url : "/api/notification/",
-						data:notification_window
-					}).then(function(response) { 
-						$scope.notifications();
-					},function(response) {
-						$scope.error = response.data
-				
-			})	
-                
+      
 
-				  }
-				   
-		
+                $scope.notificationsPopup = function(){	
+		        $uibModal.open({
+		            templateUrl: 'notificationsModal.html',
+		            size: 'md',
+		            controller: 'notificationeModalController'
+		           
+		        });
+    }
+        
                 
 
 
-   //              app.controller('notification_modalController', function($scope, $uibModalInstance) {
-
-			// 	  $scope.add = function(){
-			// 	    $uibModalInstance.close("Ok");
-			// 	    $http({
-			// 			method : "POST",
-			// 			url : "/api/notification/",
-			// 			data:notification_window
-			// 		}).then(function(response) { 
-			// 			alert("notification is sent")
-			// 		},function(response) {
-			// 			$scope.error = response.data
-				
-			// })	
-                
-
-			// 	  }
-				   
-			// 	  $scope.cancel = function(){
-			// 	    $uibModalInstance.dismiss();
-			// 	  } 
-				  
-			// 	});
 				 $scope.notifications ()
 
 

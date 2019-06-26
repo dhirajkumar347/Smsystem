@@ -8,25 +8,19 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini">
  <div class="content-wrapper">
 
         
 
   <section>
-    <h5>Create notification</h5>
     <div class="col-sm-9 col-md-6" ng-cloak>
-      <button class="btn btn-info" align="right" ng-click="open_notificationwindow()">Create</button> 
+      <button class="btn btn-info" align="right" ng-click="notificationsPopup()">Create</button> 
     </div>
-    <div class="modal-body" style="height: 400px;">
-                <div class="col-md-12">
-                        <div class="col-md-4">
-                           <textarea placeholder="enter the notification content" ng-model="notification.notification_window"></textarea>     
-                        </div>
-                       
-                       </div>
-        </div>
   
   </section> 
   <!-- Main content -->
@@ -69,3 +63,19 @@
 </html>
 
 
+<script type="text/ng-template" id="notificationsModal.html">
+  <div class="modal-header">
+    <h3 class="modal-title"><center>Fee Plans</center></h3>
+    <div class="modal-body" style="height: 400px;">
+                <div class="col-md-12">
+                        <div class="col-md-4">
+                           <textarea placeholder="enter the notification content" ng-model="notification.notification_window"></textarea>
+                           <button class="btn btn-info" align="right" ng-click="submitnotificationwindow()">Create</button>    
+                        </div>
+                       
+                       </div>
+        </div> 
+  
+  </div>
+ 
+</script>
