@@ -13,26 +13,18 @@
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
+
  <div class="content-wrapper">
-
-        
-
-  <section>
-    <div class="col-sm-9 col-md-6" ng-cloak>
-      <button class="btn btn-info" align="right" ng-click="notificationsPopup()">Create</button> 
-    </div>
-  
-  </section> 
   <!-- Main content -->
     <section class="content">
-      <h3>Notification List</h3>
-               <!--  <button class="col-md-offset-10 btn btn-primary" ng-click="create_Question()">Create</button>    -->             
+   
+   <button class="col-md-offset-10 btn btn-success" ng-click="notification_pop()">Create</button>                
    <table ng-cloak ng-table="tableParams" class="table" show-filter="true">
         <tr ng-repeat="notification in $data">    
           <td class="col-md-1" data-title="'Notification content'" filter="{notification_window: 'text'}">{{notification.notification_window}}</td>
           <td class="col-md-2" data-title="'Action'">
           <button
-               class="btn btn-danger"
+             class="btn btn-danger" 
                mwl-confirm
                title="{{ title }}"
                message="Do you want to delete this Notification content?"
@@ -45,9 +37,9 @@
                cancel-button-type="default">
                Remove
              </button>
-             <br>
+           
              <button
-               class="btn btn-primary" ng-click="edit_notification(notification.notification_id)">
+               class="btn btn-primary" ng-click="edit_notification_pop(notification.notification_window,notification.notification_id)">
                Edit
              </button>
 
@@ -64,18 +56,20 @@
 
 
 <script type="text/ng-template" id="notificationsModal.html">
-  <div class="modal-header">
-    <h3 class="modal-title"><center>Fee Plans</center></h3>
-    <div class="modal-body" style="height: 400px;">
-                <div class="col-md-12">
-                        <div class="col-md-4">
-                           <textarea placeholder="enter the notification content" ng-model="notification.notification_window"></textarea>
-                           <button class="btn btn-info" align="right" ng-click="submitnotificationwindow()">Create</button>    
-                        </div>
-                       
-                       </div>
-        </div> 
-  
-  </div>
- 
+
+<div class="modal-header">
+{{success}}
+  <h3>You can add notification content</h3>
+</div>
+<div class="modal-body">
+ <textarea class="form-control" rows="5" id="comment" placeholder="enter the notification content" ng-model="notification"></textarea>
+</div>
+<div class="modal-footer">
+   
+    <button class="btn btn-primary" ng-click="submit_notification()">Create</button>
+     <button class="btn btn-primary"  ng-click="edit_notification()">edit</button>                     
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+     <button class="btn btn-warning" onclick="reload_page()">reload_page</button>
+</div>
+
 </script>
