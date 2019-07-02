@@ -1,64 +1,57 @@
-// 'use strict';
+"use strict";
+app.controller("boardModalController", function($scope, $uibModal, $http, $uibModalStack) {
+    
+    $scope.submit_board = function() {
+    
+        var board_window = $scope.board;
+        var json_data= {"board_window":board_window};
+        var final_json_data = JSON.stringify(json_data);
+        $http({
+            method: "POST",
+            url: "/api/board/",
+            data: final_json_data
+        }).then(function(response) {
 
+        	$scope.success = "message";
+        }, function(response) {
+            $scope.error = response.data
 
-// function adminnotificationController($scope, $http,$window,NgTableParams){
+        })
+    }
+function adminboardController($scope, $http, $window, $uibModal, $controller) {
+    // angular.extend(this, $controller('boardModalController', {
+    //     $scope: $scope
+    // }));
+    $scope.board = function() {
+        $http({
+            method: "GET",
+            url: "/api/board/",
+        }).then(function(response) {
+            $scope.board_list = response.data({},{
+            $scope.tableParams = new NgTableParams({}, {
+                dataset: $scope.board_list
+            });
 
-// console.log("notification");
+        }, function(response) {
+            $scope.error = response.data
 
-// $scope.open = function () {
-//             $scope.showModal = true;
-//         };
+        };
 
+    }
 
-//    $scope.submitnotification = function() {
-//    			 $http({
-// 						method : "POST",
-// 						url : "/api/notification/",
-// 						data:notification_window
-// 			}).then(function(response) { 
-// 				 alert("notification is sent")
+    
 
-// 			},function(response) {		
-// 				$scope.error = response.data
-				
-// 			});
-					
-//                 } 
-//     $scope.notifications = function() {
-//    			 $http({
-// 						method : "GET",
-// 						url : "/api/notification/",
-// 			}).then(function(response) { 
-// 				$scope.notification_list = response.data
-// 				$scope.tableParams = new NgTableParams({},{dataset: $scope.notification_list});
+    // $scope.board_pop = function() {
+    //     $uibModal.open({
+    //         templateUrl: 'boardModal.html',
+    //         size: 'md',
+    //         controller: 'boardModalController',
+    //         scope:$scope
 
-// 			},function(response) {		
-// 				$scope.error = response.data
-				
-// 			});
-					
-//                 } 
-                
-//         $scope.delete_notification = function(notification_id) {
-//         	console.log("ags"+notification_id)
-//    			 $http({
-// 						method : "DELETE",
-// 						url : "/api/notification/"+notification_id,
-// 			}).then(function(response) { 
-// 				$scope.ok=function(notification_id){
-					
-// 				}
-				
+    //     });
+    // }
+     
 
-// 			},function(response) {		
-// 				$scope.error = response.data
-				
-// 			});
-					
-//                 }
+    $scope.board()
 
-         
-//                  $scope.notifications ()
-              
-//      }
-
+}

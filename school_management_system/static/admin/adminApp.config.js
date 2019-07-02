@@ -19,11 +19,11 @@ app.config(function($routeProvider) {
     templateUrl : "/static/admin/notification/view/notification.html",
      controller:  ["$scope", "$http","$window","$uibModal","$controller","NgTableParams", adminnotificationController],
   })
-  // .when('/board', {
-  //   templateUrl : "/static/admin/board/view/board.html",
-  //    controller:  ["$scope", "$http","$window", boardController],
+  .when('/board', {
+    templateUrl : "/static/admin/board/view/board.html",
+     controller:  ["$scope", "$http","$window", "$uibModal","$controller",adminboardController],
 
-  // })
+  })
   // .when('/standard',{
   //   templateUrl : "/static/admin/standard/view/standard.html",
   //    controller:  ["$scope", "$http","$window", standardController],

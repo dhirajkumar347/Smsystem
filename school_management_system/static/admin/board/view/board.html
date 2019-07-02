@@ -6,65 +6,46 @@
   <title>AdminLTE 2 | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  
-  <!-- Bootstrap 3.3.7 -->
- 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Google Font -->
- <!-- <!-- <!--  <link rel="stylesheet"
+  <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini">
+
  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <!-- <section class="content-header">
-      <h1>Notification list 
-      </h1>
-     </section>
-Main content
+  <!-- Main content -->
     <section class="content">
-     <div>
-                <h3>List of Objective Question</h3> -->
-               <!--  <button class="col-md-offset-10 btn btn-primary" ng-click="create_Question()">Create</button>    -->             
-   <!-- <table ng-cloak ng-table="tableParams" class="table" show-filter="true">
-        <tr ng-repeat="notification in $data">    
-          <td class="col-md-1" data-title="'Notification content'" filter="{notification_window: 'text'}">{{notification.notification_window}}</td>
-          <td class="col-md-2" data-title="'Action'">
-          <div class="modal-header">
-            <button class="btn btn-danger" ng-click="delete_notification(notification.notification_id)">
-               Remove
-             </button>
-          </div>
-          <div class="modal-body">
-            <p>Are you sure?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">No</button>
-            <button type="button" class="btn btn-primary" ng-click="ok()">Yes</button>
-          </div>
-         </td>                      
+   
+   <button class="col-md-offset-10 btn btn-success" ng-click="board_pop()">Create</button>                
+   <table ng-cloak ng-table="tableParams" class="table" show-filter="true">
+        <tr ng-repeat="board in $data">    
+          <td class="col-md-1" data-title="'board content'" filter="{board_window: 'text'}">{{board.board_window}}</td>
+                              
         </tr>
       </table>
-</div>
-
     </section>
-      
-</div>
+    </div>
 
-</div>
-
+  
 </body>
-</html> -->
- --> --> -->
+</html>
 
 
+<script type="text/ng-template" id="boardModal.html">
 
+<div class="modal-header">
+{{success}}
+  <h3>You can add board content</h3>
+</div>
+<div class="modal-body">
+ <input class="form-control" rows="5" id="comment" placeholder="enter the board content" ng-model="board">
+</div>
+<div class="modal-footer">
+   
+    <button class="btn btn-primary" ng-click="submit_board()">Create</button>
+     
+</div>
 
-
+</script>
