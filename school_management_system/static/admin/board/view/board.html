@@ -8,7 +8,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+       
   
 </head>
 
@@ -17,14 +17,42 @@
  <div class="content-wrapper">
   <!-- Main content -->
     <section class="content">
+      <form  class="form-horizontal" name="boardForm"  novalidate>
+      <div class="col-md-10">
+        {{success}}
+        {{board_name}}
+        <input type="text"   name="board_name"  ng-model ="board_name" placeholder="boardname Name" class="form-control"   >
+         <!-- <input type="text" class="form-control"  placeholder="enter the board content" ng-model="board"> -->
+                     
    
-   <button class="col-md-offset-10 btn btn-success" ng-click="board_pop()">Create</button>                
+   <button type="submit" class="col-md-offset-10 btn btn-success " ng-click="create()" >Create</button>
+
    <table ng-cloak ng-table="tableParams" class="table" show-filter="true">
-        <tr ng-repeat="board in $data">    
-          <td class="col-md-1" data-title="'board content'" filter="{board_window: 'text'}">{{board.board_window}}</td>
-                              
-        </tr>
-      </table>
+    <tr ng-repeat="board in $data">
+          <td class="col-md-1" data-title="'board content'" filter="{board_name: 'text'}">{{board.board_name}}</td>
+          <td class="col-md-2" data-title="'Action'">
+          <button
+             class="btn btn-danger" 
+               mwl-confirm
+               title="{{ title }}"
+               message="Do you want to delete this board content?"
+               confirm-text="Yes"
+               cancel-text="No"
+               placement="{{ placement }}"
+               on-confirm="delete_board(board.board_id)"
+               on-cancel="cancelClicked = true"
+               confirm-button-type="danger"
+               cancel-button-type="default">
+               Remove
+             </button>
+             <button
+               class="btn btn-primary" ng-click="edit_notification(board.board_name,board.board_id)">
+               Edit
+             </button>
+    </tr>
+</table>
+ </section>                
+  
     </section>
     </div>
 
@@ -33,19 +61,3 @@
 </html>
 
 
-<script type="text/ng-template" id="boardModal.html">
-
-<div class="modal-header">
-{{success}}
-  <h3>You can add board content</h3>
-</div>
-<div class="modal-body">
- <input class="form-control" rows="5" id="comment" placeholder="enter the board content" ng-model="board">
-</div>
-<div class="modal-footer">
-   
-    <button class="btn btn-primary" ng-click="submit_board()">Create</button>
-     
-</div>
-
-</script>

@@ -21,7 +21,7 @@ app.config(function($routeProvider) {
   })
   .when('/board', {
     templateUrl : "/static/admin/board/view/board.html",
-     controller:  ["$scope", "$http","$window", "$uibModal","$controller",adminboardController],
+     controller:  ["$scope", "$http","$window","NgTableParams",adminboardController],
 
   })
   // .when('/standard',{

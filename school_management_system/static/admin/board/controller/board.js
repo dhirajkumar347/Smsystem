@@ -1,10 +1,13 @@
 "use strict";
-app.controller("boardModalController", function($scope, $uibModal, $http, $uibModalStack) {
+
+function adminboardController($scope, $http, $window, NgTableParams) {
+    console.log("initalize the controller");
+
+
+    $scope.create = function() {
     
-    $scope.submit_board = function() {
-    
-        var board_window = $scope.board;
-        var json_data= {"board_window":board_window};
+        var board_name = $scope.board_name;
+        var json_data= {"board_name":board_name};
         var final_json_data = JSON.stringify(json_data);
         $http({
             method: "POST",
@@ -12,22 +15,25 @@ app.controller("boardModalController", function($scope, $uibModal, $http, $uibMo
             data: final_json_data
         }).then(function(response) {
 
-        	$scope.success = "message";
+           $scope.board();
         }, function(response) {
-            $scope.error = response.data
+          $scope.error = response.data
 
         })
+
+
     }
-function adminboardController($scope, $http, $window, $uibModal, $controller) {
-    // angular.extend(this, $controller('boardModalController', {
-    //     $scope: $scope
-    // }));
+
+        
     $scope.board = function() {
+      console.log("controller");
         $http({
             method: "GET",
             url: "/api/board/",
         }).then(function(response) {
-            $scope.board_list = response.data({},{
+
+            $scope.board_list = response.data
+            console.log("concxatthe "+$scope.board_list)
             $scope.tableParams = new NgTableParams({}, {
                 dataset: $scope.board_list
             });
@@ -35,23 +41,40 @@ function adminboardController($scope, $http, $window, $uibModal, $controller) {
         }, function(response) {
             $scope.error = response.data
 
-        };
+        });
+
+    } 
+     $scope.delete_board = function(board_id) {
+        $http({
+            method: "DELETE",
+            url: "/api/board/" + board_id,
+        }).then(function(response) {
+            $scope.board();
+        }, function(response) {
+            $scope.error = response.data
+
+        });
 
     }
-
+    $scope.edit_notification = function(abc,board_id) {
+      
     
+         $scope.board_name =abc
+         var board_obj= {"board_name": $scope.board_name};
+         var final_edit_data = JSON.stringify(board_obj);
+         
+        console.log("check the data"+final_edit_data);
+        $http({
+            method: "PUT",
+            url: "/api/board/" + board_id + "/",
+            data:final_edit_data
+        }).then(function(response) {
+            $scope.board();
+        }, function(response) {
+            $scope.error = response.data
 
-    // $scope.board_pop = function() {
-    //     $uibModal.open({
-    //         templateUrl: 'boardModal.html',
-    //         size: 'md',
-    //         controller: 'boardModalController',
-    //         scope:$scope
+        });
 
-    //     });
-    // }
-     
-
-    $scope.board()
-
+    }
+    $scope.board();
 }

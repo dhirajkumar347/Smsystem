@@ -66,10 +66,10 @@
 </div>
 <div class="modal-footer">
    
-    <button class="btn btn-primary" ng-click="submit_notification()">Create</button>
-     <button class="btn btn-primary"  ng-click="edit_notification()">edit</button>                     
+    <button class="btn btn-primary" ng-click="submit_notification() ng-hide="Iscreate"  ng-show="Isedit" >Create</button>
+     <button class="btn btn-primary" ng-click="edit_notification()" ng-hide="Isedit" ng-show="Iscreate">edit</button>                     
     <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-     <button class="btn btn-warning" onclick="reload_page()">reload_page</button>
+     <button class="btn btn-warning" ng-click="reload_page()">reload_page</button>
 </div>
 
 </script>

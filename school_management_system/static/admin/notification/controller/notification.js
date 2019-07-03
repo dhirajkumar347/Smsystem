@@ -52,6 +52,12 @@ app.controller("notificationeModalController", function($scope, $uibModal, $http
 
     }
 
+    $scope.reload_page = function(){
+        console.log("reload page")
+        // $window.location.reload();
+         $scope.notifications();
+    }
+
 });
 
 
@@ -92,6 +98,9 @@ function adminnotificationController($scope, $http, $window, $uibModal, $control
 
 
     $scope.notification_pop = function() {
+         $scope.Iscreate=false;
+        $scope.Isedit=true;
+       
         $uibModal.open({
             templateUrl: 'notificationsModal.html',
             size: 'md',
@@ -100,9 +109,10 @@ function adminnotificationController($scope, $http, $window, $uibModal, $control
 
         });
     }
-     $scope.edit_notification_pop = function(notification_window,id) {
-     	$scope.notification=notification_window;
-     	$scope.id=id;
+     $scope.edit_notification= function(board_name,id) {
+     	$scope.board=board_name;
+     	$scope.id=board_id;
+        
      console.log($scope.id);
         $uibModal.open({
             templateUrl: 'notificationsModal.html',
