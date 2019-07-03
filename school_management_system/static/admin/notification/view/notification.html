@@ -58,16 +58,19 @@
 <script type="text/ng-template" id="notificationsModal.html">
 
 <div class="modal-header">
-{{success}}
-  <h3>You can add notification content</h3>
+
+<div>
+  <strong> {{success}}</strong>
+</div>
+ 
 </div>
 <div class="modal-body">
- <textarea class="form-control" rows="5" id="comment" placeholder="enter the notification content" ng-model="notification"></textarea>
+ <textarea class="form-control" rows="5" id="comment" placeholder="Enter the notification content" ng-model="notification"></textarea>
 </div>
 <div class="modal-footer">
    
-    <button class="btn btn-primary" ng-click="submit_notification() ng-hide="Iscreate"  ng-show="Isedit" >Create</button>
-     <button class="btn btn-primary" ng-click="edit_notification()" ng-hide="Isedit" ng-show="Iscreate">edit</button>                     
+    <button class="btn btn-primary" ng-click="submit_notification()" ng-show="Iscreate">Create</button>
+     <button class="btn btn-primary" ng-click="edit_notification()" ng-hide="Iscreate">edit</button>                     
     <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
      <button class="btn btn-warning" ng-click="reload_page()">reload_page</button>
 </div>

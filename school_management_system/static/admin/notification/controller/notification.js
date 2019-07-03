@@ -11,8 +11,7 @@ app.controller("notificationeModalController", function($scope, $uibModal, $http
             url: "/api/notification/",
             data: final_json_data
         }).then(function(response) {
-
-        	$scope.success = "messahe";
+        	$scope.success = "Notification content created successfully";
         }, function(response) {
         	
         
@@ -38,6 +37,7 @@ app.controller("notificationeModalController", function($scope, $uibModal, $http
             data:final_edit_data
         }).then(function(response) {
             $scope.notifications();
+            $scope.success = "Notification content updated successfully";
         }, function(response) {
             $scope.error = response.data
 
@@ -53,9 +53,8 @@ app.controller("notificationeModalController", function($scope, $uibModal, $http
     }
 
     $scope.reload_page = function(){
-        console.log("reload page")
-        // $window.location.reload();
-         $scope.notifications();
+      location.reload();
+         
     }
 
 });
@@ -98,9 +97,8 @@ function adminnotificationController($scope, $http, $window, $uibModal, $control
 
 
     $scope.notification_pop = function() {
-         $scope.Iscreate=false;
-        $scope.Isedit=true;
-       
+        $scope.Iscreate=true;
+    
         $uibModal.open({
             templateUrl: 'notificationsModal.html',
             size: 'md',
@@ -109,11 +107,10 @@ function adminnotificationController($scope, $http, $window, $uibModal, $control
 
         });
     }
-     $scope.edit_notification= function(board_name,id) {
-     	$scope.board=board_name;
-     	$scope.id=board_id;
-        
-     console.log($scope.id);
+     $scope.edit_notification_pop= function(notification_window,id) {
+        $scope.Iscreate=false;
+     	$scope.notification=notification_window;
+     	$scope.id=id;
         $uibModal.open({
             templateUrl: 'notificationsModal.html',
             size: 'md',

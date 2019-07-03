@@ -56,10 +56,8 @@ function adminboardController($scope, $http, $window, NgTableParams) {
         });
 
     }
-    $scope.edit_notification = function(abc,board_id) {
-      
-    
-         $scope.board_name =abc
+    $scope.edit_notification = function(edit_boardname,board_id) {
+         $scope.board_name =edit_boardname;
          var board_obj= {"board_name": $scope.board_name};
          var final_edit_data = JSON.stringify(board_obj);
          

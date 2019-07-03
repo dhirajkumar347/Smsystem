@@ -6,3 +6,11 @@
 6:checked login api for student.
 7:chekced login api for faculty.
 8:checked all naming convetion for java script as well as django rest api.
+
+
+
+git concept
+1: When you don't want to keep your local changes at all.
+git reset --hard
+2. When you want to keep your local changes
+a:git stash b:git pull c:git stash pop
