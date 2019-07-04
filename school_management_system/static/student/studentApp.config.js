@@ -1,4 +1,4 @@
-﻿var app = angular.module('studentApp', ['ngRoute']);
+﻿var app = angular.module('studentApp', ['ngRoute','ngTable','ui.bootstrap']);
 
 app.config(function($routeProvider) {
   $routeProvider
@@ -13,7 +13,7 @@ app.config(function($routeProvider) {
   })
   .when('/notification', {
     templateUrl : "/static/student/notification/notification.html",
-     controller:  ["$scope", "$http","$window", notificationController],
+     controller:  ["$scope", "$http","$window","$uibModal","$controller","NgTableParams", notificationController],
   })
   /*.
   when('/profile', {

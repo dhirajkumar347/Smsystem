@@ -8,6 +8,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
        
   
 </head>
@@ -46,7 +47,7 @@
                Remove
              </button>
              <button
-               class="btn btn-primary" ng-click="edit_notification(board.board_name,board.board_id)">
+               class="btn btn-primary" ng-click="edit_board_pop(board.board_name,board.board_id)">
                Edit
              </button>
     </tr>
@@ -55,9 +56,30 @@
   
     </section>
     </div>
+    
 
   
 </body>
 </html>
+<script type="text/ng-template" id="edit_modal.html">
 
+<div class="modal-header">
+
+<div>
+  <strong> {{success}}</strong>
+</div>
+ 
+</div>
+<div class="modal-body">
+ <textarea class="form-control" rows="5" id="comment" placeholder="Enter the board content" ng-model="board"></textarea>
+</div>
+<div class="modal-footer">
+   
+    
+     <button class="btn btn-primary" ng-click="edit_board()" >save</button>                     
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+     
+</div>
+
+</script>
 

@@ -2,26 +2,39 @@
 
 function notificationController($scope, $http,$window){
 
-   $scope.abc = function() {
+   $scope.notification = function() {
    		
    			 $http({
 						method : "GET",
 						url : "/api/notification/",
-						data:notification_window
+						
 			}).then(function(response) { 
-				  console.log("agin loadnbvcgfgcgh"+JSON.strigyfy(response.data));
-
+                $scope.notification()
+				  // console.log("agin loadnbvcgfgcgh"+JSON.strigyfy(response.data));
+                  
 			},function(response) {		
 				$scope.error = response.data
 				
 			});
 					
                 } 
-                $scope.abc()
+                $scope.notification()
             }
 
         
-	
+	 // $scope.delete_notification = function(notification_id) {
+  //       $http({
+  //           method: "DELETE",
+  //           url: "/api/notification/" + notification_id,
+  //       }).then(function(response) {
+  //           $scope.notifications();
+  //       }, function(response) {
+  //           $scope.error = response.data
+
+  //       });
+
+  //   }
+
 
 
    
