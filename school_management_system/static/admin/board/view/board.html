@@ -21,16 +21,12 @@
       <form  class="form-horizontal" name="boardForm"  novalidate>
       <div class="col-md-10">
         {{success}}
-        {{board_name}}
-        <input type="text"   name="board_name"  ng-model ="board_name" placeholder="boardname Name" class="form-control"   >
-         <!-- <input type="text" class="form-control"  placeholder="enter the board content" ng-model="board"> -->
-                     
-   
+   </div>
    <button type="submit" class="col-md-offset-10 btn btn-success " ng-click="create()" >Create</button>
 
    <table ng-cloak ng-table="tableParams" class="table" show-filter="true">
     <tr ng-repeat="board in $data">
-          <td class="col-md-1" data-title="'board content'" filter="{board_name: 'text'}">{{board.board_name}}</td>
+          <td class="col-md-1" data-title="'Board Name'" filter="{board_name: 'text'}">{{board.board_name}}</td>
           <td class="col-md-2" data-title="'Action'">
           <button
              class="btn btn-danger" 
