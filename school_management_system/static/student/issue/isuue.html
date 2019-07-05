@@ -18,41 +18,74 @@
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>Profile Information 
-      </h1>
-     
-    </section>
 
-    <!-- Main content -->
-    <section class="content">
-   <div class="col-md-10">
-                     <textarea  name="query"  ng-model ="query" placeholder="query" class="form-control"    required></textarea>
-                     <span style="color: red" ng-show="contact_usForm.query.$error.required && (contact_usForm.$submitted || contact_usForm.query.$touched)">query block  is required.</span>
-                  </div>
  
+    <section>
+  <!--  <div class="col-md-10">
+    <textarea class="form-control" rows="5" id="comment" placeholder="Enter the Issue content" ng-model="issue"></textarea></div>
+<div class="body">
+   
+    
+     <button class="btn btn-primary" ng-click="postissue()" >save</button>                     
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+     
+</div>
       
-      <!-- /.row -->
-
-
-      <h1>Main content</h1>
-      <!-- /.row -->
+      
     </section>
+ -->
 
 
-    <!-- /.content -->
-  </div>
-   <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
+    <table ng-cloak ng-table="tableParams" class="table" show-filter="true">
+    <tr ng-repeat="board in $data">
+          <td class="col-md-1" data-title="'Board Name'" filter="{board_name: 'text'}">{{board.board_name}}</td>
+          <td class="col-md-2" data-title="'Action'">
+          
+             <button
+               class="btn btn-primary" ng-click="edit_issue_pop(board.board_name,board.board_id)">
+               Edit
+             </button>
+
+    </tr>
+</table>
+ </section>                
+  
+    </section>
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
-  </footer>
+    
+
+  
+</body>
+</html>
+<script type="text/ng-template" id="edit_modal.html">
+
+<div class="modal-header">
+
+<div>
+  <strong> {{success}}</strong>
+</div>
+ 
+</div>
+<div class="modal-body">
+ <textarea class="form-control" rows="5" id="comment" placeholder="Enter the issue content" ng-model="issue"></textarea>
+</div>
+<div class="modal-footer">
+   
+    
+     <button class="btn btn-primary" ng-click="edit_issue()" >save</button>                     
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+     
+</div>
+
+</script>
+
+
+
+  
 
 </body>
 </html>

@@ -18,11 +18,9 @@
  <div class="content-wrapper">
   <!-- Main content -->
     <section class="content">
-      <form  class="form-horizontal" name="boardForm"  novalidate>
-      <div class="col-md-10">
-        {{success}}
-   </div>
-   <button type="submit" class="col-md-offset-10 btn btn-success " ng-click="create()" >Create</button>
+     
+      
+   <button type="submit" class="col-md-offset-10 btn btn-success " ng-click="create_board_pop()" >Create</button>
 
    <table ng-cloak ng-table="tableParams" class="table" show-filter="true">
     <tr ng-repeat="board in $data">
@@ -57,7 +55,7 @@
   
 </body>
 </html>
-<script type="text/ng-template" id="edit_modal.html">
+<script type="text/ng-template" id="board_modal.html">
 
 <div class="modal-header">
 
@@ -67,11 +65,10 @@
  
 </div>
 <div class="modal-body">
- <textarea class="form-control" rows="5" id="comment" placeholder="Enter the board content" ng-model="board"></textarea>
-</div>
+ <input type="text" class="form-control" placeholder="Enter the board content" ng-model="board">
 <div class="modal-footer">
    
-    
+     <button class="btn btn-primary" ng-click="submit_board()" >Create</button>
      <button class="btn btn-primary" ng-click="edit_board()" >save</button>                     
     <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
      

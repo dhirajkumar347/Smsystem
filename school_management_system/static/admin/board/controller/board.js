@@ -1,6 +1,28 @@
 "use strict";
 
-app.controller("editModalController", function($scope, $uibModal, $http, $uibModalStack) {
+app.controller("boardModalController", function($scope, $uibModal, $http, $uibModalStack) {
+     $scope.submit_board = function() {
+    
+        var board = $scope.board_name;
+        var json_data= {"board_name":board};
+        var final_json_data = JSON.stringify(json_data);
+        $http({
+            method: "POST",
+            url: "/api/board/",
+            data: final_json_data
+        }).then(function(response) {
+            $scope.success = "board content created successfully";
+        }, function(response) {
+            
+        
+            //$scope.notifications();
+
+            $scope.error = response.data
+
+        })
+
+
+    }
    
 
    $scope.edit_board = function() {
@@ -35,31 +57,10 @@ app.controller("editModalController", function($scope, $uibModal, $http, $uibMod
 
 function adminboardController($scope, $http, $window, $uibModal, $controller, NgTableParams) {
     console.log("initalize the controller");
-    angular.extend(this, $controller('editModalController', {
+    angular.extend(this, $controller('boardModalController', {
         $scope: $scope
     }));
-    $scope.create = function() {
-    
-        var board_name = $scope.board_name;
-        var json_data= {"board_name":board_name};
-        var final_json_data = JSON.stringify(json_data);
-        $http({
-            method: "POST",
-            url: "/api/board/",
-            data: final_json_data
-        }).then(function(response) {
-
-           $scope.board();
-        }, function(response) {
-          $scope.error = response.data
-
-        });
-
-
-    }
-
-        
-    $scope.board = function() {
+     $scope.board = function() {
       console.log("controller");
         $http({
             method: "GET",
@@ -90,14 +91,25 @@ function adminboardController($scope, $http, $window, $uibModal, $controller, Ng
         });
 
     }
+    $scope.create_board_pop = function() {
+       
+    
+        $uibModal.open({
+            templateUrl: 'board_modal.html',
+            size: 'md',
+            controller: 'boardModalController',
+            scope:$scope
+
+        });
+    }
        $scope.edit_board_pop= function(board_name,id) {
         console.log(board_name,id);
         $scope.board=board_name;
         $scope.id=id;
         $uibModal.open({
-            templateUrl: 'edit_modal.html',
+            templateUrl: 'board_modal.html',
             size: 'md',
-            controller: 'editModalController',
+            controller: 'boardModalController',
             scope:$scope
 
         });

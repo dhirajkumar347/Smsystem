@@ -9,9 +9,10 @@ function notificationController($scope, $http,$window){
 						url : "/api/notification/",
 						
 			}).then(function(response) { 
-                $scope.notification()
-				  // console.log("agin loadnbvcgfgcgh"+JSON.strigyfy(response.data));
-                  
+        $scope.notifications=response.data
+        
+               
+				       
 			},function(response) {		
 				$scope.error = response.data
 				

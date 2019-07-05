@@ -9,7 +9,7 @@ app.config(function($routeProvider) {
   })
   .when('/issue', {
     templateUrl : "/static/student/issue/isuue.html",
-     controller:  ["$scope", "$http","$window", issueController],
+     controller:  ["$scope", "$http","$window","$uibModal","$controller","NgTableParams", issueController],
   })
   .when('/notification', {
     templateUrl : "/static/student/notification/notification.html",

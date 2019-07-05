@@ -28,42 +28,35 @@
       </h1>
      
     </section>
+    <div class="container">
+  <h2>List of notifications</h2>
+  <ol >
+    <div>
+      <li class="list-group-item list-group-item-success" ng-repeat="notification in notifications"> {{notification.notification_window}}</li>
+    </div>
+    <!-- <div> -->
+   <!--  <li class="list-group-item list-group-item-info"> {{notifications}}</li></div>
+    <div>
+    <li class="list-group-item list-group-item-warning"> {{notifications}}</li>
+  </div>
+  <div>
+    <li class="list-group-item list-group-item-danger"> {{notifications}}</li>
+  </div>
+  <div>
+    <li class="list-group-item list-group-item-info"> {{notifications}}</li></div>
+    <div>
+  <div>
+      <li class="list-group-item list-group-item-success"> {{notifications}}</li>
+    </div>
+  </ol> -->
+  
 
-    <!-- Main content -->
-    <table ng-cloak ng-table="tableParams" class="table" show-filter="true">
-        <tr ng-repeat="notification in $data">    
-          <td class="col-md-1" data-title="'Notification content'" style="background-color: white" filter="{notification_window: 'text'}">{{notification.notification_window}}</td>
-          {{success}}
+   
+        
 
-          <td class="col-md-2" data-title="'Action'">
+        
 
-            <!-- <button
-             class="btn btn-danger" 
-               mwl-confirm
-               title="{{ title }}"
-               message="Do you want to delete this Notification content?"
-               confirm-text="Yes"
-               cancel-text="No"
-               placement="{{ placement }}"
-               on-confirm="delete_notification(notification.notification_id)"
-               on-cancel="cancelClicked = true"
-               confirm-button-type="danger"
-               cancel-button-type="default">
-               Remove
-             </button> -->
            
-            <!--  <button
-               class="btn btn-primary" ng-click="edit_notification_pop(notification.notification_window,notification.notification_id)">
-               Edit
-             </button> -->
-
-
-          
-
-
-          </td>                      
-        </tr>
-      </table>
     </section>
     </div>
 
