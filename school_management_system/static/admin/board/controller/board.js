@@ -11,7 +11,9 @@ app.controller("boardModalController", function($scope, $uibModal, $http, $uibMo
             url: "/api/board/",
             data: final_json_data
         }).then(function(response) {
-            $scope.success = "board content created successfully";
+
+            $scope.success = "Board name created successfully";
+             $scope.board();
         }, function(response) {
             
         
@@ -27,7 +29,7 @@ app.controller("boardModalController", function($scope, $uibModal, $http, $uibMo
 
    $scope.edit_board = function() {
         
-          var board_dat =$scope.board;
+          var board_dat =$scope.board_name;
            var board_obj= {"board_name":board_dat};
            var final_edit_data = JSON.stringify(board_obj);
            var edit_board_id =$scope.id;
@@ -37,7 +39,7 @@ app.controller("boardModalController", function($scope, $uibModal, $http, $uibMo
             url: "/api/board/" + edit_board_id + "/",
             data:final_edit_data
         }).then(function(response) {
-            // $scope.board();
+             $scope.board();
              $scope.success = "Board content updated successfully";
              // $scope.board();
         }, function(response) {
@@ -56,19 +58,19 @@ app.controller("boardModalController", function($scope, $uibModal, $http, $uibMo
 });
 
 function adminboardController($scope, $http, $window, $uibModal, $controller, NgTableParams) {
-    console.log("initalize the controller");
+    // console.log("initalize the controller");
     angular.extend(this, $controller('boardModalController', {
         $scope: $scope
     }));
      $scope.board = function() {
-      console.log("controller");
+     
         $http({
             method: "GET",
             url: "/api/board/",
         }).then(function(response) {
 
             $scope.board_list = response.data
-            console.log("concxatthe "+$scope.board_list)
+           
             $scope.tableParams = new NgTableParams({}, {
                 dataset: $scope.board_list
             });
@@ -92,7 +94,7 @@ function adminboardController($scope, $http, $window, $uibModal, $controller, Ng
 
     }
     $scope.create_board_pop = function() {
-       
+       $scope.Iscreate=true;
     
         $uibModal.open({
             templateUrl: 'board_modal.html',
@@ -103,8 +105,8 @@ function adminboardController($scope, $http, $window, $uibModal, $controller, Ng
         });
     }
        $scope.edit_board_pop= function(board_name,id) {
-        console.log(board_name,id);
-        $scope.board=board_name;
+         $scope.Iscreate=false;
+        $scope.board_name=board_name;
         $scope.id=id;
         $uibModal.open({
             templateUrl: 'board_modal.html',

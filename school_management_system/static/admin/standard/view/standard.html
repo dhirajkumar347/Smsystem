@@ -18,10 +18,10 @@
   <!-- Main content -->
     <section class="content">
    
-   <button class="col-md-offset-10 btn btn-success" ng-click="notification_pop()">Create</button>                
+   <button  style="color:green" class="col-md-offset-10 btn btn-default" ng-click="standard_pop()">Add Standard</button>                
    <table ng-cloak ng-table="tableParams" class="table" show-filter="true">
-        <tr ng-repeat="notification in $data">    
-          <td class="col-md-1" data-title="'Notification content'" filter="{notification_window: 'text'}">{{notification.notification_window}}</td>
+        <tr ng-repeat="standard in $data">    
+          <td class="col-md-1" data-title="'standard content'" filter="{standard_name: 'text'}">{{standard.standard_name}}</td>
           <td class="col-md-2" data-title="'Action'">
           <button
              class="btn btn-danger" 
@@ -31,7 +31,7 @@
                confirm-text="Yes"
                cancel-text="No"
                placement="{{ placement }}"
-               on-confirm="delete_notification(notification.notification_id)"
+               on-confirm="delete_standard(standard.standard_id)"
                on-cancel="cancelClicked = true"
                confirm-button-type="danger"
                cancel-button-type="default">
@@ -39,7 +39,7 @@
              </button>
            
              <button
-               class="btn btn-primary" ng-click="edit_notification_pop(notification.notification_window,notification.notification_id)">
+               class="btn btn-primary" ng-click="edit_standard_pop(standard.standard_name,standard.standard_id)">
                Edit
              </button>
 
@@ -55,7 +55,7 @@
 </html>
 
 
-<script type="text/ng-template" id="notificationsModal.html">
+<script type="text/ng-template" id="standardModal.html">
 
 <div class="modal-header">
 
@@ -65,14 +65,14 @@
  
 </div>
 <div class="modal-body">
- <textarea class="form-control" rows="5" id="comment" placeholder="Enter the notification content" ng-model="notification"></textarea>
+ <input type="text" name="standard" class="form-control" placeholder="Enter the standard content" ng-model="standard_name">
 </div>
 <div class="modal-footer">
    
-    <button class="btn btn-primary" ng-click="submit_notification()" ng-show="Iscreate">Create</button>
-     <button class="btn btn-primary" ng-click="edit_notification()" ng-hide="Iscreate">edit</button>                     
+    <button class="btn btn-info" ng-click="submit_standard()"  ng-show="Iscreate" >Create</button>
+     <button class="btn btn-info" ng-click="edit_standard()"  ng-hide="Iscreate">Edit</button>                     
     <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
- <!--  
+     
 </div>
 
 </script>

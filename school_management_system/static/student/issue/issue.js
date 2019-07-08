@@ -1,97 +1,42 @@
 'use strict';
-"use strict";
+app.config(['$httpProvider', '$interpolateProvider',
+    function($httpProvider, $interpolateProvider) {    
+    /* csrf */
+    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+}]);
 
-app.controller("editModalController", function($scope, $uibModal, $http, $uibModalStack) {
-   
-
-   $scope.edit_issue = function() {
-        
-          var issue_dat =$scope.issue;
-           var issue_obj= {"board_name":issue_dat};
-           var final_edit_data = JSON.stringify(issue_obj);
-           
-            
-        $http({
-            method: "PUT",
-            url: "/api/issue/"  + "/",
-            data:final_edit_data
-        }).then(function(response) {
-            // $scope.board();
-             $scope.success = "issue content changed ssuccessfully";
-             // $scope.board();
-        }, function(response) {
-            $scope.error = response.data
-
-        });
-
-    }
-
-
-
-    $scope.cancel = function() {
-        $uibModalStack.dismissAll();
-
-    }
-});
-
-function issueController($scope, $http, $window, $uibModal, $controller, NgTableParams) {
+function issueController($scope, $http, $window) {
     console.log("initalize the controller");
-    angular.extend(this, $controller('editModalController', {
-        $scope: $scope
-    }));
-    // $scope.create = function() {
-    
-    //     var issue = $scope.issue;
-    //     var json_data= {"board_name":board_name};
-    //     var final_json_data = JSON.stringify(json_data);
-    //     $http({
-    //         method: "POST",
-    //         url: "/api/board/",
-    //         data: final_json_data
-    //     }).then(function(response) {
-
-    //        $scope.board();
-    //     }, function(response) {
-    //       $scope.error = response.data
-
-    //     });
-
-
-    // }
-
+  
+    $scope.submit_issue = function() {
+    console.log("initalize the controller");
+        var query = $scope.issue_content;
+        var mobile_number=$scope.mobile_number
         
-    $scope.issue = function() {
-      console.log("controller");
+        var json_data= {"query":query,"mobile_no":mobile_number};
+        var final_json_data = JSON.stringify(json_data);
+        
         $http({
-            method: "GET",
+            method: "POST",
             url: "/api/issue/",
+            data: final_json_data,
         }).then(function(response) {
-
-            $scope.issue_list = response.data
-            console.log("concxatthe "+$scope.issue_list)
-            $scope.tableParams = new NgTableParams({}, {
-                dataset: $scope.issue_list
-            });
-
+            $scope.success = " issue content created successfully";
         }, function(response) {
+        
+
             $scope.error = response.data
 
-        });
-
-    } 
-     
-       $scope.edit_issue_pop= function(issue) {
-        console.log(issue);
-        $scope.issue=issue;
-        
-        $uibModal.open({
-            templateUrl: 'edit_modal.html',
-            size: 'md',
-            controller: 'editModalController',
-            scope:$scope
-
-        });
-    }
-    $scope.issue()
+        })
 }
+}
+
+    
+     
  
+
+
+    
+
+

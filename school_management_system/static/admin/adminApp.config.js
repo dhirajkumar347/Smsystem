@@ -24,11 +24,11 @@ app.config(function($routeProvider) {
      controller:  ["$scope", "$http","$window","$uibModal","$controller","NgTableParams",adminboardController],
 
   })
-  // .when('/standard',{
-  //   templateUrl : "/static/admin/standard/view/standard.html",
-  //    controller:  ["$scope", "$http","$window", standardController],
+  .when('/standard',{
+    templateUrl : "/static/admin/standard/view/standard.html",
+     controller:  ["$scope", "$http","$window","$uibModal","$controller","NgTableParams", adminstandardController],
 
-  // })
+  })
   // .when('/allStudents',{
   //   templateUrl : "/static/admin/allStudents/view/allStudents.html",
   //    controller:  ["$scope", "$http","$window", allStudentsController],

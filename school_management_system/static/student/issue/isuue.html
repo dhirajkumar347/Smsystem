@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -22,70 +23,18 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
  <div class="content-wrapper">
-
- 
-    <section>
-  <!--  <div class="col-md-10">
-    <textarea class="form-control" rows="5" id="comment" placeholder="Enter the Issue content" ng-model="issue"></textarea></div>
-<div class="body">
+{{success}}
+ <textarea class="form-control" rows="4" cols="50" id="comment" placeholder="Enter the issue content" ng-model="issue_content"></textarea>
+   <input type="text"   name="mobile_number"  ng-model ="mobile_number" placeholder="Mobile number" class="form-control" ng-minlength="10" ng-maxlength="10" >
+    <button class="col-md-offset-10 btn btn-success" ng-click="submit_issue()">Create</button>
    
     
-     <button class="btn btn-primary" ng-click="postissue()" >save</button>                     
-    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-     
-</div>
-      
-      
-    </section>
- -->
-
-
-    <table ng-cloak ng-table="tableParams" class="table" show-filter="true">
-    <tr ng-repeat="board in $data">
-          <td class="col-md-1" data-title="'Board Name'" filter="{board_name: 'text'}">{{board.board_name}}</td>
-          <td class="col-md-2" data-title="'Action'">
-          
-             <button
-               class="btn btn-primary" ng-click="edit_issue_pop(board.board_name,board.board_id)">
-               Edit
-             </button>
-
-    </tr>
-</table>
- </section>                
-  
-    </section>
     </div>
-    
+}
+}
 
   
 </body>
 </html>
-<script type="text/ng-template" id="edit_modal.html">
-
-<div class="modal-header">
-
-<div>
-  <strong> {{success}}</strong>
-</div>
- 
-</div>
-<div class="modal-body">
- <textarea class="form-control" rows="5" id="comment" placeholder="Enter the issue content" ng-model="issue"></textarea>
-</div>
-<div class="modal-footer">
-   
-    
-     <button class="btn btn-primary" ng-click="edit_issue()" >save</button>                     
-    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-     
-</div>
-
-</script>
 
 
-
-  
-
-</body>
-</html>

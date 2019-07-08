@@ -65,13 +65,14 @@
  
 </div>
 <div class="modal-body">
- <input type="text" class="form-control" placeholder="Enter the board content" ng-model="board">
+ <input type="text" class="form-control" placeholder="Enter the board name" ng-model="board_name">
 <div class="modal-footer">
    
-     <button class="btn btn-primary" ng-click="submit_board()" >Create</button>
-     <button class="btn btn-primary" ng-click="edit_board()" >save</button>                     
+     <button class="btn btn-primary" ng-click="submit_board()" ng-show="Iscreate" >Create</button>
+     <button class="btn btn-primary" ng-click="edit_board()" ng-hide="Iscreate" >Edit</button>                     
     <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
      
+</div>
 </div>
 
 </script>
