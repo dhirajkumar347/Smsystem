@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Dashboard</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+ <div class="content-wrapper">
+  <!-- Main content -->
+    <section class="content">
+   
+
+{{success}}
+ <strong style="color:red">Admission_fee</strong><textarea class="form-control" rows="4" cols="50" id="comment" placeholder="Enter the issue content" ng-model="admission_fee"></textarea>
+   <strong style="color:red">Monthly Fee</strong><textarea   class="form-control" rows="4" cols="50" id="comment"  name="monthly_fee"  ng-model ="monthly_fee" class="form-control" placeholder="monthly_fee" ></textarea>
+   <strong style="color:red">Bus Fee</strong><input type="text"  name="bus_fee"  ng-model ="bus_fee" class="form-control" placeholder="bus_fee">
+    <button class="col-md-offset-10 btn btn-primary" ng-click="create()">Create</button>
+   
+    
+    </div>
+
+
+  
+</body>
+</html>
+
+
+

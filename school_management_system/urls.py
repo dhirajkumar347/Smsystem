@@ -21,5 +21,7 @@ urlpatterns = [
     url(r'^admin_Registration/$',views.ad_Registration,name='admin_Registration'),
     url(r'^admin_login/$', views.admin_user_login, name='admin_user_login'),
     url(r'^admin_dashboard/$', views.admin_dashboard, name='admin_dashboard'),
-    
+    #admission fee
+    url(r'^admissions/$',views.admissions,name='admissions'),
+    url(r'^admission_fee/$',views.admission_fee, name='admission_fee'),
 ]

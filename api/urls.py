@@ -13,6 +13,9 @@ router.register(r'board', views.boardApi,base_name='board')
 router.register(r'issue', views.issueApi,base_name='issue')
 router.register(r'notification', views.notificationApi,base_name='notification')
 router.register(r'admin',views.admin_RegistrationApi,base_name='admin_Registration')
+router.register(r'admission_fee',views.admission_feeApi,base_name='admission_fee')
+
+
 """"
 Here is we're using ViewSet classes rather than View classes, we actually don't need to design the URL configuration
 so need put custome url becaese of  default  router concept

@@ -6,3 +6,4 @@ from .board import *
 from .issue import *
 from .notification import *
 from .admin_Registration import *
+from .admission_fee import *

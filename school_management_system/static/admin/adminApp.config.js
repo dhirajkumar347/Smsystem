@@ -29,11 +29,11 @@ app.config(function($routeProvider) {
      controller:  ["$scope", "$http","$window","$uibModal","$controller","NgTableParams", adminstandardController],
 
   })
-  // .when('/allStudents',{
-  //   templateUrl : "/static/admin/allStudents/view/allStudents.html",
-  //    controller:  ["$scope", "$http","$window", allStudentsController],
+  .when('/admission_fee',{
+    templateUrl : "/static/admin/admission_fee/view/admission_fee.html",
+     controller:  ["$scope", "$http","$window", admission_feeController],
 
-  // })
+  })
   // .when('/allFaculty',{
   //   templateUrl : "/static/admin/allFaculty/view/allFaculty.html",
   //    controller:  ["$scope", "$http","$window", allFacultyController],

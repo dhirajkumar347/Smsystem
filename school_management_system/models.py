@@ -99,10 +99,17 @@ class contact_us(models.Model):
 
 class issue(models.Model):
     query=models.TextField(max_length=200,null=False,blank=False)
-    mobile_no = models.IntegerField(max_length=20,unique=True)
+    mobile_no = models.IntegerField(max_length=20)
+
+    def __str__(self):
+        return self.query
+
 
 class notification(models.Model):
     notification_window=models.TextField()
+
+    def __str__(self):
+        return self.notification_window
 
 class admin_Registration(models.Model):
     full_name=models.CharField(max_length=30)
@@ -113,4 +120,13 @@ class admin_Registration(models.Model):
 
     def __str__(self):
         return self.full_name
+
+class admission_fee(models.Model):
+    admission_fee=models.IntegerField(max_length=100)
+    monthly_fee=models.IntegerField(max_length=100)
+    bus_fee=models.IntegerField(max_length=100)
+
+    def __str__(self):
+        return self.admission_fee
+
 

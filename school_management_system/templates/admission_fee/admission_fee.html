@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+QLS-register
+{% endblock %}
+{% block head %}
+{{ block.super }}
+ 
+  <script src="{% static 'js/admission_fee/admission_fee.js' %}"></script>
+  {% endblock %}
+  {% block front_pane %}  
+
+<style>
+body  {
+  background-color: #cccccc;
+}
+</style>
+<div class="container" ng-cloak ng-app="qlsApp" ng-controller ="admission_feeController" class="container">
+  <div class="col-sm-6 col-sm-offset-3 panel panel-default">
+    {% verbatim %}
+
+    <div class="container">
+  <h2>Fee Structure</h2>
+  <ol >
+    <div>
+      <li class="list-group-item list-group-item-success" ng-repeat="admission_fee in admission_fees"> {{admission_fee.admission_fee}}</li>
+    </div>
+
+    </div></ol>
+  {% endverbatim %}</div>
+</div>
+</div>{% endblock %}

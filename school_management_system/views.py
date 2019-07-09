@@ -1,3 +1,5 @@
+
+
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
@@ -56,6 +58,14 @@ class JSONResponse(HttpResponse):
         content = JSONRenderer().render(data)
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
+        #admission
+def admissions(request):
+	if request.method == 'GET':
+		return render(request,'admissions/admissions.html')
+
+def admission_fee(request):
+	if request.method == 'GET':
+		return render(request,'admission_fee/admission_fee.html')
 
 def user_login(request):
 	if request.method == 'POST':
