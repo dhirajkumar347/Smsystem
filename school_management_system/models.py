@@ -30,7 +30,6 @@ class board(models.Model):
     def __str__(self):
         return self.board_name
 
-
 """
 This model belong to faculty as well as faculty information 
 
@@ -125,8 +124,24 @@ class admission_fee(models.Model):
     admission_fee=models.IntegerField(max_length=100)
     monthly_fee=models.IntegerField(max_length=100)
     bus_fee=models.IntegerField(max_length=100)
+    extra_curricular_activities=models.CharField(max_length=20,null=True)
+    standard_name=models.ForeignKey(standard,null=False,on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.admission_fee
+    
+
+class admissionform(models.Model):
+     student_name = models.CharField(max_length=20)
+     father_name=models.CharField(max_length=20)
+     father_mobile_number=models.CharField(max_length=10,unique=True,null=False)
+     father_email_id=models.EmailField(max_length=20,unique=True,null=False)
+     mother_name=models.CharField(max_length=20)
+     mother_mobile_number=models.CharField(max_length=10,unique=True,null=False)
+     mother_email_id=models.EmailField(max_length=20,unique=True,null=False)
+     board_name=models.ForeignKey(board,null=False,on_delete=models.CASCADE)
+     standard_name=models.ForeignKey(standard,null=False,on_delete=models.CASCADE)
+
+     def __str__(self):
+        return self.student_name
+
 
 

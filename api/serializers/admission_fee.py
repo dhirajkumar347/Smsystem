@@ -4,4 +4,4 @@ from school_management_system.models import admission_fee
 class admission_feeSerializers(serializers.ModelSerializer):
 	class Meta:
 		model=admission_fee
-		fields=('admission_fee', 'monthly_fee', 'bus_fee')
+		fields=('admission_fee', 'monthly_fee', 'bus_fee','extra_curricular_activities','standard_name') 

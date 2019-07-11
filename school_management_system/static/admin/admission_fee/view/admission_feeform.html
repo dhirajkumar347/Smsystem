@@ -1,0 +1,64 @@
+ <div class="col-md-7 panel panel-default" style="margin-top: 50px">
+ <form  class="form-horizontal" name="admission_fee" ng-submit="submitform()" novalidate>
+             
+              
+               
+               <div class="form-group">
+                  <label class="col-md-4 control-label" ><span class="cus_man7"></span></label>
+                  <div class="col-md-10">
+                     <input type="text"   name="admission_fee"  ng-model ="admission_fee" placeholder=" Admission_Fee" class="form-control"  >
+                     
+                     
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label" ><span class="cus_man7"></span></label>
+                  <div class="col-md-10">
+                     <input type="text"   name="monthly_fee"  ng-model ="monthly_fee" placeholder="monthly_fee" class="form-control">
+                       
+                  </div>
+                    
+               </div>
+
+
+               <div class="form-group">
+                  <label class="col-md-4 control-label" ><span class="cus_man7"></span></label>
+                  <div class="col-md-10">
+                     <input type="text"   name="bus_fee"  ng-model ="bus_fee" placeholder="Bus Fee" class="form-control" >
+                      
+                     
+                  </div>
+                 
+               </div>
+
+              <div class="form-group">
+                  <label class="col-md-4 control-label">Select Standard</label>
+              
+                  <div class="col-md-10">
+                    
+                    <select  id="standard_name" name="standard_name" type="text" class="form-control" placeholder="Select Standard" ng-options="item as item.standard_name for item in standards track by item.standard_id" ng-model="standard" ></select>
+                    
+                  </div>
+               </div>
+
+               <div class="form-group">
+                  <label class="col-md-4 control-label" ><span class="cus_man7"></span></label>
+                  <div class="col-md-10">
+                     <input type="text"   name="extra_curricular_activities"  ng-model ="extra_curricular_activities" placeholder="extra_curricular_activities" class="form-control" ng-show="" ng-hide="" >
+                     
+                  </div>
+               </div>
+
+
+               
+
+              
+
+              <button type="submit" class="btn btn-primary">submit</button>
+             
+        </form>
+       
+           </div>
+           
+</div>
+</div>

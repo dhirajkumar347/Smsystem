@@ -14,6 +14,8 @@ router.register(r'issue', views.issueApi,base_name='issue')
 router.register(r'notification', views.notificationApi,base_name='notification')
 router.register(r'admin',views.admin_RegistrationApi,base_name='admin_Registration')
 router.register(r'admission_fee',views.admission_feeApi,base_name='admission_fee')
+router.register(r'admissionform',views.admissionformApi,base_name='admissionform')
+
 
 
 """"

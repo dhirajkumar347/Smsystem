@@ -67,6 +67,13 @@ def admission_fee(request):
 	if request.method == 'GET':
 		return render(request,'admission_fee/admission_fee.html')
 
+def howtoapply(request):
+	if request.method == 'GET':
+		return render(request,'admission_fee/howtoapply.html')
+def admissionform(request):
+	if request.method == 'GET':
+		return render(request,'admission_fee/admissionform.html')
+
 def user_login(request):
 	if request.method == 'POST':
 		data = JSONParser().parse(request)

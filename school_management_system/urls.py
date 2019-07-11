@@ -24,4 +24,7 @@ urlpatterns = [
     #admission fee
     url(r'^admissions/$',views.admissions,name='admissions'),
     url(r'^admission_fee/$',views.admission_fee, name='admission_fee'),
+    url(r'^howtoapply/$',views.howtoapply, name='howtoapply.html'),
+    url(r'^admissionform/$',views.admissionform, name='admissionform.html')
+
 ]
