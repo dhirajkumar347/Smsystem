@@ -34,15 +34,11 @@ app.config(function($routeProvider) {
      controller:  ["$scope", "$http","$window", admission_feeController],
 
   })
-  // .when('/allFaculty',{
-  //   templateUrl : "/static/admin/allFaculty/view/allFaculty.html",
-  //    controller:  ["$scope", "$http","$window", allFacultyController],
+  .when('/career',{
+    templateUrl : "/static/admin/career/view/career.html",
+     controller:  ["$scope", "$http","$window", careerController],
 
-  // })*/
-  // /*.
-  // when('/profile', {
-  //   templateUrl : "/static/student/profile/view/profile.html",
-  //   controller:  ["$scope", "$http", ProfileController],
-  // })*/
+  })
+ 
   .otherwise({redirectTo: '/'});
 });

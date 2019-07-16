@@ -1,12 +1,14 @@
- <div class="col-md-7 panel panel-default" style="margin-top: 50px">
- <form  class="form-horizontal" name="admission_fee" ng-submit="submitform()" novalidate>
+<div class="container" ng-cloak ng-app="qlsApp" ng-controller="admission_feeController" class="container">
+ <div class="row">
+   <div class="col-md-7 panel panel-default" style="margin-top: 50px">
+ <form  class="form-horizontal" name="admission_fee"  novalidate>
              
               
                
                <div class="form-group">
                   <label class="col-md-4 control-label" ><span class="cus_man7"></span></label>
                   <div class="col-md-10">
-                     <input type="text"   name="admission_fee"  ng-model ="admission_fee" placeholder=" Admission_Fee" class="form-control"  >
+                     <input type="text"   name="admission_fee"  ng-model ="user.admission_fee" placeholder=" Admission_Fee" class="form-control"  >
                      
                      
                   </div>
@@ -14,7 +16,7 @@
                <div class="form-group">
                   <label class="col-md-4 control-label" ><span class="cus_man7"></span></label>
                   <div class="col-md-10">
-                     <input type="text"   name="monthly_fee"  ng-model ="monthly_fee" placeholder="monthly_fee" class="form-control">
+                     <input type="text"   name="monthly_fee"  ng-model ="user.monthly_fee" placeholder="monthly_fee" class="form-control">
                        
                   </div>
                     
@@ -24,7 +26,7 @@
                <div class="form-group">
                   <label class="col-md-4 control-label" ><span class="cus_man7"></span></label>
                   <div class="col-md-10">
-                     <input type="text"   name="bus_fee"  ng-model ="bus_fee" placeholder="Bus Fee" class="form-control" >
+                     <input type="text"   name="bus_fee"  ng-model ="user.bus_fee" placeholder="Bus Fee" class="form-control" >
                       
                      
                   </div>
@@ -44,7 +46,7 @@
                <div class="form-group">
                   <label class="col-md-4 control-label" ><span class="cus_man7"></span></label>
                   <div class="col-md-10">
-                     <input type="text"   name="extra_curricular_activities"  ng-model ="extra_curricular_activities" placeholder="extra_curricular_activities" class="form-control" ng-show="" ng-hide="" >
+                     <input type="text"   name="extra_curricular_activities"  ng-model ="extra_curricular_activities" placeholder="extra_curricular_activities" class="form-control">
                      
                   </div>
                </div>
@@ -54,7 +56,9 @@
 
               
 
-              <button type="submit" class="btn btn-primary">submit</button>
+              <button type="submit" class="btn btn-primary" ng-click="admission_fee()" ng-hide="Isextra_curricular_activities">submit</button>
+             <!--  <button type="submit" class="btn btn-primary" ng-click="admission_fee1" ng-show="Isextra_curricular_activities">submit</button> -->
+
              
         </form>
        
@@ -62,3 +66,4 @@
            
 </div>
 </div>
+ 

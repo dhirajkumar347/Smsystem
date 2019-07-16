@@ -127,6 +127,9 @@ class admission_fee(models.Model):
     extra_curricular_activities=models.CharField(max_length=20,null=True)
     standard_name=models.ForeignKey(standard,null=False,on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.admission_fee
+
     
 
 class admissionform(models.Model):
@@ -143,5 +146,14 @@ class admissionform(models.Model):
      def __str__(self):
         return self.student_name
 
+class career(models.Model):
+    key_skill=models.CharField(max_length=100)
+    job_description=models.TextField(max_length=1000)
+    experience=models.IntegerField(max_length=20)
+    employeement_type=models.CharField(max_length=20)
+    number_of_vacancy=models.IntegerField(max_length=20)
+
+    def __str__(self):
+         return self.key_skill
 
 

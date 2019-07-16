@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Dashboard</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+ <div class="content-wrapper">
+{{success}}
+<input type="text"   name="key_skill"  ng-model ="key_skill" placeholder="key_skill" class="form-control" >
+
+ <textarea class="form-control" rows="4" cols="50" id="comment" placeholder="Enter the job_descriptiont" ng-model="job_description"></textarea>
+ <input type="text"   name="experience"  ng-model ="experience" placeholder="experience" class="form-control" >
+ <input type="text"   name="employeement_type"  ng-model ="employeement_type" placeholder="employeement_type" class="form-control" >
+   <input type="text"   name="number_of_vacancy"  ng-model ="number_of_vacancy" placeholder="number_of_vacancy" class="form-control"  >
+    <button class="col-md-offset-10 btn btn-primary" ng-click="submit_career()">Submit</button>
+   
+    
+    </div>
+
+ <div class="container">
+        <div class="row">
+            <div class="col-md-4" ng-repeat="career in careers">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="https://placeimg.com/380/230/nature" alt="" width="300">
+                    </div>
+                    <div class="card-desc">
+                        <h3>key_skill:{{career.key_skill}}</h3>
+                          <h3>number_of_vacancy:{{career.number_of_vacancy}}</h3>
+                           <h3> experience:{{career.experience}}</h3>
+                        <p>{{career.job_description}}</p>
+                              
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+   
+</body>
+</html>

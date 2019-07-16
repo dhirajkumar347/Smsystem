@@ -100,6 +100,10 @@ def admin_dashboard(request):
 	if request.method == 'GET':
 		return render(request,'admin/index1.html')
 
+def career(request):
+	if request.method == 'GET':
+		return render(request,'career/career.html')
+
 class JSONResponse(HttpResponse):
     def __init__(self, data, **kwargs):
         content = JSONRenderer().render(data)

@@ -8,3 +8,4 @@ from .notification import *
 from .admin_Registration import *
 from .admission_fee import *
 from .admissionform import *
+from .career import *
