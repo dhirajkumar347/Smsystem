@@ -37,21 +37,16 @@ angularApp.controller('ListDashboardCtrl', function($scope,$http,$window,$locati
                            var error = err;  
                        });  
     }  
+    $scope.get_careerapplicationform=function(){
+      window.location.href="http://127.0.0.1:8000/app/applicationForm_registration/"
+      
+    }
 
 
   
     //Loading FacultyList list on first time  
      $scope.getcareers();  
   
-    //This method is calling from pagination number  
-    $scope.pageChanged = function () {
-     $scope.pageIndex =  $scope.pageIndex+1   
-        $scope.getFacultyList();  
-    };  
-     $scope.pageChanged1 = function () {
-     $scope.pageIndex =  $scope.pageIndex-1   
-        $scope.getFacultyList();  
-    }; 
 });
 
 

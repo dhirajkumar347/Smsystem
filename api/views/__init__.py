@@ -9,3 +9,5 @@ from .admin_Registration import *
 from .admission_fee import *
 from .admissionform import *
 from .career import *
+from .applicationForm_registration import *
+from .extra_curricular_activities import *

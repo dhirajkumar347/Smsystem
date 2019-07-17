@@ -104,6 +104,10 @@ def career(request):
 	if request.method == 'GET':
 		return render(request,'career/career.html')
 
+def applicationForm_registration(request):
+	if request.method == 'GET':
+		return render(request,'applicationForm_registration/applicationForm_registration.html')
+
 class JSONResponse(HttpResponse):
     def __init__(self, data, **kwargs):
         content = JSONRenderer().render(data)

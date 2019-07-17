@@ -70,7 +70,8 @@ function adminnotificationController($scope, $http, $window, $uibModal, $control
             method: "GET",
             url: "/api/notification/",
         }).then(function(response) {
-            $scope.notification_list = response.data
+            $scope.notification_list = response.data;
+            console.log("g"+response.data);
             $scope.tableParams = new NgTableParams({}, {
                 dataset: $scope.notification_list
             });

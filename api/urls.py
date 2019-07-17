@@ -16,7 +16,8 @@ router.register(r'admin',views.admin_RegistrationApi,base_name='admin_Registrati
 router.register(r'admission_fee',views.admission_feeApi,base_name='admission_fee')
 router.register(r'admissionform',views.admissionformApi,base_name='admissionform')
 router.register(r'career',views.careerApi,base_name='career')
-
+router.register(r'extra_curricular_activities',views.extra_curricular_activitiesApi,base_name='extra_curricular_activities')
+router.register(r'applicationForm_registration',views.applicationForm_registrationApi,base_name='applicationForm_registration')
 
 
 """"

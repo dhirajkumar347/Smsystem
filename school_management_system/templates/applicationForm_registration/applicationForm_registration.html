@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+Faculty-register
+{% endblock %}
+{% block head %}
+ {{ block.super }}
+ 
+ <script src="{% static 'js/applicationForm_registration/applicationForm_registratio.js' %}"></script>
+
+  
+  {% endblock %}
+  {% block front_pane %}  
+
+<style>
+body  {
+ 
+  background-color: #cccccc;
+}
+</style>
+
+
+
+
+<div class="container" ng-cloak ng-app="qlsApp" ng-controller="registerController" class="container">
+ <div class="row">
+  {% verbatim %} 
+  <div class="col-md-7 panel panel-default" style="margin-top: 50px">
+  <form  class="form-horizontal" name="Applicationform" ng-submit="registrationform()" novalidate>
+    <div class="form-group">
+      <label class="col-md-4 control-label" ><span class="cus_man7"></span></label>
+      <div class="col-md-10">
+        <input id="full_name" name="full_name"  ng-model ="user.full_name"  type="text" placeholder="Full name" class="form-control"  placeholder="Full Name" required pattern="[A-Za-z '-]{2,}">
+        <span style="color: red" ng-show="Applicationform.full_name.$error.required && (Applicationform.$submitted || Applicationform.full_name.$touched)">Full name is required.</span>
+        <span style="color: red" ng-show="Applicationform.full_name.$error.pattern && (Applicationform.$submitted || Applicationform.full_name.$touched)">Full name should be only letter.</span>
+      </div>
+    </div>
+ <div class="form-group">
+                  <label class="col-md-4 control-label" ><span class="cus_man7"></span></label>
+                  <div class="col-md-10">
+                     <input type="text"   name="Email_id"  ng-model ="contact_us.Email_id" placeholder="Email ID" class="form-control" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/"   required>
+                     <span style="color: red" ng-show="Applicationform.Email_id.$error.required && (Applicationform.$submitted || Applicationform.Email_id.$touched)">email is required.</span>
+
+                  <span style="color: red" ng-show="Applicationform.Email_id.$error.pattern && (Applicationform.$submitted || Applicationform.Email_id.$touched)">Invalid Email!.</span>  
+                     
+                  </div>
+                   <span style="color: red;margin-left: 17px;">{{email_error[0]}}</span>
+               </div>
+    
+
+    <div class="form-group">
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
+      <div class="col-md-10">
+        <input   name="mobile_no" ng-model ="user.mobile_no"   align="right" type="text" id="mobile_no" placeholder="Mobile No" class="form-control thedate" ng-minlength="10" ng-maxlength="10"    required >
+        <span style="color: red" ng-show="Applicationform.mobile_no.$error.required && (Applicationform.$submitted || Applicationform.mobile_no.$touched)">Mobile number is required.</span>
+        <span style="color: red" ng-show="Applicationform.mobile_no.$error.minlength && (Applicationform.$submitted || Applicationform.mobile_no.$touched)">mobile number should be only 10 digit.</span>
+        <span style="color: red" ng-show="Applicationform.mobile_no.$error.maxlength && (Applicationform.$submitted || Applicationform.mobile_no.$touched)">mobile number should  be only 10 digit.</span>
+        <span style="color: red;margin-left: 17px;">{{mobile_error[0]}}</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
+      <div class="col-md-10">
+        <input id="qualification" name="qualification"  ng-model ="user.qualification" type="text" placeholder="qualification" class=" form-control field" required>
+        <span style="color: red" ng-show="Applicationform.qualification.$error.required && (Applicationform.$submitted || Applicationform.qualification.$touched)">qualification is required.</span>
+      </div>
+    </div>
+
+    
+
+   
+
+    <div class="form-group">
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
+      <div class="col-md-10">
+        <input id="experience" name="experience"  ng-model ="user.experience"  type="text" placeholder="Experience" class="form-control" required>
+        <span style="color: red" ng-show="Applicationform.experience.$error.required && (Applicationform.$submitted || Applicationform.experience.$touched)">experience is required.</span>
+      </div>
+    </div>
+
+   
+
+    <div class="form-group">
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
+      <div class="col-md-10">
+        <input id="current_salary" name="current_salary"  ng-model ="user.current_salary"  type="text" placeholder="current_salary" class="form-control" title="current_salary name should be integer" required >
+        <span style="color: red" ng-show="Applicationform.current_salary.$error.required && (Applicationform.$submitted || Applicationform.current_salary.$touched)">current_salary is required.</span>
+      </div>
+    </div>
+
+     <div class="form-group">
+      <label class="col-md-4 control-label"><span class="cus_man7"></span></label>
+      <div class="col-md-10">
+        <input id="expected_salary" name="expected_salary"  ng-model ="user.expected_salary"  type="text" placeholder="expected_salary" class="form-control" title="expected_salary name should be integer" required >
+        <span style="color: red" ng-show="Applicationform.expected_salary.$error.required && (Applicationform.$submitted || Applicationform.expected_salary.$touched)">expected_salary is required.</span>
+      </div>
+    </div>
+
+    
+
+    
+    <button type="submit"  class="btn btn-success cus_man4">Submit</button>
+  </form> {% endverbatim %}
+</div>
+</div>
+</div>
+{% endblock %}

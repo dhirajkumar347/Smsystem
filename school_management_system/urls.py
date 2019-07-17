@@ -27,6 +27,8 @@ urlpatterns = [
     url(r'^howtoapply/$',views.howtoapply, name='howtoapply.html'),
     url(r'^admissionform/$',views.admissionform, name='admissionform.html'),
     #carrer
-    url(r'^career/$', views.career, name='career')
+    url(r'^career/$', views.career, name='career'),
+    url(r'^applicationForm_registration/$',views.applicationForm_registration,name='applicationForm_registration'),
+ 
 
 ]

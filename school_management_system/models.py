@@ -29,6 +29,16 @@ class board(models.Model):
 
     def __str__(self):
         return self.board_name
+        
+class extra_curricular_activities(models.Model):
+    extra_curricular_activities_types=models.CharField(max_length=40)
+
+    def __str__(self):
+        return self.extra_curricular_activities_types
+
+
+
+
 
 """
 This model belong to faculty as well as faculty information 
@@ -43,7 +53,8 @@ class faculty_Registration(models.Model):
     mobile_no = models.IntegerField(max_length=20,unique=True)
     qualification = models.CharField(max_length=10)   
     faculty_designation = models.CharField(max_length=20)
-    experience = models.CharField(max_length=10)
+    experience=models.IntegerField(max_length=10)
+    
     faculty_description = models.TextField(max_length=600)
     country =  models.CharField(max_length=20)
     state = models.CharField(max_length=20)
@@ -105,7 +116,7 @@ class issue(models.Model):
 
 
 class notification(models.Model):
-    notification_window=models.TextField()
+    notification_window=models.TextField(max_length=1000)
 
     def __str__(self):
         return self.notification_window
@@ -124,7 +135,7 @@ class admission_fee(models.Model):
     admission_fee=models.IntegerField(max_length=100)
     monthly_fee=models.IntegerField(max_length=100)
     bus_fee=models.IntegerField(max_length=100)
-    extra_curricular_activities=models.CharField(max_length=20,null=True)
+    extra_curricular_activities_types=models.ForeignKey(extra_curricular_activities,null=False,on_delete=models.CASCADE)
     standard_name=models.ForeignKey(standard,null=False,on_delete=models.CASCADE)
 
     def __str__(self):
@@ -149,11 +160,26 @@ class admissionform(models.Model):
 class career(models.Model):
     key_skill=models.CharField(max_length=100)
     job_description=models.TextField(max_length=1000)
-    experience=models.IntegerField(max_length=20)
+    experience=models.IntegerField(max_length=10)
+    
     employeement_type=models.CharField(max_length=20)
     number_of_vacancy=models.IntegerField(max_length=20)
 
     def __str__(self):
          return self.key_skill
+
+class applicationForm_registration(models.Model):
+    full_name = models.CharField(max_length=20)
+    Email_id=models.EmailField(max_length=20,unique=True,null=False)
+    mobile_no = models.IntegerField(max_length=20,unique=True)
+    qualification = models.CharField(max_length=10)   
+    experience=models.IntegerField(max_length=10)
+    current_salary = models.IntegerField(max_length=10)
+    excepted_salary = models.IntegerField(max_length=10)
+   
+    resume = models.CharField(max_length=10,null=True)
+    
+    def __str__(self):
+        return self.full_name
 
 
