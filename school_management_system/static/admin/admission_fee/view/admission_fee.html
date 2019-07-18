@@ -17,22 +17,80 @@
  <div class="content-wrapper">
   <!-- Main content -->
     <section class="content">
-   
+  
+ <select name="dropChange" ng-model="dropValue" ng-change="DropDownChnaged()">
+        <option value="1to3">Class 1 To 3</option>
+        <option value="4to12">Class 4 to 12</option>
+    </select>
 
-{{success}}
+ <div class="row"  ng-show='isform'>
+   <div class="col-md-7 panel panel-default" style="margin-top: 50px">
+ <form  class="form-horizontal" name="admission_fee"  novalidate>
+             
+              
+               
+               <div class="form-group">
+                  <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
+                  <div class="col-md-10-7">
+                     <input type="text"   name="admission_fee"  ng-model ="user.admission_fee" placeholder=" Admission_Fee" class="form-control"  >
+                     
+                     
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
+                  <div class="col-md-10">
+                     <input type="text"   name="monthly_fee"  ng-model ="user.monthly_fee" placeholder="monthly_fee" class="form-control">
+                       
+                  </div>
+                    
+               </div>
 
 
-    <div class="btn-group" uib-dropdown is-open="status.isopen">
-      <button id="select_dropdown" type="select_dropdown" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
-        select dropdown <span class="caret"></span>
-      </button>
-      <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-        <li role="menuitem"><a href="/static/admin/admission_fee/view/admission_feeform.html"
-          ng-click="">Class 1 to Class 3</a></li>
-        <li role="menuitem"><a href="/static/admin/admission_fee/view/admission_feeform.html">Class 4 to Class 10</a></li>
-       </ul>
-    </div>
-<h1>hyhy</h1>
+               <div class="form-group">
+                  <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
+                  <div class="col-md-10">
+                     <input type="text"   name="bus_fee"  ng-model ="user.bus_fee" placeholder="Bus Fee" class="form-control" >
+                      
+                     
+                  </div>
+                 
+               </div>
+  <div class="form-group">
+                  <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
+                  <div class="col-md-10">
+                     <input type="text"   name="bus_fee"  ng-model ="user.bus_fee" placeholder="Standard" class="form-control" >
+                      
+                     
+                  </div>
+                 
+               </div>
+            
+
+               <div class="form-group" ng-hide='isformextra'>
+                  <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
+                  <div class="col-md-107">
+                     <input type="text"   name="extra_curricular_activities"  ng-model ="extra_curricular_activities" placeholder="extra_curricular_activities" class="form-control">
+                     
+                  </div>
+               </div>
+
+
+               
+
+              
+
+              <button type="submit" class="btn btn-primary" ng-click="admission_fee()" ng-hide="Isextra_curricular_activities">submit</button>
+             <!--  <button type="submit" class="btn btn-primary" ng-click="admission_fee1" ng-show="Isextra_curricular_activities">submit</button> -->
+
+             
+        </form>
+       
+           </div>
+           
+</div>
+</div>
+ 
 
 
   </section>

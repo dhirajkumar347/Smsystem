@@ -8,11 +8,6 @@ from api.serializers import *
 # Create your views here.
 class notificationApi(viewsets.ModelViewSet): 
 	serializer_class=notificationSerializers
+	queryset = notification.objects.all()
 
-	def get_queryset(self):
-		student_obj = student_Registration.objects.all()
-		student_user_type=student_obj[0].user_type
-		if student_user_type == 'student' :
-			return notification.objects.all()[:3]
-		else:
-			return notification.objects.all()
+	

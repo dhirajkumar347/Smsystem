@@ -39,6 +39,11 @@ app.config(function($routeProvider) {
      controller:  ["$scope", "$http","$window", careerController],
 
   })
+  .when('/extra_curricular_activities',{
+    templateUrl : "/static/admin/extra_curricular_activities/view/extra_curricular_activities.html",
+     controller:  ["$scope", "$http","$window",,"$uibModal","$controller","NgTableParams", abc],
+
+  })
  
   .otherwise({redirectTo: '/'});
 });

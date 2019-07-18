@@ -8,10 +8,10 @@ app.config(['$httpProvider', '$interpolateProvider',
 
 function admission_feeController($scope, $http, $window) {
     console.log("initalize the controller");
+    $scope.isform = false;
   
     $scope.admission_fee = function() {
     console.log("initalize the controller");
-    $scope.Is=false;
         var user_input = $scope.user;
         
         
@@ -31,6 +31,17 @@ function admission_feeController($scope, $http, $window) {
 
         })
 }
+ $scope.DropDownChnaged = function () {
+    if($scope.dropValue == '1to3'){
+         $scope.isform = true;
+          $scope.isformextra = true;
+
+           console.log("data"+$scope.dropValue);
+       }else{
+           $scope.isform = true;
+             $scope.isformextra = false;
+       }
+    }; 
 }
 // function admission_feeController($scope, $http, $window) {
 //     console.log("initalize the controller");

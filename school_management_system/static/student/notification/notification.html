@@ -32,7 +32,8 @@
   <h2>List of notifications</h2>
   <ol >
     <div>
-      <li class="list-group-item list-group-item-success" ng-repeat="notification in notifications"> {{notification.notification_window}}</li>
+      <li class="list-group-item list-group-item-success" ng-repeat="notification in notifications  |
+      limitTo : 3"> {{notification.notification_window}}</li>
     </div>
   </section>
     </div>
