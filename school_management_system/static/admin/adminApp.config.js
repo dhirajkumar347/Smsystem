@@ -41,7 +41,7 @@ app.config(function($routeProvider) {
   })
   .when('/extra_curricular_activities',{
     templateUrl : "/static/admin/extra_curricular_activities/view/extra_curricular_activities.html",
-     controller:  ["$scope", "$http","$window",,"$uibModal","$controller","NgTableParams", abc],
+     controller:  ["$scope", "$http","$window","$uibModal","$controller","NgTableParams", extra_curricular_activitiesController],
 
   })
  

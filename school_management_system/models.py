@@ -137,6 +137,7 @@ class admission_fee(models.Model):
     bus_fee=models.IntegerField(max_length=100)
     extra_curricular_activities_types=models.ForeignKey(extra_curricular_activities,null=False,on_delete=models.CASCADE)
     standard_name=models.ForeignKey(standard,null=False,on_delete=models.CASCADE)
+    extra_curricular_activities_fee=models.IntegerField(max_length=200,null=False)
 
     def __str__(self):
         return self.admission_fee

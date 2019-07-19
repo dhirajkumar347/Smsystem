@@ -17,7 +17,7 @@
 
  <div class="content-wrapper">
   <!-- Main content -->
-   <!--  <section class="content">
+    <section class="content">
      
       
    <button type="submit" class="col-md-offset-10 btn btn-success " ng-click="extra_curricular_activities_pop()" >Create</button>
@@ -48,14 +48,14 @@
 </table>
  </section>                
   
-    </section> -->
+    </section>
     </div>
     
 
   
 </body>
 </html>
-<!-- <script type="text/ng-template" id="extra_curricular_activities_modal.html">
+<script type="text/ng-template" id="extra_curricular_activities_modal.html">
 
 <div class="modal-header">
 
@@ -65,15 +65,15 @@
  
 </div>
 <div class="modal-body">
- <input type="text" class="form-control" placeholder="Enter the board name" ng-model="extra_curricular_activities">
+ <input type="text" class="form-control" placeholder="Enter the Curricular activities type" ng-model="extra_curricular_activities_types">
 <div class="modal-footer">
    
-     <button class="btn btn-primary" ng-click="submit_extra_curricular_activities()"  >Create</button>
-     <button class="btn btn-primary" ng-click="edit_extra_curricular_activities()" >Edit</button>                     
+     <button class="btn btn-primary" ng-click="submit_extra_curricular_activities()" ng-show="Iscreate" >Create</button>
+     <button class="btn btn-primary" ng-click="edit_extra_curricular_activities()" ng-hide="Iscreate" >Edit</button>                     
     <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
      
 </div>
 </div>
 
-</script> -->
+</script>
 
