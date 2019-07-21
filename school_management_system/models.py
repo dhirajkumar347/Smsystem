@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+    # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 from django.db import models
@@ -135,15 +135,15 @@ class admission_fee(models.Model):
     admission_fee=models.IntegerField(max_length=100)
     monthly_fee=models.IntegerField(max_length=100)
     bus_fee=models.IntegerField(max_length=100)
-    extra_curricular_activities_types=models.ForeignKey(extra_curricular_activities,null=False,on_delete=models.CASCADE)
-    standard_name=models.ForeignKey(standard,null=False,on_delete=models.CASCADE)
-    extra_curricular_activities_fee=models.IntegerField(max_length=200,null=False)
+    extra_curricular_activities_types=models.ForeignKey(extra_curricular_activities,null=True)
+    standard_name=models.CharField(max_length=100,null=False)
+    extra_curricular_activities_fee=models.IntegerField(max_length=200,null=True)
 
     def __str__(self):
-        return self.admission_fee
+        return self.standard_name
 
     
-
+#  return 'standard_name: {} '.format(self.standard_name)
 class admissionform(models.Model):
      student_name = models.CharField(max_length=20)
      father_name=models.CharField(max_length=20)
