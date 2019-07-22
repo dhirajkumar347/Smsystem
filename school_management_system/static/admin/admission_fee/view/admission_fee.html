@@ -1,116 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>AdminLTE 2 | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
           <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
 
   
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
-
-
- <div class="col-lg-12 col-md-offset-12">
- <header>Add admission structure</header>
-  <!-- Main content -->
-
-  
-  
- <select name="dropChange" ng-model="dropValue" ng-change="DropDownChnaged()" class="form-control" >
+<div class="col-lg-12 col-md-offset-12">
+<header>Add admission structure</header>
+<select name="dropChange" ng-model="dropValue" ng-change="DropDownChnaged()" class="form-control" >
         <option value="1to3">Class 1 To 3</option>
         <option value="4to12">Class 4 to 12</option>
-    </select>
+</select>
+{{success}}
+<div class="row"  ng-show='isform'>
+  <div class="row">
 
- <div class="row"  ng-show='isform'>
-   <div>
- <form  class="form-horizontal" name="admission_fee"  novalidate>
-             
-               <div class="form-group">
-                  <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
-                  <div class="col-md-12">
-                     <input type="text"   name="admission_fee"  ng-model ="student_fee.admission_fee" placeholder=" Admission_Fee" class="form-control"  >
-                     
-                     
-                  </div>
-               </div>
-               <div class="form-group">
-                  <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
-                  <div class="col-md-12">
-                     <input type="text"   name="monthly_fee"  ng-model ="student_fee.monthly_fee" placeholder="monthly_fee" class="form-control">
-                       
-                  </div>
-                    
-               </div>
-
-
-               <div class="form-group">
-                  <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
-                  <div class="col-md-10">
-                     <input type="text"   name="bus_fee"  ng-model ="student_fee.bus_fee" placeholder="Bus Fee" class="form-control" >
-                   </div>
-                 </div>
-
-                 <div class="form-group">
-                  <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
-                  <div class="col-md-10">
-                     <input type="text"   name="bus_fee"  ng-model ="student_fee.standard_name" placeholder="Standard" class="form-control" >
-                   </div>
-                 </div>
-
-
-
-<!-- 
-               <div class="form-group">
-                  <label class="col-md-4 control-label">Select Standard</label>
-
-                  <div class="col-md-10">
-                    <select  id="standard_name" name="standard_name" type="text" class="form-control" placeholder="Select Standard" ng-options="item as item.standard_name for item in standards track by item.standard_id " ng-model="standard_name" required>
-                     
-                    </select>
-                    <span style="color: red" ng-show="studentform.standard_name.$error.required && (studentform.$submitted || studentform.standard_name.$touched)">
-                              standard_name is required.
-                            </span>
-                  </div>
-               </div> -->
+  <div class="col-lg-10 panel panel-default" >
   
-            
+    <form  class="form-horizontal" name="admission_fee"  novalidate>
+      <div class="form-group">
+        <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
+        <div class="col-md-12">
+          <input type="text"   name="admission_fee"  ng-model ="student_fee.admission_fee" placeholder=" Admission_Fee" class="form-control"  >
+      </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
+    <div class="col-md-12">
+      <input type="text"   name="monthly_fee"  ng-model ="student_fee.monthly_fee" placeholder="monthly_fee" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
+    <div class="col-md-12">
+      <input type="text"   name="bus_fee"  ng-model ="student_fee.bus_fee" placeholder="Bus Fee" class="form-control" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
+    <div class="col-md-12">
+      <input type="text"   name="bus_fee"  ng-model ="student_fee.standard_name" placeholder="Standard" class="form-control" >
+    </div>
+  </div>
+  <div class="form-group" ng-hide='isformextra' >
+    <label class="col-md-10 control-label" >Select Curriculam Type</label>
+    <div class="col-md-12">
+      <select  id="extra_curricular_activities_types" name="extra_curricular_activities_types" type="text" class="form-control" placeholder="Select extra_curricular_activities_types" ng-options="item as item.extra_curricular_activities_types for item in extra_curricular_activitiess track by item.extra_curricular_activities_id" ng-model="extra_curricular_activities_types" ng-change="extra()" ></select>
+    </div>
+  </div>
+  <div class="form-group"   ng-show="isextra_curricular_activities">
+    <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
+    <div class="col-md-12">
+      <input type="text"   name="extra_curricular_activities_fee"  ng-model ="extra_curricular_activities_fee" placeholder="extra_curricular_activities Fee" class="form-control" >
+    </div>
+  </div>
 
-               <div class="form-group" ng-hide='isformextra'>
-                  <label class="col-md-4 control-label" >Select Curriculam Type</label>
-                  <div class="col-md-10">
-
-                    <select  id="extra_curricular_activities_types" name="extra_curricular_activities_types" type="text" class="form-control" placeholder="Select extra_curricular_activities_types" ng-options="item as item.extra_curricular_activities_types for item in extra_curricular_activitiess track by item.extra_curricular_activities_id" ng-model="extra_curricular_activities_types" ></select>
-                  </div></div>
-
-                  <div class="form-group" ng-hide='isformextrafee' >
-                  <label class="col-md-10 control-label" ><span class="cus_man7"></span></label>
-                  <div class="col-md-10">
-                     <input type="text"   name="extra_curricular_activities_fee"  ng-model ="extra_curricular_activities_fee" placeholder="extra_curricular_activities Fee" class="form-control" >
-                   </div>
-                 </div>
-
-              <button type="submit" class="btn btn-primary" ng-click="admission()" >submit</button>
-             
-        </form>
-       
-           </div>
-           
+  <button type="submit" class="btn btn-primary" ng-click="admission()" >submit</button>
+</form>
 </div>
 </div>
- 
-
-
 </div>
-
-
-  
 </body>
 </html>
 

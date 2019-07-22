@@ -30,9 +30,7 @@ body  {
 					<div class="col-md-12">
 						<input   name="username" ng-model ="user.username" ng-pattern="/^[a-z][a-z0-9-_\.]{3,20}$/"   ng-maxlength ="20" ng-minlength="4"  align="right" type="text" id="username" placeholder="username" class="form-control field"  required >
 						<span style="color: red" ng-show="loginform.username.$error.required && (loginform.username.$touched || loginform.$submitted)">User name is required.</span>
-						<!-- <span style="color: red" ng-show="loginform.username.$error.minlength && (loginform.username.$touched  || loginform.$submitted)">User name is too short</span>
-						<span style="color: red" ng-show="loginform.username.$error.maxlength && (loginform.username.$touched  || loginform.$submitted)">User name is too long</span>
-						<span style="color: red" ng-show="loginform.username.$error.pattern && (loginform.$submitted || loginform.username.$touched)">Username can only contain small letters, number, dots or underscore.</span> -->
+						
 						<span style="color: red">{{ username_error[0] }}</span> 
 					</div>
 				</div>

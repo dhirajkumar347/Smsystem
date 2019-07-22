@@ -7,7 +7,7 @@ from api.serializers import *
 
 class admission_feeApi(viewsets.ModelViewSet): 
 	serializer_class=admission_feeSerializers
-	#queryset=admission_fee.objects.all()
+	
 
 
 

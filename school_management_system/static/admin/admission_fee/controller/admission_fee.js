@@ -9,12 +9,11 @@ app.config(['$httpProvider', '$interpolateProvider',
 function admission_feeController($scope, $http, $window) {
     console.log("initalize the controller");
     $scope.isform = false;
+    $scope.isextra_curricular_activities = false;
   
     $scope.admission = function() {
-    //var id=$scope.standard_name.standard_id;
     var fee_data = JSON.stringify($scope.student_fee);
     var final_data= JSON.parse(fee_data)
-    //final_data["standard_name"] = id;
     if(typeof $scope.extra_curricular_activities_types!="undefined"){
         var extra_cur_id = $scope.extra_curricular_activities_types.extra_curricular_activities_id
          final_data["extra_curricular_activities_types"] = extra_cur_id;
@@ -35,9 +34,10 @@ function admission_feeController($scope, $http, $window) {
 }
 $scope.DropDownChnaged = function () {
     if($scope.dropValue == '1to3'){
-         $scope.isform = true;
-          $scope.isformextra = true;
-          $scope.isformextrafee=true;
+        $scope.isform = true;
+        $scope.isformextra = true;
+        $scope.isformextrafee=true;
+        $scope.isextra_curricular_activities = false;
 
            console.log("data"+$scope.dropValue);
        }else{
@@ -47,17 +47,13 @@ $scope.DropDownChnaged = function () {
        }
     }; 
 
-/*$scope.getstandardList = function() {
-            $http({
-                method : "GET",
-                url : "/api/standard/",
-            }).then(function(response) {
-                $scope.standards = response.data;
-                console.log("standards"+JSON.stringify($scope.standards));
-            },function(response) {          
-                $scope.error = response.data;
-            });
-        };*/
+$scope.extra = function(){
+     $scope.isextra_curricular_activities = true;
+   
+};
+
+
+
 
 $scope.getextra_curricular_activitiesList=function(){
             $http({
@@ -71,10 +67,11 @@ $scope.getextra_curricular_activitiesList=function(){
             });
         };
 
-       // $scope.getstandardList();
+       
         $scope.getextra_curricular_activitiesList();
 
-    }
+   
+}
 
     
      
