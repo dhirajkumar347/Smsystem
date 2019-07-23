@@ -44,6 +44,9 @@ app.config(function($routeProvider) {
      controller:  ["$scope", "$http","$window","$uibModal","$controller","NgTableParams", extra_curricular_activitiesController],
 
   })
+  .when('/application_form',{
+    templateUrl : "/static/admin/application_form/view/application_form.html",
+     controller:  ["$scope", "$http","$window",application_formController],
  
   .otherwise({redirectTo: '/'});
 });

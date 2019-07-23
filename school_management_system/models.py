@@ -105,7 +105,7 @@ class contact_us(models.Model):
     query=models.TextField()
 
     def __str__(self):
-        return self.Email_id
+        return self.fullname
 
 class issue(models.Model):
     query=models.TextField(max_length=200,null=False,blank=False)

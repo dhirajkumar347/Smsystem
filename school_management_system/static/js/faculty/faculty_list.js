@@ -10,10 +10,7 @@ angularApp.config(['$httpProvider', '$interpolateProvider',
 
 //https://www.c-sharpcorner.com/article/server-side-pagination-using-angularjs-web-api-and-sql-server/
 angularApp.controller('ListDashboardCtrl', function($scope,$http,$window,$location) {
-    //$scope.maxSize = 1;     // Limit number for pagination display number.  
-    //$scope.totalCount = 0;  // Total number of items in all pages. initialize as a zero  
-    $scope.pageIndex = 1;   // Current page number. First page is 1.-->  
-    //$scope.pageSizeSelected = 5; // Maximum number of items per page.  
+    
   
     $scope.getFacultyList = function () { 
         $http.get("/api/faculty?page=" + $scope.pageIndex).then(  
@@ -44,14 +41,7 @@ angularApp.controller('ListDashboardCtrl', function($scope,$http,$window,$locati
      $scope.getFacultyList();  
   
     //This method is calling from pagination number  
-    $scope.pageChanged = function () {
-     $scope.pageIndex =  $scope.pageIndex+1   
-        $scope.getFacultyList();  
-    };  
-     $scope.pageChanged1 = function () {
-     $scope.pageIndex =  $scope.pageIndex-1   
-        $scope.getFacultyList();  
-    }; 
+   
 
      $scope.search_faculty = function () {
       if($scope.full_name == undefined){

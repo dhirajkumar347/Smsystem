@@ -16,18 +16,32 @@ body  {
   background-color: #cccccc;
 }
 </style>
-<div class="container" ng-cloak ng-app="qlsApp" ng-controller ="admission_feeController" class="container">
+<div class="container" ng-cloak ng-app="qlsApp" ng-controller ="contCntrl" class="container">
   <div class="col-sm-6 col-sm-offset-3 panel panel-default">
     {% verbatim %}
 
-    <div class="container">
-  <h2>Fee Structure</h2>
+  <div style="background-color: blue">
+<h1><center><strong>Fee Structure</strong></center></h1>>
+<select name="dropChange" ng-model="dropValue" ng-change="DropDownChnaged()" class="form-control" >
+        <option value="1to3" style="background-color: blue" style="color: white" >Class 1 To 3</option>
+        <option value="4to12" style="background-color: blue" style="color: white">Class 4 to 12</option>
+</select>
+<div class="row"  ng-show='isform'>
+  
   <ol >
     <div>
-      <li class="list-group-item list-group-item-success" ng-repeat="admission_fee in admission_fees"> {{admission_fee.admission_fee}}</li>
+      <li class="list-group-item list-group-item-success" ng-repeat="admission_fee in admission_fees"> 
+
+      Admission_Fee:{{admission_fee.admission_fee}}</li>
+      
+      <li class="list-group-item list-group-item-success" ng-repeat="admission_fee in admission_fees"> Monthly_Fee:{{admission_fee.monthly_fee}}</li>
+      <li class="list-group-item list-group-item-success" ng-repeat="admission_fee in admission_fees"> bus_fee:{{admission_fee.bus_fee}}</li>
+       <li class="list-group-item list-group-item-success" ng-hide='isformextra' ng-repeat="admission_fee in admission_fees"> 
+        extra_curricular_activities_types:{{admission_fee.extra_curricular_activities_types}}
+    </li> 
     </div>
 
-    </div></ol>
+    </div></ol> 
   {% endverbatim %}</div>
 </div>
 </div>{% endblock %}

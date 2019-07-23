@@ -32,4 +32,4 @@ app.controller('adminregisterCtrl', function($scope,$http,$window) {
                 }
         };
 	
-})
+});
