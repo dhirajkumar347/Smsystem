@@ -23,6 +23,7 @@ class admission_feeApi(viewsets.ModelViewSet):
 			elif standard_name>='4':
 				print("yesor no")
 				queryset= admission_fees.filter(standard_name=standard_name)
+				
 				return queryset
 		print("my exe")
 		return admission_fees

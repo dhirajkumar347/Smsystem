@@ -20,28 +20,49 @@ body  {
   <div class="col-sm-6 col-sm-offset-3 panel panel-default">
     {% verbatim %}
 
-  <div style="background-color: blue">
-<h1><center><strong>Fee Structure</strong></center></h1>>
-<select name="dropChange" ng-model="dropValue" ng-change="DropDownChnaged()" class="form-control" >
-        <option value="1to3" style="background-color: blue" style="color: white" >Class 1 To 3</option>
-        <option value="4to12" style="background-color: blue" style="color: white">Class 4 to 12</option>
+  <div >
+<h1><center><strong style="color: blue">Fee Structure</strong></center></h1>>
+<select name="dropChange" ng-model="value" ng-change="admission_fee()" class="form-control" >
+        <option value="1"  style="color: blue" >Class 1</option>
+        <option value="2"  style="color: blue" >Class 2</option>
+        <option value="3"  style="color: blue" >Class 3</option>
+        <option value="4"  style="color: blue">Class 4 </option>
+        <option value="5" style="color: blue" >Class 5 </option>
+        <option value="6" style="color: blue" >Class 6 </option>
+        <option value="7" style="color: blue" >Class 7 </option>
+        <option value="8" style="color: blue">Class 8 </option>
+        <option value="9" style="color: blue" >Class 9 </option>
+        <option value="10" style="color: blue">Class 10 </option>
+        <option value="11" style="color: blue" >Class 11 </option>
+        <option value="12" style="color: blue" >Class 12</option>
+
 </select>
 <div class="row"  ng-show='isform'>
-  
-  <ol >
+
+
+{{add_fee}}
+{{monthly_fee}}
+{{bus_fee}}
+<!-- {{extra_curricular_activities_types}}
+{{extra_curricular_activities_fee}} -->
+
+ <!--  <ol >
     <div>
-      <li class="list-group-item list-group-item-success" ng-repeat="admission_fee in admission_fees"> 
-
-      Admission_Fee:{{admission_fee.admission_fee}}</li>
-      
-      <li class="list-group-item list-group-item-success" ng-repeat="admission_fee in admission_fees"> Monthly_Fee:{{admission_fee.monthly_fee}}</li>
-      <li class="list-group-item list-group-item-success" ng-repeat="admission_fee in admission_fees"> bus_fee:{{admission_fee.bus_fee}}</li>
-       <li class="list-group-item list-group-item-success" ng-hide='isformextra' ng-repeat="admission_fee in admission_fees"> 
-        extra_curricular_activities_types:{{admission_fee.extra_curricular_activities_types}}
+            
+       <li class="list-group-item list-group-item-success" ng-hide='isextra_curricular_activities' ng-repeat="admission_fee in Admission_Fee"> 
+         extra_curricular_activities_types:{{admission_fee.extra_curricular_activities_types}} 
     </li> 
+     <li class="list-group-item list-group-item-success" ng-hide='isformextra' ng-repeat="admission_fee in Admission_Fee"> extra_curricular_activities_Fee:{{admission_fee.extra_curricular_activities_fee}}</li>
     </div>
+    
 
-    </div></ol> 
+    </div></ol>  -->
+    <table>
+  <tr ng-repeat="x in extra_curricular_activities_types">
+    <td>{{ x.extra_curricular_activities_types }}</td>
+    <td>{{ x.extra_curricular_activities_fee }}</td>
+  </tr>
+</table>
   {% endverbatim %}</div>
 </div>
 </div>{% endblock %}

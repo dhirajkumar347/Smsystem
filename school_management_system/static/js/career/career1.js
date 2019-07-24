@@ -8,12 +8,7 @@ angularApp.config(['$httpProvider', '$interpolateProvider',
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
 }]);
 
-//https://www.c-sharpcorner.com/article/server-side-pagination-using-angularjs-web-api-and-sql-server/
-angularApp.controller('ListDashboardCtrl', function($scope,$http,$window,$location) {
-    //$scope.maxSize = 1;     // Limit number for pagination display number.  
-    //$scope.totalCount = 0;  // Total number of items in all pages. initialize as a zero  
-      // Current page number. First page is 1.-->  
-    //$scope.pageSizeSelected = 5; // Maximum number of items per page.  
+angularApp.controller('ListDashboardCtrl', function($scope,$http,$window,$location) {  
   
     $scope.getcareers = function () { 
         $http.get("/api/career?page=" + $scope.pageIndex).then(  
@@ -41,10 +36,6 @@ angularApp.controller('ListDashboardCtrl', function($scope,$http,$window,$locati
       window.location.href="http://127.0.0.1:8000/app/applicationForm_registration/"
       
     }
-
-
-  
-    //Loading FacultyList list on first time  
      $scope.getcareers();  
   
 });
