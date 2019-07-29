@@ -8,23 +8,30 @@ app.config(['$httpProvider', '$interpolateProvider',
 }]);
 
 app.controller('contCntrl', function($scope, $http,$window){
-  console.log("initialize the controller");
-  $scope.isform = true;
+  $scope.istablehide = false;
     $scope.isformextrafee=false;
         $scope.isextra_curricular_activities = false;
      
     $scope.admission_fee = function () {
-      console.log($scope.value);
-       $http.get("/api/admission_fee?standard_name=" +$scope.value).then(  
-                       function (response) {  
-                            $scope.Admission_Fee = response.data;
-                           $scope.add_fee =  $scope.Admission_Fee[0].admission_fee;
-                           $scope.monthly_fee = $scope.Admission_Fee[0].monthly_fee;
-                           $scope.bus_fee = $scope.Admission_Fee[0].bus_fee;
-                            $scope.extra_curricular_activities_types = $scope.Admission_Fee[0].extra_curricular_activities_types
-                           // $scope.extra_curricular_activities_fee = $scope.Admission_Fee[0].extra_curricular_activities_fee
 
-                            console.log(JSON.stringify($scope.Admission_Fee));
+      console.log($scope.value);
+
+       $http.get("/api/admission_fee?standard_name=" +$scope.value).then(  
+         // $scope.isformextrafee=true;
+                       function (response) {  
+                        $scope.istablehide=true;
+                        // $scope.school_name= $scope.admission_fee.school_name;
+                            $scope.admission_fee = response.data;
+
+                             console.log(JSON.stringify($scope.admission_fee));
+
+                           $scope.add_fee =  $scope.admission_fee[0].admission_fee;
+                           $scope.monthly_fee = $scope.admission_fee[0].monthly_fee;
+                           $scope.bus_fee = $scope.admission_fee[0].bus_fee;
+                           $scope.school_name= $scope.admission_fee.school_name;
+                            
+                            
+                            // console.log(JSON.stringify($scope.admission_fee));
 
                           
                        }, function (err) {  
@@ -33,6 +40,6 @@ app.controller('contCntrl', function($scope, $http,$window){
 
    
   }
-                
-                
+   
+              
             });

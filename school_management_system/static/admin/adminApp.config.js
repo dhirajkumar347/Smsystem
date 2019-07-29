@@ -38,6 +38,10 @@ app.config(function($routeProvider) {
     templateUrl : "/static/admin/career/view/career.html",
      controller:  ["$scope", "$http","$window", careerController],
 
+  }).when('/school_name',{
+    templateUrl : "/static/admin/school_name/view/school_name.html",
+     controller:  ["$scope", "$http","$window","$uibModal","$controller", school_nameController],
+
   })
   .when('/extra_curricular_activities',{
     templateUrl : "/static/admin/extra_curricular_activities/view/extra_curricular_activities.html",

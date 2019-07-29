@@ -15,7 +15,7 @@ function admission_feeController($scope, $http, $window) {
     var fee_data = JSON.stringify($scope.student_fee);
     var final_data= JSON.parse(fee_data)
     if(typeof $scope.extra_curricular_activities_types!="undefined"){
-        var extra_cur_id = $scope.extra_curricular_activities_types.extra_curricular_activities_id
+        var extra_cur_id = $scope.extra_curricular_activities.extra_curricular_activities_types
          final_data["extra_curricular_activities_types"] = extra_cur_id;
          final_data['extra_curricular_activities_fee'] =$scope.extra_curricular_activities_fee
     } 

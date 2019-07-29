@@ -10,18 +10,26 @@ QLS-register
   <script src="{% static 'js/admission_fee/admission_fee.js' %}"></script>
   {% endblock %}
   {% block front_pane %}  
-
 <style>
-body  {
-  background-color: #cccccc;
-}
-</style>
+         table, th , td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+         }
+         table tr:nth-child(odd) {
+            background-color: #f2f2f2;
+         }
+         table tr:nth-child(even) {
+            background-color: #ffffff;
+         }
+      </style>
 <div class="container" ng-cloak ng-app="qlsApp" ng-controller ="contCntrl" class="container">
-  <div class="col-sm-6 col-sm-offset-3 panel panel-default">
+  <div class="col-sm-4 ">
     {% verbatim %}
 
-  <div >
-<h1><center><strong style="color: blue">Fee Structure</strong></center></h1>>
+  </div>
+<h1><center><strong style="color: blue">Fee Structure</strong></center></h1>
+<!-- <h2><center><strong>School Name:{{school_name}}</strong></center></h2> -->
 <select name="dropChange" ng-model="value" ng-change="admission_fee()" class="form-control" >
         <option value="1"  style="color: blue" >Class 1</option>
         <option value="2"  style="color: blue" >Class 2</option>
@@ -37,32 +45,50 @@ body  {
         <option value="12" style="color: blue" >Class 12</option>
 
 </select>
-<div class="row"  ng-show='isform'>
+ 
 
 
-{{add_fee}}
-{{monthly_fee}}
-{{bus_fee}}
-<!-- {{extra_curricular_activities_types}}
-{{extra_curricular_activities_fee}} -->
-
- <!--  <ol >
-    <div>
+ 
+ <div class="col-sm-6 col-sm-offset-3 panel panel-default" ng-show='istablehide' >
+  <table border = "0" >
+   
+        
+                    <tr>
+               <td>admission_fee: </td>
+               <td>{{add_fee}}</td>
+            </tr>
+            <tr>
+               <td>monthly_fee: </td>
+               <td>{{monthly_fee}}</td>
+            </tr>
+             <tr>
+               <td>bus_fee: </td>
+               <td>{{bus_fee}}</td>
+            </tr>
+             
+            <tr>
+               <td>extra_curricular_activities:</td>
+               
+               <td>
+                  <table>
+                     <tr>
+                        <th>curricular_activitie</th>.
+                        <th>curricular_fee</th>
+                     </tr>
+                     <tr ng-repeat = "subject in admission_fee">
+                        <td>{{ subject.extra_curricular_activities }}</td>
+                        <td>{{ subject.extra_curricular_activities_fee }}</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
             
-       <li class="list-group-item list-group-item-success" ng-hide='isextra_curricular_activities' ng-repeat="admission_fee in Admission_Fee"> 
-         extra_curricular_activities_types:{{admission_fee.extra_curricular_activities_types}} 
-    </li> 
-     <li class="list-group-item list-group-item-success" ng-hide='isformextra' ng-repeat="admission_fee in Admission_Fee"> extra_curricular_activities_Fee:{{admission_fee.extra_curricular_activities_fee}}</li>
-    </div>
-    
 
-    </div></ol>  -->
-    <table>
-  <tr ng-repeat="x in extra_curricular_activities_types">
-    <td>{{ x.extra_curricular_activities_types }}</td>
-    <td>{{ x.extra_curricular_activities_fee }}</td>
-  </tr>
+            
 </table>
+  </div></div>
   {% endverbatim %}</div>
 </div>
 </div>{% endblock %}
+
+
